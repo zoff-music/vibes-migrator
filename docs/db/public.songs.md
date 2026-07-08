@@ -16,12 +16,14 @@
 | added_by_nickname | text |  | true |  |  |  |
 | added_at | timestamp with time zone | now() | true |  |  |  |
 | position | integer |  | true |  |  |  |
+| duplicate_guard | integer | 1 | false |  |  |  |
 
 ## Constraints
 
 | Name | Type | Definition |
 | ---- | ---- | ---------- |
 | songs_added_by_not_null | n | NOT NULL added_by |
+| songs_duplicate_guard_not_null | n | NOT NULL duplicate_guard |
 | songs_duration_not_null | n | NOT NULL duration |
 | songs_id_not_null | n | NOT NULL id |
 | songs_room_id_not_null | n | NOT NULL room_id |
@@ -39,6 +41,7 @@
 | songs_pkey | CREATE UNIQUE INDEX songs_pkey ON public.songs USING btree (id) |
 | idx_songs_room_id | CREATE INDEX idx_songs_room_id ON public.songs USING btree (room_id) |
 | idx_songs_room_position | CREATE INDEX idx_songs_room_position ON public.songs USING btree (room_id, "position") |
+| idx_songs_duplicate_guard | CREATE UNIQUE INDEX idx_songs_duplicate_guard ON public.songs USING btree (room_id, source_type, source_id) WHERE (duplicate_guard = 1) |
 
 ## Relations
 

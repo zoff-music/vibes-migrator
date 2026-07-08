@@ -1,5 +1,5 @@
 {
-  "name": "vibes_docs_20260707232657",
+  "name": "vibes",
   "tables": [
     {
       "name": "public.migrations",
@@ -437,6 +437,12 @@
           "name": "position",
           "type": "integer",
           "nullable": true
+        },
+        {
+          "name": "duplicate_guard",
+          "type": "integer",
+          "nullable": false,
+          "default": "1"
         }
       ],
       "indexes": [
@@ -464,6 +470,16 @@
             "room_id",
             "position"
           ]
+        },
+        {
+          "name": "idx_songs_duplicate_guard",
+          "def": "CREATE UNIQUE INDEX idx_songs_duplicate_guard ON public.songs USING btree (room_id, source_type, source_id) WHERE (duplicate_guard = 1)",
+          "table": "public.songs",
+          "columns": [
+            "room_id",
+            "source_type",
+            "source_id"
+          ]
         }
       ],
       "constraints": [
@@ -475,6 +491,16 @@
           "referenced_table": "",
           "columns": [
             "added_by"
+          ]
+        },
+        {
+          "name": "songs_duplicate_guard_not_null",
+          "type": "n",
+          "def": "NOT NULL duplicate_guard",
+          "table": "public.songs",
+          "referenced_table": "",
+          "columns": [
+            "duplicate_guard"
           ]
         },
         {
@@ -1683,7 +1709,7 @@
   ],
   "driver": {
     "name": "postgres",
-    "database_version": "PostgreSQL 18.4 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 12.2.0, 64-bit",
+    "database_version": "PostgreSQL 18.4 (Debian 18.4-1.pgdg13+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit",
     "meta": {
       "current_schema": "public",
       "search_paths": [
