@@ -1,0 +1,9 @@
+DROP INDEX IF EXISTS idx_songs_room_added_at;
+DROP INDEX IF EXISTS idx_songs_room_source;
+DROP INDEX IF EXISTS idx_room_users_active_listener_room_last_seen_at;
+DROP INDEX IF EXISTS idx_room_users_room_last_seen_at;
+DROP INDEX IF EXISTS idx_pending_oauth_state_state_expires_at;
+DROP INDEX IF EXISTS idx_access_tokens_refresh_claim;
+DROP INDEX IF EXISTS idx_access_tokens_refresh_expires_at;
+DROP INDEX IF EXISTS idx_access_tokens_user_refresh_expires_at;
+DROP INDEX IF EXISTS idx_rooms_name_unique;
