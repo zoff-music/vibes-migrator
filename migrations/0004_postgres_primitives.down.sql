@@ -1,0 +1,108 @@
+DROP INDEX IF EXISTS idx_room_users_active_listener_room_last_seen_at;
+DROP INDEX IF EXISTS idx_songs_duplicate_guard;
+
+ALTER TABLE room_settings
+ALTER COLUMN skip_allowed DROP DEFAULT,
+ALTER COLUMN skip_allowed TYPE INTEGER USING CASE WHEN skip_allowed THEN 1 ELSE 0 END,
+ALTER COLUMN skip_allowed SET DEFAULT 1,
+ALTER COLUMN democratic_skip DROP DEFAULT,
+ALTER COLUMN democratic_skip TYPE INTEGER USING CASE WHEN democratic_skip THEN 1 ELSE 0 END,
+ALTER COLUMN democratic_skip SET DEFAULT 1,
+ALTER COLUMN remove_on_play DROP DEFAULT,
+ALTER COLUMN remove_on_play TYPE INTEGER USING CASE WHEN remove_on_play THEN 1 ELSE 0 END,
+ALTER COLUMN remove_on_play SET DEFAULT 1,
+ALTER COLUMN loop_queue DROP DEFAULT,
+ALTER COLUMN loop_queue TYPE INTEGER USING CASE WHEN loop_queue THEN 1 ELSE 0 END,
+ALTER COLUMN loop_queue SET DEFAULT 0,
+ALTER COLUMN allow_duplicates DROP DEFAULT,
+ALTER COLUMN allow_duplicates TYPE INTEGER USING CASE WHEN allow_duplicates THEN 1 ELSE 0 END,
+ALTER COLUMN allow_duplicates SET DEFAULT 0,
+ALTER COLUMN only_admin_add_songs DROP DEFAULT,
+ALTER COLUMN only_admin_add_songs TYPE INTEGER USING CASE WHEN only_admin_add_songs THEN 1 ELSE 0 END,
+ALTER COLUMN only_admin_add_songs SET DEFAULT 0;
+
+ALTER TABLE playback_state
+ALTER COLUMN is_playing DROP DEFAULT,
+ALTER COLUMN is_playing TYPE INTEGER USING CASE WHEN is_playing THEN 1 ELSE 0 END,
+ALTER COLUMN is_playing SET DEFAULT 0;
+
+ALTER TABLE room_users
+ALTER COLUMN is_admin DROP DEFAULT,
+ALTER COLUMN is_admin TYPE INTEGER USING CASE WHEN is_admin THEN 1 ELSE 0 END,
+ALTER COLUMN is_admin SET DEFAULT 0,
+ALTER COLUMN is_active_listener DROP DEFAULT,
+ALTER COLUMN is_active_listener TYPE INTEGER USING CASE WHEN is_active_listener THEN 1 ELSE 0 END,
+ALTER COLUMN is_active_listener SET DEFAULT 0,
+ALTER COLUMN is_cast_receiver DROP DEFAULT,
+ALTER COLUMN is_cast_receiver TYPE INTEGER USING CASE WHEN is_cast_receiver THEN 1 ELSE 0 END,
+ALTER COLUMN is_cast_receiver SET DEFAULT 0;
+
+ALTER TABLE songs
+ALTER COLUMN duplicate_guard DROP DEFAULT,
+ALTER COLUMN duplicate_guard TYPE INTEGER USING CASE WHEN duplicate_guard THEN 1 ELSE 0 END,
+ALTER COLUMN duplicate_guard SET DEFAULT 1;
+
+ALTER TABLE rooms
+ALTER COLUMN created_at DROP DEFAULT,
+ALTER COLUMN created_at TYPE TIMESTAMPTZ USING created_at AT TIME ZONE 'UTC',
+ALTER COLUMN created_at SET DEFAULT NOW();
+
+ALTER TABLE songs
+ALTER COLUMN added_at DROP DEFAULT,
+ALTER COLUMN added_at TYPE TIMESTAMPTZ USING added_at AT TIME ZONE 'UTC',
+ALTER COLUMN added_at SET DEFAULT NOW();
+
+ALTER TABLE playback_state
+ALTER COLUMN updated_at DROP DEFAULT,
+ALTER COLUMN updated_at TYPE TIMESTAMPTZ USING updated_at AT TIME ZONE 'UTC',
+ALTER COLUMN updated_at SET DEFAULT NOW();
+
+ALTER TABLE room_users
+ALTER COLUMN joined_at DROP DEFAULT,
+ALTER COLUMN joined_at TYPE TIMESTAMPTZ USING joined_at AT TIME ZONE 'UTC',
+ALTER COLUMN joined_at SET DEFAULT NOW(),
+ALTER COLUMN last_seen_at DROP DEFAULT,
+ALTER COLUMN last_seen_at TYPE TIMESTAMPTZ USING last_seen_at AT TIME ZONE 'UTC',
+ALTER COLUMN last_seen_at SET DEFAULT NOW();
+
+ALTER TABLE skip_votes
+ALTER COLUMN created_at DROP DEFAULT,
+ALTER COLUMN created_at TYPE TIMESTAMPTZ USING created_at AT TIME ZONE 'UTC',
+ALTER COLUMN created_at SET DEFAULT NOW();
+
+ALTER TABLE song_votes
+ALTER COLUMN created_at DROP DEFAULT,
+ALTER COLUMN created_at TYPE TIMESTAMPTZ USING created_at AT TIME ZONE 'UTC',
+ALTER COLUMN created_at SET DEFAULT NOW();
+
+ALTER TABLE auth_tokens
+ALTER COLUMN expires_at TYPE TIMESTAMPTZ USING expires_at AT TIME ZONE 'UTC',
+ALTER COLUMN created_at DROP DEFAULT,
+ALTER COLUMN created_at TYPE TIMESTAMPTZ USING created_at AT TIME ZONE 'UTC',
+ALTER COLUMN created_at SET DEFAULT NOW(),
+ALTER COLUMN updated_at DROP DEFAULT,
+ALTER COLUMN updated_at TYPE TIMESTAMPTZ USING updated_at AT TIME ZONE 'UTC',
+ALTER COLUMN updated_at SET DEFAULT NOW();
+
+ALTER TABLE access_tokens
+ALTER COLUMN expires_at TYPE TIMESTAMPTZ USING expires_at AT TIME ZONE 'UTC',
+ALTER COLUMN refresh_expires_at TYPE TIMESTAMPTZ USING refresh_expires_at AT TIME ZONE 'UTC',
+ALTER COLUMN created_at DROP DEFAULT,
+ALTER COLUMN created_at TYPE TIMESTAMPTZ USING created_at AT TIME ZONE 'UTC',
+ALTER COLUMN created_at SET DEFAULT NOW(),
+ALTER COLUMN updated_at DROP DEFAULT,
+ALTER COLUMN updated_at TYPE TIMESTAMPTZ USING updated_at AT TIME ZONE 'UTC',
+ALTER COLUMN updated_at SET DEFAULT NOW(),
+ALTER COLUMN last_checked TYPE TIMESTAMPTZ USING last_checked AT TIME ZONE 'UTC';
+
+ALTER TABLE pending_oauth_state
+ALTER COLUMN expires_at TYPE TIMESTAMPTZ USING expires_at AT TIME ZONE 'UTC';
+
+CREATE UNIQUE INDEX IF NOT EXISTS idx_songs_duplicate_guard
+ON songs(room_id, source_type, source_id)
+WHERE duplicate_guard = 1;
+
+CREATE INDEX IF NOT EXISTS idx_room_users_active_listener_room_last_seen_at
+ON room_users(room_id, last_seen_at)
+WHERE is_active_listener = 1
+AND is_cast_receiver = 0;
