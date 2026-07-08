@@ -1,6 +1,19 @@
-vibes-migrator
-*.log
+# Local environment
 .env
 .env.*
 !.env.example
+
+# Logs and local runtime state
+*.log
+tmp/
+
+# Go build and test output
+vibes-migrator
+*.test
+*.out
+coverage/
+
+# Local tooling
 .DS_Store
+.idea/
+.vscode/
