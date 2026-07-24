@@ -5,7 +5,7 @@
 | Name | Type | Default | Nullable | Children | Parents | Comment |
 | ---- | ---- | ------- | -------- | -------- | ------- | ------- |
 | id | text |  | false |  |  |  |
-| room_id | text |  | false |  | [public.rooms](public.rooms.md) |  |
+| room_id | text |  | false |  |  |  |
 | nickname | text |  | true |  |  |  |
 | is_admin | boolean | false | true |  |  |  |
 | is_active_listener | boolean | false | true |  |  |  |
@@ -20,7 +20,6 @@
 | ---- | ---- | ---------- |
 | room_users_id_not_null | n | NOT NULL id |
 | room_users_room_id_not_null | n | NOT NULL room_id |
-| room_users_room_id_fkey | FOREIGN KEY | FOREIGN KEY (room_id) REFERENCES rooms(id) ON DELETE CASCADE |
 | room_users_pkey | PRIMARY KEY | PRIMARY KEY (id, room_id) |
 
 ## Indexes

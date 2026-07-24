@@ -356,19 +356,6 @@
           ]
         },
         {
-          "name": "room_settings_room_id_fkey",
-          "type": "FOREIGN KEY",
-          "def": "FOREIGN KEY (room_id) REFERENCES rooms(id) ON DELETE CASCADE",
-          "table": "public.room_settings",
-          "referenced_table": "public.rooms",
-          "columns": [
-            "room_id"
-          ],
-          "referenced_columns": [
-            "id"
-          ]
-        },
-        {
           "name": "room_settings_pkey",
           "type": "PRIMARY KEY",
           "def": "PRIMARY KEY (room_id)",
@@ -601,19 +588,6 @@
           ]
         },
         {
-          "name": "songs_room_id_fkey",
-          "type": "FOREIGN KEY",
-          "def": "FOREIGN KEY (room_id) REFERENCES rooms(id) ON DELETE CASCADE",
-          "table": "public.songs",
-          "referenced_table": "public.rooms",
-          "columns": [
-            "room_id"
-          ],
-          "referenced_columns": [
-            "id"
-          ]
-        },
-        {
           "name": "songs_pkey",
           "type": "PRIMARY KEY",
           "def": "PRIMARY KEY (id)",
@@ -677,19 +651,6 @@
           "referenced_table": "",
           "columns": [
             "room_id"
-          ]
-        },
-        {
-          "name": "playback_state_room_id_fkey",
-          "type": "FOREIGN KEY",
-          "def": "FOREIGN KEY (room_id) REFERENCES rooms(id) ON DELETE CASCADE",
-          "table": "public.playback_state",
-          "referenced_table": "public.rooms",
-          "columns": [
-            "room_id"
-          ],
-          "referenced_columns": [
-            "id"
           ]
         },
         {
@@ -826,19 +787,6 @@
           ]
         },
         {
-          "name": "room_users_room_id_fkey",
-          "type": "FOREIGN KEY",
-          "def": "FOREIGN KEY (room_id) REFERENCES rooms(id) ON DELETE CASCADE",
-          "table": "public.room_users",
-          "referenced_table": "public.rooms",
-          "columns": [
-            "room_id"
-          ],
-          "referenced_columns": [
-            "id"
-          ]
-        },
-        {
           "name": "room_users_pkey",
           "type": "PRIMARY KEY",
           "def": "PRIMARY KEY (id, room_id)",
@@ -927,32 +875,6 @@
           "referenced_table": "",
           "columns": [
             "user_id"
-          ]
-        },
-        {
-          "name": "skip_votes_room_id_fkey",
-          "type": "FOREIGN KEY",
-          "def": "FOREIGN KEY (room_id) REFERENCES rooms(id) ON DELETE CASCADE",
-          "table": "public.skip_votes",
-          "referenced_table": "public.rooms",
-          "columns": [
-            "room_id"
-          ],
-          "referenced_columns": [
-            "id"
-          ]
-        },
-        {
-          "name": "skip_votes_song_id_fkey",
-          "type": "FOREIGN KEY",
-          "def": "FOREIGN KEY (song_id) REFERENCES songs(id) ON DELETE CASCADE",
-          "table": "public.skip_votes",
-          "referenced_table": "public.songs",
-          "columns": [
-            "song_id"
-          ],
-          "referenced_columns": [
-            "id"
           ]
         },
         {
@@ -1045,32 +967,6 @@
           "referenced_table": "",
           "columns": [
             "user_id"
-          ]
-        },
-        {
-          "name": "song_votes_room_id_fkey",
-          "type": "FOREIGN KEY",
-          "def": "FOREIGN KEY (room_id) REFERENCES rooms(id) ON DELETE CASCADE",
-          "table": "public.song_votes",
-          "referenced_table": "public.rooms",
-          "columns": [
-            "room_id"
-          ],
-          "referenced_columns": [
-            "id"
-          ]
-        },
-        {
-          "name": "song_votes_song_id_fkey",
-          "type": "FOREIGN KEY",
-          "def": "FOREIGN KEY (song_id) REFERENCES songs(id) ON DELETE CASCADE",
-          "table": "public.song_votes",
-          "referenced_table": "public.songs",
-          "columns": [
-            "song_id"
-          ],
-          "referenced_columns": [
-            "id"
           ]
         },
         {
@@ -1688,112 +1584,6 @@
           ]
         }
       ]
-    }
-  ],
-  "relations": [
-    {
-      "table": "public.room_settings",
-      "columns": [
-        "room_id"
-      ],
-      "cardinality": "zero_or_one",
-      "parent_table": "public.rooms",
-      "parent_columns": [
-        "id"
-      ],
-      "parent_cardinality": "exactly_one",
-      "def": "FOREIGN KEY (room_id) REFERENCES rooms(id) ON DELETE CASCADE"
-    },
-    {
-      "table": "public.songs",
-      "columns": [
-        "room_id"
-      ],
-      "cardinality": "zero_or_more",
-      "parent_table": "public.rooms",
-      "parent_columns": [
-        "id"
-      ],
-      "parent_cardinality": "exactly_one",
-      "def": "FOREIGN KEY (room_id) REFERENCES rooms(id) ON DELETE CASCADE"
-    },
-    {
-      "table": "public.playback_state",
-      "columns": [
-        "room_id"
-      ],
-      "cardinality": "zero_or_one",
-      "parent_table": "public.rooms",
-      "parent_columns": [
-        "id"
-      ],
-      "parent_cardinality": "exactly_one",
-      "def": "FOREIGN KEY (room_id) REFERENCES rooms(id) ON DELETE CASCADE"
-    },
-    {
-      "table": "public.room_users",
-      "columns": [
-        "room_id"
-      ],
-      "cardinality": "zero_or_more",
-      "parent_table": "public.rooms",
-      "parent_columns": [
-        "id"
-      ],
-      "parent_cardinality": "exactly_one",
-      "def": "FOREIGN KEY (room_id) REFERENCES rooms(id) ON DELETE CASCADE"
-    },
-    {
-      "table": "public.skip_votes",
-      "columns": [
-        "room_id"
-      ],
-      "cardinality": "zero_or_more",
-      "parent_table": "public.rooms",
-      "parent_columns": [
-        "id"
-      ],
-      "parent_cardinality": "exactly_one",
-      "def": "FOREIGN KEY (room_id) REFERENCES rooms(id) ON DELETE CASCADE"
-    },
-    {
-      "table": "public.skip_votes",
-      "columns": [
-        "song_id"
-      ],
-      "cardinality": "zero_or_more",
-      "parent_table": "public.songs",
-      "parent_columns": [
-        "id"
-      ],
-      "parent_cardinality": "exactly_one",
-      "def": "FOREIGN KEY (song_id) REFERENCES songs(id) ON DELETE CASCADE"
-    },
-    {
-      "table": "public.song_votes",
-      "columns": [
-        "room_id"
-      ],
-      "cardinality": "zero_or_more",
-      "parent_table": "public.rooms",
-      "parent_columns": [
-        "id"
-      ],
-      "parent_cardinality": "exactly_one",
-      "def": "FOREIGN KEY (room_id) REFERENCES rooms(id) ON DELETE CASCADE"
-    },
-    {
-      "table": "public.song_votes",
-      "columns": [
-        "song_id"
-      ],
-      "cardinality": "zero_or_more",
-      "parent_table": "public.songs",
-      "parent_columns": [
-        "id"
-      ],
-      "parent_cardinality": "exactly_one",
-      "def": "FOREIGN KEY (song_id) REFERENCES songs(id) ON DELETE CASCADE"
     }
   ],
   "functions": [

@@ -4,7 +4,7 @@
 
 | Name | Type | Default | Nullable | Children | Parents | Comment |
 | ---- | ---- | ------- | -------- | -------- | ------- | ------- |
-| room_id | text |  | false |  | [public.rooms](public.rooms.md) |  |
+| room_id | text |  | false |  |  |  |
 | skip_allowed | boolean | true | false |  |  |  |
 | democratic_skip | boolean | true | false |  |  |  |
 | skip_vote_threshold | real | 0.5 | false |  |  |  |
@@ -29,7 +29,6 @@
 | room_settings_room_id_not_null | n | NOT NULL room_id |
 | room_settings_skip_allowed_not_null | n | NOT NULL skip_allowed |
 | room_settings_skip_vote_threshold_not_null | n | NOT NULL skip_vote_threshold |
-| room_settings_room_id_fkey | FOREIGN KEY | FOREIGN KEY (room_id) REFERENCES rooms(id) ON DELETE CASCADE |
 | room_settings_pkey | PRIMARY KEY | PRIMARY KEY (room_id) |
 
 ## Indexes
