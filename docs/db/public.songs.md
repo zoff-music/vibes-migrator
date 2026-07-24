@@ -4,8 +4,8 @@
 
 | Name | Type | Default | Nullable | Children | Parents | Comment |
 | ---- | ---- | ------- | -------- | -------- | ------- | ------- |
-| id | text | (gen_random_uuid())::text | false | [public.skip_votes](public.skip_votes.md) [public.song_votes](public.song_votes.md) |  |  |
-| room_id | text |  | false |  | [public.rooms](public.rooms.md) |  |
+| id | text | (gen_random_uuid())::text | false |  |  |  |
+| room_id | text |  | false |  |  |  |
 | source_type | text |  | false |  |  |  |
 | source_id | text |  | false |  |  |  |
 | title | text |  | false |  |  |  |
@@ -31,7 +31,6 @@
 | songs_source_type_not_null | n | NOT NULL source_type |
 | songs_thumbnail_url_not_null | n | NOT NULL thumbnail_url |
 | songs_title_not_null | n | NOT NULL title |
-| songs_room_id_fkey | FOREIGN KEY | FOREIGN KEY (room_id) REFERENCES rooms(id) ON DELETE CASCADE |
 | songs_pkey | PRIMARY KEY | PRIMARY KEY (id) |
 
 ## Indexes

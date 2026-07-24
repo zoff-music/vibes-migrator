@@ -4,8 +4,8 @@
 
 | Name | Type | Default | Nullable | Children | Parents | Comment |
 | ---- | ---- | ------- | -------- | -------- | ------- | ------- |
-| room_id | text |  | false |  | [public.rooms](public.rooms.md) |  |
-| song_id | text |  | false |  | [public.songs](public.songs.md) |  |
+| room_id | text |  | false |  |  |  |
+| song_id | text |  | false |  |  |  |
 | user_id | text |  | false |  |  |  |
 | created_at | timestamp without time zone | (CURRENT_TIMESTAMP AT TIME ZONE 'UTC'::text) | true |  |  |  |
 
@@ -16,8 +16,6 @@
 | skip_votes_room_id_not_null | n | NOT NULL room_id |
 | skip_votes_song_id_not_null | n | NOT NULL song_id |
 | skip_votes_user_id_not_null | n | NOT NULL user_id |
-| skip_votes_room_id_fkey | FOREIGN KEY | FOREIGN KEY (room_id) REFERENCES rooms(id) ON DELETE CASCADE |
-| skip_votes_song_id_fkey | FOREIGN KEY | FOREIGN KEY (song_id) REFERENCES songs(id) ON DELETE CASCADE |
 | skip_votes_pkey | PRIMARY KEY | PRIMARY KEY (room_id, song_id, user_id) |
 
 ## Indexes

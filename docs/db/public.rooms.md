@@ -4,7 +4,7 @@
 
 | Name | Type | Default | Nullable | Children | Parents | Comment |
 | ---- | ---- | ------- | -------- | -------- | ------- | ------- |
-| id | text | (gen_random_uuid())::text | false | [public.room_settings](public.room_settings.md) [public.songs](public.songs.md) [public.playback_state](public.playback_state.md) [public.room_users](public.room_users.md) [public.skip_votes](public.skip_votes.md) [public.song_votes](public.song_votes.md) |  |  |
+| id | text | (gen_random_uuid())::text | false |  |  |  |
 | name | text |  | false |  |  |  |
 | mode | text | 'server'::text | false |  |  |  |
 | host_id | text |  | true |  |  |  |

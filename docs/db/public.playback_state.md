@@ -4,7 +4,7 @@
 
 | Name | Type | Default | Nullable | Children | Parents | Comment |
 | ---- | ---- | ------- | -------- | -------- | ------- | ------- |
-| room_id | text |  | false |  | [public.rooms](public.rooms.md) |  |
+| room_id | text |  | false |  |  |  |
 | current_song_id | text |  | true |  |  |  |
 | is_playing | boolean | false | true |  |  |  |
 | position_ms | integer | 0 | true |  |  |  |
@@ -15,7 +15,6 @@
 | Name | Type | Definition |
 | ---- | ---- | ---------- |
 | playback_state_room_id_not_null | n | NOT NULL room_id |
-| playback_state_room_id_fkey | FOREIGN KEY | FOREIGN KEY (room_id) REFERENCES rooms(id) ON DELETE CASCADE |
 | playback_state_pkey | PRIMARY KEY | PRIMARY KEY (room_id) |
 
 ## Indexes
