@@ -31,13 +31,13 @@
 <text text-anchor="start" x="87.44" y="-150.8" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
 <polygon fill="none" stroke="black" points="46.2,-107.8 46.2,-138.6 321.17,-138.6 321.17,-107.8 46.2,-107.8"/>
 <text text-anchor="start" x="53.2" y="-120" font-family="Arial" font-size="14.00">expires_at </text>
-<text text-anchor="start" x="121.68" y="-120" font-family="Arial" font-size="14.00" fill="#666666">[timestamp with time zone]</text>
+<text text-anchor="start" x="121.68" y="-120" font-family="Arial" font-size="14.00" fill="#666666">[timestamp without time zone]</text>
 <polygon fill="none" stroke="black" points="46.2,-77 46.2,-107.8 321.17,-107.8 321.17,-77 46.2,-77"/>
 <text text-anchor="start" x="53.2" y="-89.2" font-family="Arial" font-size="14.00">created_at </text>
-<text text-anchor="start" x="123.25" y="-89.2" font-family="Arial" font-size="14.00" fill="#666666">[timestamp with time zone]</text>
+<text text-anchor="start" x="123.25" y="-89.2" font-family="Arial" font-size="14.00" fill="#666666">[timestamp without time zone]</text>
 <polygon fill="none" stroke="black" points="46.2,-46.2 46.2,-77 321.17,-77 321.17,-46.2 46.2,-46.2"/>
 <text text-anchor="start" x="53.2" y="-58.4" font-family="Arial" font-size="14.00">updated_at </text>
-<text text-anchor="start" x="127.16" y="-58.4" font-family="Arial" font-size="14.00" fill="#666666">[timestamp with time zone]</text>
+<text text-anchor="start" x="127.16" y="-58.4" font-family="Arial" font-size="14.00" fill="#666666">[timestamp without time zone]</text>
 <polygon fill="none" stroke="black" stroke-width="3" points="44.7,-44.7 44.7,-298.9 322.67,-298.9 322.67,-44.7 44.7,-44.7"/>
 </g>
 </g>

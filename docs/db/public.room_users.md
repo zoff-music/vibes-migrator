@@ -7,12 +7,12 @@
 | id | text |  | false |  |  |  |
 | room_id | text |  | false |  | [public.rooms](public.rooms.md) |  |
 | nickname | text |  | true |  |  |  |
-| is_admin | integer | 0 | true |  |  |  |
-| is_active_listener | integer | 0 | true |  |  |  |
-| is_cast_receiver | integer | 0 | true |  |  |  |
+| is_admin | boolean | false | true |  |  |  |
+| is_active_listener | boolean | false | true |  |  |  |
+| is_cast_receiver | boolean | false | true |  |  |  |
 | cast_owner_id | text |  | true |  |  |  |
-| joined_at | timestamp with time zone | now() | true |  |  |  |
-| last_seen_at | timestamp with time zone | now() | true |  |  |  |
+| joined_at | timestamp without time zone | (CURRENT_TIMESTAMP AT TIME ZONE 'UTC'::text) | true |  |  |  |
+| last_seen_at | timestamp without time zone | (CURRENT_TIMESTAMP AT TIME ZONE 'UTC'::text) | true |  |  |  |
 
 ## Constraints
 
@@ -30,6 +30,8 @@
 | room_users_pkey | CREATE UNIQUE INDEX room_users_pkey ON public.room_users USING btree (id, room_id) |
 | idx_room_users_room_id | CREATE INDEX idx_room_users_room_id ON public.room_users USING btree (room_id) |
 | idx_room_users_last_seen | CREATE INDEX idx_room_users_last_seen ON public.room_users USING btree (last_seen_at) |
+| idx_room_users_room_last_seen_at | CREATE INDEX idx_room_users_room_last_seen_at ON public.room_users USING btree (room_id, last_seen_at) |
+| idx_room_users_active_listener_room_last_seen_at | CREATE INDEX idx_room_users_active_listener_room_last_seen_at ON public.room_users USING btree (room_id, last_seen_at) WHERE (is_active_listener AND (NOT is_cast_receiver)) |
 
 ## Relations
 

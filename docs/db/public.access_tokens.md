@@ -8,11 +8,11 @@
 | provider | text |  | false |  |  |  |
 | access_token | text |  | false |  |  |  |
 | refresh_token | text |  | false |  |  |  |
-| expires_at | timestamp with time zone |  | false |  |  |  |
-| refresh_expires_at | timestamp with time zone |  | false |  |  |  |
-| created_at | timestamp with time zone | now() | true |  |  |  |
-| updated_at | timestamp with time zone | now() | true |  |  |  |
-| last_checked | timestamp with time zone |  | true |  |  |  |
+| expires_at | timestamp without time zone |  | false |  |  |  |
+| refresh_expires_at | timestamp without time zone |  | false |  |  |  |
+| created_at | timestamp without time zone | (CURRENT_TIMESTAMP AT TIME ZONE 'UTC'::text) | true |  |  |  |
+| updated_at | timestamp without time zone | (CURRENT_TIMESTAMP AT TIME ZONE 'UTC'::text) | true |  |  |  |
+| last_checked | timestamp without time zone |  | true |  |  |  |
 
 ## Constraints
 
@@ -31,6 +31,9 @@
 | Name | Definition |
 | ---- | ---------- |
 | access_tokens_pkey | CREATE UNIQUE INDEX access_tokens_pkey ON public.access_tokens USING btree (user_id, provider) |
+| idx_access_tokens_refresh_claim | CREATE INDEX idx_access_tokens_refresh_claim ON public.access_tokens USING btree (provider, expires_at, refresh_expires_at, last_checked) |
+| idx_access_tokens_user_refresh_expires_at | CREATE INDEX idx_access_tokens_user_refresh_expires_at ON public.access_tokens USING btree (user_id, refresh_expires_at) |
+| idx_access_tokens_refresh_expires_at | CREATE INDEX idx_access_tokens_refresh_expires_at ON public.access_tokens USING btree (refresh_expires_at) |
 
 ## Relations
 

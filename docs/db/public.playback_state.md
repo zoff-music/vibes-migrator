@@ -6,9 +6,9 @@
 | ---- | ---- | ------- | -------- | -------- | ------- | ------- |
 | room_id | text |  | false |  | [public.rooms](public.rooms.md) |  |
 | current_song_id | text |  | true |  |  |  |
-| is_playing | integer | 0 | true |  |  |  |
+| is_playing | boolean | false | true |  |  |  |
 | position_ms | integer | 0 | true |  |  |  |
-| updated_at | timestamp with time zone | now() | true |  |  |  |
+| updated_at | timestamp without time zone | (CURRENT_TIMESTAMP AT TIME ZONE 'UTC'::text) | true |  |  |  |
 
 ## Constraints
 
