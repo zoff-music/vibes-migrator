@@ -15,7 +15,7 @@
 | [public.auth_tokens](public.auth_tokens.md) | 7 |  | BASE TABLE |
 | [public.access_tokens](public.access_tokens.md) | 9 |  | BASE TABLE |
 | [public.pending_oauth_state](public.pending_oauth_state.md) | 4 |  | BASE TABLE |
-| [public.room_generations](public.room_generations.md) | 5 |  | BASE TABLE |
+| [public.room_generations](public.room_generations.md) | 8 |  | BASE TABLE |
 
 ## Stored procedures and functions
 
