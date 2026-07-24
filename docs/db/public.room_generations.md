@@ -12,6 +12,7 @@
 | id | bigint |  | false |  |  |  |
 | completed_at | timestamp without time zone |  | true |  |  |  |
 | failed_at | timestamp without time zone |  | true |  |  |  |
+| failure_reason | text |  | true |  |  |  |
 
 ## Constraints
 
@@ -21,6 +22,7 @@
 | room_generations_attempt_not_null | n | NOT NULL attempt |
 | room_generations_created_at_not_null | n | NOT NULL created_at |
 | room_generations_failure_attempt | CHECK | CHECK (((failed_at IS NULL) OR (attempt >= 5))) |
+| room_generations_failure_reason | CHECK | CHECK (((failure_reason IS NULL) OR ((failed_at IS NOT NULL) AND ((length(failure_reason) >= 1) AND (length(failure_reason) <= 300))))) |
 | room_generations_id_not_null | n | NOT NULL id |
 | room_generations_prompt_check | CHECK | CHECK (((length(btrim(prompt)) >= 1) AND (length(btrim(prompt)) <= 300))) |
 | room_generations_prompt_not_null | n | NOT NULL prompt |

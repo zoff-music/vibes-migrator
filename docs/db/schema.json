@@ -1504,6 +1504,11 @@
           "name": "failed_at",
           "type": "timestamp without time zone",
           "nullable": true
+        },
+        {
+          "name": "failure_reason",
+          "type": "text",
+          "nullable": true
         }
       ],
       "indexes": [
@@ -1598,6 +1603,17 @@
           "columns": [
             "failed_at",
             "attempt"
+          ]
+        },
+        {
+          "name": "room_generations_failure_reason",
+          "type": "CHECK",
+          "def": "CHECK (((failure_reason IS NULL) OR ((failed_at IS NOT NULL) AND ((length(failure_reason) \u003e= 1) AND (length(failure_reason) \u003c= 300)))))",
+          "table": "public.room_generations",
+          "referenced_table": "",
+          "columns": [
+            "failure_reason",
+            "failed_at"
           ]
         },
         {
