@@ -6,7 +6,7 @@
 | ---- | ---- | ------- | -------- | -------- | ------- | ------- |
 | user_id | text |  | false |  |  |  |
 | state | text |  | false |  |  |  |
-| expires_at | timestamp with time zone |  | false |  |  |  |
+| expires_at | timestamp without time zone |  | false |  |  |  |
 | code_verifier | text |  | true |  |  |  |
 
 ## Constraints
@@ -23,6 +23,7 @@
 | Name | Definition |
 | ---- | ---------- |
 | pending_oauth_state_pkey | CREATE UNIQUE INDEX pending_oauth_state_pkey ON public.pending_oauth_state USING btree (user_id, state) |
+| idx_pending_oauth_state_state_expires_at | CREATE INDEX idx_pending_oauth_state_state_expires_at ON public.pending_oauth_state USING btree (state, expires_at) |
 
 ## Relations
 

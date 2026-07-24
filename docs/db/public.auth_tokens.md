@@ -8,9 +8,9 @@
 | provider | text |  | false |  |  |  |
 | code | text |  | false |  |  |  |
 | state | text |  | false |  |  |  |
-| expires_at | timestamp with time zone |  | false |  |  |  |
-| created_at | timestamp with time zone | now() | true |  |  |  |
-| updated_at | timestamp with time zone | now() | true |  |  |  |
+| expires_at | timestamp without time zone |  | false |  |  |  |
+| created_at | timestamp without time zone | (CURRENT_TIMESTAMP AT TIME ZONE 'UTC'::text) | true |  |  |  |
+| updated_at | timestamp without time zone | (CURRENT_TIMESTAMP AT TIME ZONE 'UTC'::text) | true |  |  |  |
 
 ## Constraints
 

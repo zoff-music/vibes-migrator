@@ -22,10 +22,10 @@
 <text text-anchor="start" x="107.67" y="-678.4" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
 <polygon fill="none" stroke="black" points="46.2,-635.4 46.2,-666.2 336.18,-666.2 336.18,-635.4 46.2,-635.4"/>
 <text text-anchor="start" x="53.2" y="-647.6" font-family="Arial" font-size="14.00">skip_allowed </text>
-<text text-anchor="start" x="137.25" y="-647.6" font-family="Arial" font-size="14.00" fill="#666666">[integer]</text>
+<text text-anchor="start" x="137.25" y="-647.6" font-family="Arial" font-size="14.00" fill="#666666">[boolean]</text>
 <polygon fill="none" stroke="black" points="46.2,-604.6 46.2,-635.4 336.18,-635.4 336.18,-604.6 46.2,-604.6"/>
 <text text-anchor="start" x="53.2" y="-616.8" font-family="Arial" font-size="14.00">democratic_skip </text>
-<text text-anchor="start" x="158.24" y="-616.8" font-family="Arial" font-size="14.00" fill="#666666">[integer]</text>
+<text text-anchor="start" x="158.24" y="-616.8" font-family="Arial" font-size="14.00" fill="#666666">[boolean]</text>
 <polygon fill="none" stroke="black" points="46.2,-573.8 46.2,-604.6 336.18,-604.6 336.18,-573.8 46.2,-573.8"/>
 <text text-anchor="start" x="53.2" y="-586" font-family="Arial" font-size="14.00">skip_vote_threshold </text>
 <text text-anchor="start" x="181.61" y="-586" font-family="Arial" font-size="14.00" fill="#666666">[real]</text>
@@ -34,53 +34,53 @@
 <text text-anchor="start" x="197.19" y="-555.2" font-family="Arial" font-size="14.00" fill="#666666">[integer]</text>
 <polygon fill="none" stroke="black" points="46.2,-512.2 46.2,-543 336.18,-543 336.18,-512.2 46.2,-512.2"/>
 <text text-anchor="start" x="53.2" y="-524.4" font-family="Arial" font-size="14.00">remove_on_play </text>
-<text text-anchor="start" x="160.6" y="-524.4" font-family="Arial" font-size="14.00" fill="#666666">[integer]</text>
+<text text-anchor="start" x="160.6" y="-524.4" font-family="Arial" font-size="14.00" fill="#666666">[boolean]</text>
 <polygon fill="none" stroke="black" points="46.2,-481.4 46.2,-512.2 336.18,-512.2 336.18,-481.4 46.2,-481.4"/>
 <text text-anchor="start" x="53.2" y="-493.6" font-family="Arial" font-size="14.00">loop_queue </text>
-<text text-anchor="start" x="130.28" y="-493.6" font-family="Arial" font-size="14.00" fill="#666666">[integer]</text>
+<text text-anchor="start" x="130.28" y="-493.6" font-family="Arial" font-size="14.00" fill="#666666">[boolean]</text>
 <polygon fill="none" stroke="black" points="46.2,-450.6 46.2,-481.4 336.18,-481.4 336.18,-450.6 46.2,-450.6"/>
 <text text-anchor="start" x="53.2" y="-462.8" font-family="Arial" font-size="14.00">allow_duplicates </text>
-<text text-anchor="start" x="159.82" y="-462.8" font-family="Arial" font-size="14.00" fill="#666666">[integer]</text>
+<text text-anchor="start" x="159.82" y="-462.8" font-family="Arial" font-size="14.00" fill="#666666">[boolean]</text>
 <polygon fill="none" stroke="black" points="46.2,-419.8 46.2,-450.6 336.18,-450.6 336.18,-419.8 46.2,-419.8"/>
 <text text-anchor="start" x="53.2" y="-432" font-family="Arial" font-size="14.00">enabled_sources </text>
 <text text-anchor="start" x="163.72" y="-432" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
 <polygon fill="none" stroke="black" points="46.2,-389 46.2,-419.8 336.18,-419.8 336.18,-389 46.2,-389"/>
 <text text-anchor="start" x="53.2" y="-401.2" font-family="Arial" font-size="14.00">only_admin_add_songs </text>
-<text text-anchor="start" x="204.98" y="-401.2" font-family="Arial" font-size="14.00" fill="#666666">[integer]</text>
+<text text-anchor="start" x="204.98" y="-401.2" font-family="Arial" font-size="14.00" fill="#666666">[boolean]</text>
 <polygon fill="none" stroke="black" stroke-width="3" points="44.7,-387.5 44.7,-734.1 337.68,-734.1 337.68,-387.5 44.7,-387.5"/>
 </g>
 <!-- public.rooms -->
 <g id="node2" class="node">
 <title>public.rooms</title>
-<polygon fill="#efefef" stroke="none" points="66.3,-228 66.3,-263.6 316.07,-263.6 316.07,-228 66.3,-228"/>
-<polygon fill="none" stroke="black" points="66.3,-228 66.3,-263.6 316.07,-263.6 316.07,-228 66.3,-228"/>
+<polygon fill="#efefef" stroke="none" points="56.57,-228 56.57,-263.6 325.81,-263.6 325.81,-228 56.57,-228"/>
+<polygon fill="none" stroke="black" points="56.57,-228 56.57,-263.6 325.81,-263.6 325.81,-228 56.57,-228"/>
 <text text-anchor="start" x="81.7" y="-241.4" font-family="Arial Bold" font-size="18.00">public.rooms</text>
 <text text-anchor="start" x="176.19" y="-241.4" font-family="Arial" font-size="14.00">    </text>
 <text text-anchor="start" x="207.31" y="-241.4" font-family="Arial" font-size="14.00" fill="#666666">[BASE TABLE]</text>
-<polygon fill="none" stroke="black" points="66.3,-197.2 66.3,-228 316.07,-228 316.07,-197.2 66.3,-197.2"/>
-<text text-anchor="start" x="73.3" y="-209.4" font-family="Arial" font-size="14.00">id </text>
-<text text-anchor="start" x="88.09" y="-209.4" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
-<polygon fill="none" stroke="black" points="66.3,-166.4 66.3,-197.2 316.07,-197.2 316.07,-166.4 66.3,-166.4"/>
-<text text-anchor="start" x="73.3" y="-178.6" font-family="Arial" font-size="14.00">name </text>
-<text text-anchor="start" x="112.21" y="-178.6" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
-<polygon fill="none" stroke="black" points="66.3,-135.6 66.3,-166.4 316.07,-166.4 316.07,-135.6 66.3,-135.6"/>
-<text text-anchor="start" x="73.3" y="-147.8" font-family="Arial" font-size="14.00">mode </text>
-<text text-anchor="start" x="112.21" y="-147.8" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
-<polygon fill="none" stroke="black" points="66.3,-104.8 66.3,-135.6 316.07,-135.6 316.07,-104.8 66.3,-104.8"/>
-<text text-anchor="start" x="73.3" y="-117" font-family="Arial" font-size="14.00">host_id </text>
-<text text-anchor="start" x="122.34" y="-117" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
-<polygon fill="none" stroke="black" points="66.3,-74 66.3,-104.8 316.07,-104.8 316.07,-74 66.3,-74"/>
-<text text-anchor="start" x="73.3" y="-86.2" font-family="Arial" font-size="14.00">admin_password_hash </text>
-<text text-anchor="start" x="221.17" y="-86.2" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
-<polygon fill="none" stroke="black" points="66.3,-43.2 66.3,-74 316.07,-74 316.07,-43.2 66.3,-43.2"/>
-<text text-anchor="start" x="73.3" y="-55.4" font-family="Arial" font-size="14.00">created_at </text>
-<text text-anchor="start" x="143.35" y="-55.4" font-family="Arial" font-size="14.00" fill="#666666">[timestamp with time zone]</text>
+<polygon fill="none" stroke="black" points="56.57,-197.2 56.57,-228 325.81,-228 325.81,-197.2 56.57,-197.2"/>
+<text text-anchor="start" x="63.57" y="-209.4" font-family="Arial" font-size="14.00">id </text>
+<text text-anchor="start" x="78.36" y="-209.4" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
+<polygon fill="none" stroke="black" points="56.57,-166.4 56.57,-197.2 325.81,-197.2 325.81,-166.4 56.57,-166.4"/>
+<text text-anchor="start" x="63.57" y="-178.6" font-family="Arial" font-size="14.00">name </text>
+<text text-anchor="start" x="102.48" y="-178.6" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
+<polygon fill="none" stroke="black" points="56.57,-135.6 56.57,-166.4 325.81,-166.4 325.81,-135.6 56.57,-135.6"/>
+<text text-anchor="start" x="63.57" y="-147.8" font-family="Arial" font-size="14.00">mode </text>
+<text text-anchor="start" x="102.48" y="-147.8" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
+<polygon fill="none" stroke="black" points="56.57,-104.8 56.57,-135.6 325.81,-135.6 325.81,-104.8 56.57,-104.8"/>
+<text text-anchor="start" x="63.57" y="-117" font-family="Arial" font-size="14.00">host_id </text>
+<text text-anchor="start" x="112.61" y="-117" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
+<polygon fill="none" stroke="black" points="56.57,-74 56.57,-104.8 325.81,-104.8 325.81,-74 56.57,-74"/>
+<text text-anchor="start" x="63.57" y="-86.2" font-family="Arial" font-size="14.00">admin_password_hash </text>
+<text text-anchor="start" x="211.44" y="-86.2" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
+<polygon fill="none" stroke="black" points="56.57,-43.2 56.57,-74 325.81,-74 325.81,-43.2 56.57,-43.2"/>
+<text text-anchor="start" x="63.57" y="-55.4" font-family="Arial" font-size="14.00">created_at </text>
+<text text-anchor="start" x="133.62" y="-55.4" font-family="Arial" font-size="14.00" fill="#666666">[timestamp without time zone]</text>
 </g>
 <!-- public.room_settings&#45;&gt;public.rooms -->
 <g id="edge1" class="edge">
 <title>public.room_settings:room_id&#45;&gt;public.rooms:id</title>
-<path fill="none" stroke="black" d="M347.44,-679.99C440.02,-650.09 417.83,-212.6 317.07,-212.6"/>
-<polygon fill="black" stroke="black" points="347.39,-680 336.81,-677.1 342.12,-680.83 337.84,-681.5 337.84,-681.5 337.84,-681.5 342.12,-680.83 338.2,-685.99 347.39,-680"/>
+<path fill="none" stroke="black" d="M347.47,-679.99C440.61,-650.09 427.49,-212.6 326.81,-212.6"/>
+<polygon fill="black" stroke="black" points="347.39,-680.01 336.81,-677.1 342.12,-680.83 337.84,-681.5 337.84,-681.5 337.84,-681.5 342.12,-680.83 338.2,-685.99 347.39,-680.01"/>
 <text text-anchor="start" x="344.18" y="-691.6" font-family="Arial" font-size="10.00">FOREIGN KEY (room_id) REFERENCES rooms(id) ON DELETE CASCADE</text>
 </g>
 </g>

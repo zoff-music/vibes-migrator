@@ -114,9 +114,9 @@
         },
         {
           "name": "created_at",
-          "type": "timestamp with time zone",
+          "type": "timestamp without time zone",
           "nullable": true,
-          "default": "now()"
+          "default": "(CURRENT_TIMESTAMP AT TIME ZONE 'UTC'::text)"
         }
       ],
       "indexes": [
@@ -126,6 +126,14 @@
           "table": "public.rooms",
           "columns": [
             "id"
+          ]
+        },
+        {
+          "name": "idx_rooms_name_unique",
+          "def": "CREATE UNIQUE INDEX idx_rooms_name_unique ON public.rooms USING btree (name)",
+          "table": "public.rooms",
+          "columns": [
+            "name"
           ]
         }
       ],
@@ -183,15 +191,15 @@
         },
         {
           "name": "skip_allowed",
-          "type": "integer",
+          "type": "boolean",
           "nullable": false,
-          "default": "1"
+          "default": "true"
         },
         {
           "name": "democratic_skip",
-          "type": "integer",
+          "type": "boolean",
           "nullable": false,
-          "default": "1"
+          "default": "true"
         },
         {
           "name": "skip_vote_threshold",
@@ -207,21 +215,21 @@
         },
         {
           "name": "remove_on_play",
-          "type": "integer",
+          "type": "boolean",
           "nullable": false,
-          "default": "1"
+          "default": "true"
         },
         {
           "name": "loop_queue",
-          "type": "integer",
+          "type": "boolean",
           "nullable": false,
-          "default": "0"
+          "default": "false"
         },
         {
           "name": "allow_duplicates",
-          "type": "integer",
+          "type": "boolean",
           "nullable": false,
-          "default": "0"
+          "default": "false"
         },
         {
           "name": "enabled_sources",
@@ -231,9 +239,9 @@
         },
         {
           "name": "only_admin_add_songs",
-          "type": "integer",
+          "type": "boolean",
           "nullable": false,
-          "default": "0"
+          "default": "false"
         }
       ],
       "indexes": [
@@ -429,9 +437,9 @@
         },
         {
           "name": "added_at",
-          "type": "timestamp with time zone",
+          "type": "timestamp without time zone",
           "nullable": true,
-          "default": "now()"
+          "default": "(CURRENT_TIMESTAMP AT TIME ZONE 'UTC'::text)"
         },
         {
           "name": "position",
@@ -440,9 +448,9 @@
         },
         {
           "name": "duplicate_guard",
-          "type": "integer",
+          "type": "boolean",
           "nullable": false,
-          "default": "1"
+          "default": "true"
         }
       ],
       "indexes": [
@@ -472,8 +480,27 @@
           ]
         },
         {
+          "name": "idx_songs_room_source",
+          "def": "CREATE INDEX idx_songs_room_source ON public.songs USING btree (room_id, source_type, source_id)",
+          "table": "public.songs",
+          "columns": [
+            "room_id",
+            "source_type",
+            "source_id"
+          ]
+        },
+        {
+          "name": "idx_songs_room_added_at",
+          "def": "CREATE INDEX idx_songs_room_added_at ON public.songs USING btree (room_id, added_at)",
+          "table": "public.songs",
+          "columns": [
+            "room_id",
+            "added_at"
+          ]
+        },
+        {
           "name": "idx_songs_duplicate_guard",
-          "def": "CREATE UNIQUE INDEX idx_songs_duplicate_guard ON public.songs USING btree (room_id, source_type, source_id) WHERE (duplicate_guard = 1)",
+          "def": "CREATE UNIQUE INDEX idx_songs_duplicate_guard ON public.songs USING btree (room_id, source_type, source_id) WHERE duplicate_guard",
           "table": "public.songs",
           "columns": [
             "room_id",
@@ -614,9 +641,9 @@
         },
         {
           "name": "is_playing",
-          "type": "integer",
+          "type": "boolean",
           "nullable": true,
-          "default": "0"
+          "default": "false"
         },
         {
           "name": "position_ms",
@@ -626,9 +653,9 @@
         },
         {
           "name": "updated_at",
-          "type": "timestamp with time zone",
+          "type": "timestamp without time zone",
           "nullable": true,
-          "default": "now()"
+          "default": "(CURRENT_TIMESTAMP AT TIME ZONE 'UTC'::text)"
         }
       ],
       "indexes": [
@@ -698,21 +725,21 @@
         },
         {
           "name": "is_admin",
-          "type": "integer",
+          "type": "boolean",
           "nullable": true,
-          "default": "0"
+          "default": "false"
         },
         {
           "name": "is_active_listener",
-          "type": "integer",
+          "type": "boolean",
           "nullable": true,
-          "default": "0"
+          "default": "false"
         },
         {
           "name": "is_cast_receiver",
-          "type": "integer",
+          "type": "boolean",
           "nullable": true,
-          "default": "0"
+          "default": "false"
         },
         {
           "name": "cast_owner_id",
@@ -721,15 +748,15 @@
         },
         {
           "name": "joined_at",
-          "type": "timestamp with time zone",
+          "type": "timestamp without time zone",
           "nullable": true,
-          "default": "now()"
+          "default": "(CURRENT_TIMESTAMP AT TIME ZONE 'UTC'::text)"
         },
         {
           "name": "last_seen_at",
-          "type": "timestamp with time zone",
+          "type": "timestamp without time zone",
           "nullable": true,
-          "default": "now()"
+          "default": "(CURRENT_TIMESTAMP AT TIME ZONE 'UTC'::text)"
         }
       ],
       "indexes": [
@@ -755,6 +782,24 @@
           "def": "CREATE INDEX idx_room_users_last_seen ON public.room_users USING btree (last_seen_at)",
           "table": "public.room_users",
           "columns": [
+            "last_seen_at"
+          ]
+        },
+        {
+          "name": "idx_room_users_room_last_seen_at",
+          "def": "CREATE INDEX idx_room_users_room_last_seen_at ON public.room_users USING btree (room_id, last_seen_at)",
+          "table": "public.room_users",
+          "columns": [
+            "room_id",
+            "last_seen_at"
+          ]
+        },
+        {
+          "name": "idx_room_users_active_listener_room_last_seen_at",
+          "def": "CREATE INDEX idx_room_users_active_listener_room_last_seen_at ON public.room_users USING btree (room_id, last_seen_at) WHERE (is_active_listener AND (NOT is_cast_receiver))",
+          "table": "public.room_users",
+          "columns": [
+            "room_id",
             "last_seen_at"
           ]
         }
@@ -827,9 +872,9 @@
         },
         {
           "name": "created_at",
-          "type": "timestamp with time zone",
+          "type": "timestamp without time zone",
           "nullable": true,
-          "default": "now()"
+          "default": "(CURRENT_TIMESTAMP AT TIME ZONE 'UTC'::text)"
         }
       ],
       "indexes": [
@@ -945,9 +990,9 @@
         },
         {
           "name": "created_at",
-          "type": "timestamp with time zone",
+          "type": "timestamp without time zone",
           "nullable": true,
-          "default": "now()"
+          "default": "(CURRENT_TIMESTAMP AT TIME ZONE 'UTC'::text)"
         }
       ],
       "indexes": [
@@ -1068,20 +1113,20 @@
         },
         {
           "name": "expires_at",
-          "type": "timestamp with time zone",
+          "type": "timestamp without time zone",
           "nullable": false
         },
         {
           "name": "created_at",
-          "type": "timestamp with time zone",
+          "type": "timestamp without time zone",
           "nullable": true,
-          "default": "now()"
+          "default": "(CURRENT_TIMESTAMP AT TIME ZONE 'UTC'::text)"
         },
         {
           "name": "updated_at",
-          "type": "timestamp with time zone",
+          "type": "timestamp without time zone",
           "nullable": true,
-          "default": "now()"
+          "default": "(CURRENT_TIMESTAMP AT TIME ZONE 'UTC'::text)"
         }
       ],
       "indexes": [
@@ -1185,29 +1230,29 @@
         },
         {
           "name": "expires_at",
-          "type": "timestamp with time zone",
+          "type": "timestamp without time zone",
           "nullable": false
         },
         {
           "name": "refresh_expires_at",
-          "type": "timestamp with time zone",
+          "type": "timestamp without time zone",
           "nullable": false
         },
         {
           "name": "created_at",
-          "type": "timestamp with time zone",
+          "type": "timestamp without time zone",
           "nullable": true,
-          "default": "now()"
+          "default": "(CURRENT_TIMESTAMP AT TIME ZONE 'UTC'::text)"
         },
         {
           "name": "updated_at",
-          "type": "timestamp with time zone",
+          "type": "timestamp without time zone",
           "nullable": true,
-          "default": "now()"
+          "default": "(CURRENT_TIMESTAMP AT TIME ZONE 'UTC'::text)"
         },
         {
           "name": "last_checked",
-          "type": "timestamp with time zone",
+          "type": "timestamp without time zone",
           "nullable": true
         }
       ],
@@ -1219,6 +1264,34 @@
           "columns": [
             "user_id",
             "provider"
+          ]
+        },
+        {
+          "name": "idx_access_tokens_refresh_claim",
+          "def": "CREATE INDEX idx_access_tokens_refresh_claim ON public.access_tokens USING btree (provider, expires_at, refresh_expires_at, last_checked)",
+          "table": "public.access_tokens",
+          "columns": [
+            "provider",
+            "expires_at",
+            "refresh_expires_at",
+            "last_checked"
+          ]
+        },
+        {
+          "name": "idx_access_tokens_user_refresh_expires_at",
+          "def": "CREATE INDEX idx_access_tokens_user_refresh_expires_at ON public.access_tokens USING btree (user_id, refresh_expires_at)",
+          "table": "public.access_tokens",
+          "columns": [
+            "user_id",
+            "refresh_expires_at"
+          ]
+        },
+        {
+          "name": "idx_access_tokens_refresh_expires_at",
+          "def": "CREATE INDEX idx_access_tokens_refresh_expires_at ON public.access_tokens USING btree (refresh_expires_at)",
+          "table": "public.access_tokens",
+          "columns": [
+            "refresh_expires_at"
           ]
         }
       ],
@@ -1312,7 +1385,7 @@
         },
         {
           "name": "expires_at",
-          "type": "timestamp with time zone",
+          "type": "timestamp without time zone",
           "nullable": false
         },
         {
@@ -1329,6 +1402,15 @@
           "columns": [
             "user_id",
             "state"
+          ]
+        },
+        {
+          "name": "idx_pending_oauth_state_state_expires_at",
+          "def": "CREATE INDEX idx_pending_oauth_state_state_expires_at ON public.pending_oauth_state USING btree (state, expires_at)",
+          "table": "public.pending_oauth_state",
+          "columns": [
+            "state",
+            "expires_at"
           ]
         }
       ],
@@ -1372,6 +1454,149 @@
           "columns": [
             "user_id",
             "state"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "public.room_generations",
+      "type": "BASE TABLE",
+      "columns": [
+        {
+          "name": "room_id",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "prompt",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "attempt",
+          "type": "integer",
+          "nullable": false,
+          "default": "0"
+        },
+        {
+          "name": "created_at",
+          "type": "timestamp without time zone",
+          "nullable": false,
+          "default": "(CURRENT_TIMESTAMP AT TIME ZONE 'UTC'::text)"
+        },
+        {
+          "name": "updated_at",
+          "type": "timestamp without time zone",
+          "nullable": false,
+          "default": "(CURRENT_TIMESTAMP AT TIME ZONE 'UTC'::text)"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "room_generations_pkey",
+          "def": "CREATE UNIQUE INDEX room_generations_pkey ON public.room_generations USING btree (room_id)",
+          "table": "public.room_generations",
+          "columns": [
+            "room_id"
+          ]
+        },
+        {
+          "name": "room_generations_claim_idx",
+          "def": "CREATE INDEX room_generations_claim_idx ON public.room_generations USING btree (updated_at, created_at)",
+          "table": "public.room_generations",
+          "columns": [
+            "updated_at",
+            "created_at"
+          ]
+        },
+        {
+          "name": "room_generations_single_active_idx",
+          "def": "CREATE UNIQUE INDEX room_generations_single_active_idx ON public.room_generations USING btree ((true)) WHERE (attempt \u003c 5)",
+          "table": "public.room_generations",
+          "columns": [
+            "expr"
+          ]
+        }
+      ],
+      "constraints": [
+        {
+          "name": "room_generations_attempt_check",
+          "type": "CHECK",
+          "def": "CHECK (((attempt \u003e= 0) AND (attempt \u003c= 5)))",
+          "table": "public.room_generations",
+          "referenced_table": "",
+          "columns": [
+            "attempt"
+          ]
+        },
+        {
+          "name": "room_generations_attempt_not_null",
+          "type": "n",
+          "def": "NOT NULL attempt",
+          "table": "public.room_generations",
+          "referenced_table": "",
+          "columns": [
+            "attempt"
+          ]
+        },
+        {
+          "name": "room_generations_created_at_not_null",
+          "type": "n",
+          "def": "NOT NULL created_at",
+          "table": "public.room_generations",
+          "referenced_table": "",
+          "columns": [
+            "created_at"
+          ]
+        },
+        {
+          "name": "room_generations_prompt_check",
+          "type": "CHECK",
+          "def": "CHECK (((length(btrim(prompt)) \u003e= 1) AND (length(btrim(prompt)) \u003c= 300)))",
+          "table": "public.room_generations",
+          "referenced_table": "",
+          "columns": [
+            "prompt"
+          ]
+        },
+        {
+          "name": "room_generations_prompt_not_null",
+          "type": "n",
+          "def": "NOT NULL prompt",
+          "table": "public.room_generations",
+          "referenced_table": "",
+          "columns": [
+            "prompt"
+          ]
+        },
+        {
+          "name": "room_generations_room_id_not_null",
+          "type": "n",
+          "def": "NOT NULL room_id",
+          "table": "public.room_generations",
+          "referenced_table": "",
+          "columns": [
+            "room_id"
+          ]
+        },
+        {
+          "name": "room_generations_updated_at_not_null",
+          "type": "n",
+          "def": "NOT NULL updated_at",
+          "table": "public.room_generations",
+          "referenced_table": "",
+          "columns": [
+            "updated_at"
+          ]
+        },
+        {
+          "name": "room_generations_pkey",
+          "type": "PRIMARY KEY",
+          "def": "PRIMARY KEY (room_id)",
+          "table": "public.room_generations",
+          "referenced_table": "",
+          "columns": [
+            "room_id"
           ]
         }
       ]
@@ -1709,7 +1934,7 @@
   ],
   "driver": {
     "name": "postgres",
-    "database_version": "PostgreSQL 18.4 (Debian 18.4-1.pgdg13+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit",
+    "database_version": "PostgreSQL 18.4 (Debian 18.4-1.pgdg13+1) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit",
     "meta": {
       "current_schema": "public",
       "search_paths": [

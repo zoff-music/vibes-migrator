@@ -14,9 +14,9 @@
 | duration | integer |  | false |  |  |  |
 | added_by | text |  | false |  |  |  |
 | added_by_nickname | text |  | true |  |  |  |
-| added_at | timestamp with time zone | now() | true |  |  |  |
+| added_at | timestamp without time zone | (CURRENT_TIMESTAMP AT TIME ZONE 'UTC'::text) | true |  |  |  |
 | position | integer |  | true |  |  |  |
-| duplicate_guard | integer | 1 | false |  |  |  |
+| duplicate_guard | boolean | true | false |  |  |  |
 
 ## Constraints
 
@@ -41,7 +41,9 @@
 | songs_pkey | CREATE UNIQUE INDEX songs_pkey ON public.songs USING btree (id) |
 | idx_songs_room_id | CREATE INDEX idx_songs_room_id ON public.songs USING btree (room_id) |
 | idx_songs_room_position | CREATE INDEX idx_songs_room_position ON public.songs USING btree (room_id, "position") |
-| idx_songs_duplicate_guard | CREATE UNIQUE INDEX idx_songs_duplicate_guard ON public.songs USING btree (room_id, source_type, source_id) WHERE (duplicate_guard = 1) |
+| idx_songs_room_source | CREATE INDEX idx_songs_room_source ON public.songs USING btree (room_id, source_type, source_id) |
+| idx_songs_room_added_at | CREATE INDEX idx_songs_room_added_at ON public.songs USING btree (room_id, added_at) |
+| idx_songs_duplicate_guard | CREATE UNIQUE INDEX idx_songs_duplicate_guard ON public.songs USING btree (room_id, source_type, source_id) WHERE duplicate_guard |
 
 ## Relations
 

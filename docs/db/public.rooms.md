@@ -9,7 +9,7 @@
 | mode | text | 'server'::text | false |  |  |  |
 | host_id | text |  | true |  |  |  |
 | admin_password_hash | text |  | true |  |  |  |
-| created_at | timestamp with time zone | now() | true |  |  |  |
+| created_at | timestamp without time zone | (CURRENT_TIMESTAMP AT TIME ZONE 'UTC'::text) | true |  |  |  |
 
 ## Constraints
 
@@ -25,6 +25,7 @@
 | Name | Definition |
 | ---- | ---------- |
 | rooms_pkey | CREATE UNIQUE INDEX rooms_pkey ON public.rooms USING btree (id) |
+| idx_rooms_name_unique | CREATE UNIQUE INDEX idx_rooms_name_unique ON public.rooms USING btree (name) |
 
 ## Relations
 

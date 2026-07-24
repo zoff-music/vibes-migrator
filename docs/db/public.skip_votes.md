@@ -7,7 +7,7 @@
 | room_id | text |  | false |  | [public.rooms](public.rooms.md) |  |
 | song_id | text |  | false |  | [public.songs](public.songs.md) |  |
 | user_id | text |  | false |  |  |  |
-| created_at | timestamp with time zone | now() | true |  |  |  |
+| created_at | timestamp without time zone | (CURRENT_TIMESTAMP AT TIME ZONE 'UTC'::text) | true |  |  |  |
 
 ## Constraints
 

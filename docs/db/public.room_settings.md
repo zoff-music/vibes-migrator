@@ -5,15 +5,15 @@
 | Name | Type | Default | Nullable | Children | Parents | Comment |
 | ---- | ---- | ------- | -------- | -------- | ------- | ------- |
 | room_id | text |  | false |  | [public.rooms](public.rooms.md) |  |
-| skip_allowed | integer | 1 | false |  |  |  |
-| democratic_skip | integer | 1 | false |  |  |  |
+| skip_allowed | boolean | true | false |  |  |  |
+| democratic_skip | boolean | true | false |  |  |  |
 | skip_vote_threshold | real | 0.5 | false |  |  |  |
 | max_continuous_adds | integer | 3 | false |  |  |  |
-| remove_on_play | integer | 1 | false |  |  |  |
-| loop_queue | integer | 0 | false |  |  |  |
-| allow_duplicates | integer | 0 | false |  |  |  |
+| remove_on_play | boolean | true | false |  |  |  |
+| loop_queue | boolean | false | false |  |  |  |
+| allow_duplicates | boolean | false | false |  |  |  |
 | enabled_sources | text | 'youtube,spotify,soundcloud'::text | false |  |  |  |
-| only_admin_add_songs | integer | 0 | false |  |  |  |
+| only_admin_add_songs | boolean | false | false |  |  |  |
 
 ## Constraints
 
