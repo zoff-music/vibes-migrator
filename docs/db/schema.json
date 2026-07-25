@@ -438,6 +438,18 @@
           "type": "boolean",
           "nullable": false,
           "default": "true"
+        },
+        {
+          "name": "metadata_updated_at",
+          "type": "timestamp with time zone",
+          "nullable": false,
+          "default": "now()"
+        },
+        {
+          "name": "metadata_refresh_after",
+          "type": "timestamp with time zone",
+          "nullable": false,
+          "default": "(now() + '21 days'::interval)"
         }
       ],
       "indexes": [
@@ -494,6 +506,15 @@
             "source_type",
             "source_id"
           ]
+        },
+        {
+          "name": "idx_songs_metadata_refresh",
+          "def": "CREATE INDEX idx_songs_metadata_refresh ON public.songs USING btree (source_type, metadata_refresh_after)",
+          "table": "public.songs",
+          "columns": [
+            "source_type",
+            "metadata_refresh_after"
+          ]
         }
       ],
       "constraints": [
@@ -535,6 +556,26 @@
           "referenced_table": "",
           "columns": [
             "id"
+          ]
+        },
+        {
+          "name": "songs_metadata_refresh_after_not_null",
+          "type": "n",
+          "def": "NOT NULL metadata_refresh_after",
+          "table": "public.songs",
+          "referenced_table": "",
+          "columns": [
+            "metadata_refresh_after"
+          ]
+        },
+        {
+          "name": "songs_metadata_updated_at_not_null",
+          "type": "n",
+          "def": "NOT NULL metadata_updated_at",
+          "table": "public.songs",
+          "referenced_table": "",
+          "columns": [
+            "metadata_updated_at"
           ]
         },
         {
