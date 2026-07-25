@@ -17,6 +17,8 @@
 | added_at | timestamp without time zone | (CURRENT_TIMESTAMP AT TIME ZONE 'UTC'::text) | true |  |  |  |
 | position | integer |  | true |  |  |  |
 | duplicate_guard | boolean | true | false |  |  |  |
+| metadata_updated_at | timestamp with time zone | now() | false |  |  |  |
+| metadata_refresh_after | timestamp with time zone | (now() + '21 days'::interval) | false |  |  |  |
 
 ## Constraints
 
@@ -26,6 +28,8 @@
 | songs_duplicate_guard_not_null | n | NOT NULL duplicate_guard |
 | songs_duration_not_null | n | NOT NULL duration |
 | songs_id_not_null | n | NOT NULL id |
+| songs_metadata_refresh_after_not_null | n | NOT NULL metadata_refresh_after |
+| songs_metadata_updated_at_not_null | n | NOT NULL metadata_updated_at |
 | songs_room_id_not_null | n | NOT NULL room_id |
 | songs_source_id_not_null | n | NOT NULL source_id |
 | songs_source_type_not_null | n | NOT NULL source_type |
@@ -43,6 +47,7 @@
 | idx_songs_room_source | CREATE INDEX idx_songs_room_source ON public.songs USING btree (room_id, source_type, source_id) |
 | idx_songs_room_added_at | CREATE INDEX idx_songs_room_added_at ON public.songs USING btree (room_id, added_at) |
 | idx_songs_duplicate_guard | CREATE UNIQUE INDEX idx_songs_duplicate_guard ON public.songs USING btree (room_id, source_type, source_id) WHERE duplicate_guard |
+| idx_songs_metadata_refresh | CREATE INDEX idx_songs_metadata_refresh ON public.songs USING btree (source_type, metadata_refresh_after) |
 
 ## Relations
 
