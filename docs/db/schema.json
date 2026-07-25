@@ -1625,6 +1625,337 @@
           ]
         }
       ]
+    },
+    {
+      "name": "public.room_name_words",
+      "type": "BASE TABLE",
+      "columns": [
+        {
+          "name": "id",
+          "type": "integer",
+          "nullable": false
+        },
+        {
+          "name": "word",
+          "type": "text",
+          "nullable": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "room_name_words_pkey",
+          "def": "CREATE UNIQUE INDEX room_name_words_pkey ON public.room_name_words USING btree (id)",
+          "table": "public.room_name_words",
+          "columns": [
+            "id"
+          ]
+        },
+        {
+          "name": "room_name_words_word_key",
+          "def": "CREATE UNIQUE INDEX room_name_words_word_key ON public.room_name_words USING btree (word)",
+          "table": "public.room_name_words",
+          "columns": [
+            "word"
+          ]
+        }
+      ],
+      "constraints": [
+        {
+          "name": "room_name_words_id_not_null",
+          "type": "n",
+          "def": "NOT NULL id",
+          "table": "public.room_name_words",
+          "referenced_table": "",
+          "columns": [
+            "id"
+          ]
+        },
+        {
+          "name": "room_name_words_word_not_null",
+          "type": "n",
+          "def": "NOT NULL word",
+          "table": "public.room_name_words",
+          "referenced_table": "",
+          "columns": [
+            "word"
+          ]
+        },
+        {
+          "name": "room_name_words_pkey",
+          "type": "PRIMARY KEY",
+          "def": "PRIMARY KEY (id)",
+          "table": "public.room_name_words",
+          "referenced_table": "",
+          "columns": [
+            "id"
+          ]
+        },
+        {
+          "name": "room_name_words_word_key",
+          "type": "UNIQUE",
+          "def": "UNIQUE (word)",
+          "table": "public.room_name_words",
+          "referenced_table": "",
+          "columns": [
+            "word"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "public.room_name_pool",
+      "type": "BASE TABLE",
+      "columns": [
+        {
+          "name": "id",
+          "type": "bigint",
+          "nullable": false
+        },
+        {
+          "name": "name",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "generated",
+          "type": "boolean",
+          "nullable": false,
+          "default": "true"
+        },
+        {
+          "name": "consumed_at",
+          "type": "timestamp without time zone",
+          "nullable": true
+        }
+      ],
+      "indexes": [
+        {
+          "name": "room_name_pool_pkey",
+          "def": "CREATE UNIQUE INDEX room_name_pool_pkey ON public.room_name_pool USING btree (id)",
+          "table": "public.room_name_pool",
+          "columns": [
+            "id"
+          ]
+        },
+        {
+          "name": "room_name_pool_name_idx",
+          "def": "CREATE UNIQUE INDEX room_name_pool_name_idx ON public.room_name_pool USING btree (name)",
+          "table": "public.room_name_pool",
+          "columns": [
+            "name"
+          ]
+        },
+        {
+          "name": "room_name_pool_available_id_idx",
+          "def": "CREATE INDEX room_name_pool_available_id_idx ON public.room_name_pool USING btree (id) WHERE (consumed_at IS NULL)",
+          "table": "public.room_name_pool",
+          "columns": [
+            "id"
+          ]
+        }
+      ],
+      "constraints": [
+        {
+          "name": "room_name_pool_generated_not_null",
+          "type": "n",
+          "def": "NOT NULL generated",
+          "table": "public.room_name_pool",
+          "referenced_table": "",
+          "columns": [
+            "generated"
+          ]
+        },
+        {
+          "name": "room_name_pool_id_not_null",
+          "type": "n",
+          "def": "NOT NULL id",
+          "table": "public.room_name_pool",
+          "referenced_table": "",
+          "columns": [
+            "id"
+          ]
+        },
+        {
+          "name": "room_name_pool_name_not_null",
+          "type": "n",
+          "def": "NOT NULL name",
+          "table": "public.room_name_pool",
+          "referenced_table": "",
+          "columns": [
+            "name"
+          ]
+        },
+        {
+          "name": "room_name_pool_pkey",
+          "type": "PRIMARY KEY",
+          "def": "PRIMARY KEY (id)",
+          "table": "public.room_name_pool",
+          "referenced_table": "",
+          "columns": [
+            "id"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "public.room_name_reservations",
+      "type": "BASE TABLE",
+      "columns": [
+        {
+          "name": "name",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "token",
+          "type": "uuid",
+          "nullable": false,
+          "default": "gen_random_uuid()"
+        },
+        {
+          "name": "owner_id",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "created_at",
+          "type": "timestamp without time zone",
+          "nullable": false,
+          "default": "(CURRENT_TIMESTAMP AT TIME ZONE 'UTC'::text)"
+        },
+        {
+          "name": "expires_at",
+          "type": "timestamp without time zone",
+          "nullable": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "room_name_reservations_pkey",
+          "def": "CREATE UNIQUE INDEX room_name_reservations_pkey ON public.room_name_reservations USING btree (name)",
+          "table": "public.room_name_reservations",
+          "columns": [
+            "name"
+          ]
+        },
+        {
+          "name": "room_name_reservations_token_key",
+          "def": "CREATE UNIQUE INDEX room_name_reservations_token_key ON public.room_name_reservations USING btree (token)",
+          "table": "public.room_name_reservations",
+          "columns": [
+            "token"
+          ]
+        },
+        {
+          "name": "room_name_reservations_owner_id_key",
+          "def": "CREATE UNIQUE INDEX room_name_reservations_owner_id_key ON public.room_name_reservations USING btree (owner_id)",
+          "table": "public.room_name_reservations",
+          "columns": [
+            "owner_id"
+          ]
+        },
+        {
+          "name": "room_name_reservations_expires_at_idx",
+          "def": "CREATE INDEX room_name_reservations_expires_at_idx ON public.room_name_reservations USING btree (expires_at)",
+          "table": "public.room_name_reservations",
+          "columns": [
+            "expires_at"
+          ]
+        }
+      ],
+      "constraints": [
+        {
+          "name": "room_name_reservations_created_at_not_null",
+          "type": "n",
+          "def": "NOT NULL created_at",
+          "table": "public.room_name_reservations",
+          "referenced_table": "",
+          "columns": [
+            "created_at"
+          ]
+        },
+        {
+          "name": "room_name_reservations_expires_at_not_null",
+          "type": "n",
+          "def": "NOT NULL expires_at",
+          "table": "public.room_name_reservations",
+          "referenced_table": "",
+          "columns": [
+            "expires_at"
+          ]
+        },
+        {
+          "name": "room_name_reservations_expiry_check",
+          "type": "CHECK",
+          "def": "CHECK ((expires_at \u003e created_at))",
+          "table": "public.room_name_reservations",
+          "referenced_table": "",
+          "columns": [
+            "expires_at",
+            "created_at"
+          ]
+        },
+        {
+          "name": "room_name_reservations_name_not_null",
+          "type": "n",
+          "def": "NOT NULL name",
+          "table": "public.room_name_reservations",
+          "referenced_table": "",
+          "columns": [
+            "name"
+          ]
+        },
+        {
+          "name": "room_name_reservations_owner_id_not_null",
+          "type": "n",
+          "def": "NOT NULL owner_id",
+          "table": "public.room_name_reservations",
+          "referenced_table": "",
+          "columns": [
+            "owner_id"
+          ]
+        },
+        {
+          "name": "room_name_reservations_token_not_null",
+          "type": "n",
+          "def": "NOT NULL token",
+          "table": "public.room_name_reservations",
+          "referenced_table": "",
+          "columns": [
+            "token"
+          ]
+        },
+        {
+          "name": "room_name_reservations_pkey",
+          "type": "PRIMARY KEY",
+          "def": "PRIMARY KEY (name)",
+          "table": "public.room_name_reservations",
+          "referenced_table": "",
+          "columns": [
+            "name"
+          ]
+        },
+        {
+          "name": "room_name_reservations_token_key",
+          "type": "UNIQUE",
+          "def": "UNIQUE (token)",
+          "table": "public.room_name_reservations",
+          "referenced_table": "",
+          "columns": [
+            "token"
+          ]
+        },
+        {
+          "name": "room_name_reservations_owner_id_key",
+          "type": "UNIQUE",
+          "def": "UNIQUE (owner_id)",
+          "table": "public.room_name_reservations",
+          "referenced_table": "",
+          "columns": [
+            "owner_id"
+          ]
+        }
+      ]
     }
   ],
   "functions": [
