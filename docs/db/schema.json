@@ -1987,19 +1987,36 @@
           "nullable": false
         },
         {
+          "name": "search_count",
+          "type": "bigint",
+          "nullable": false,
+          "default": "1"
+        },
+        {
           "name": "created_at",
           "type": "timestamp with time zone",
           "nullable": false,
-          "default": "now()"
+          "default": "date_trunc('hour'::text, now())"
         }
       ],
       "indexes": [
         {
-          "name": "search_usage_pkey",
-          "def": "CREATE UNIQUE INDEX search_usage_pkey ON public.search_usage USING btree (id)",
+          "name": "search_usage_hourly_pkey",
+          "def": "CREATE UNIQUE INDEX search_usage_hourly_pkey ON public.search_usage USING btree (id)",
           "table": "public.search_usage",
           "columns": [
             "id"
+          ]
+        },
+        {
+          "name": "idx_search_usage_hourly",
+          "def": "CREATE UNIQUE INDEX idx_search_usage_hourly ON public.search_usage USING btree (provider, query_hash, cached, created_at)",
+          "table": "public.search_usage",
+          "columns": [
+            "provider",
+            "query_hash",
+            "cached",
+            "created_at"
           ]
         },
         {
@@ -2013,7 +2030,7 @@
       ],
       "constraints": [
         {
-          "name": "search_usage_cached_not_null",
+          "name": "search_usage_hourly_cached_not_null",
           "type": "n",
           "def": "NOT NULL cached",
           "table": "public.search_usage",
@@ -2023,7 +2040,7 @@
           ]
         },
         {
-          "name": "search_usage_created_at_not_null",
+          "name": "search_usage_hourly_created_at_not_null",
           "type": "n",
           "def": "NOT NULL created_at",
           "table": "public.search_usage",
@@ -2033,7 +2050,7 @@
           ]
         },
         {
-          "name": "search_usage_id_not_null",
+          "name": "search_usage_hourly_id_not_null",
           "type": "n",
           "def": "NOT NULL id",
           "table": "public.search_usage",
@@ -2043,7 +2060,7 @@
           ]
         },
         {
-          "name": "search_usage_provider_not_null",
+          "name": "search_usage_hourly_provider_not_null",
           "type": "n",
           "def": "NOT NULL provider",
           "table": "public.search_usage",
@@ -2053,7 +2070,7 @@
           ]
         },
         {
-          "name": "search_usage_query_hash_not_null",
+          "name": "search_usage_hourly_query_hash_not_null",
           "type": "n",
           "def": "NOT NULL query_hash",
           "table": "public.search_usage",
@@ -2063,7 +2080,17 @@
           ]
         },
         {
-          "name": "search_usage_pkey",
+          "name": "search_usage_hourly_search_count_not_null",
+          "type": "n",
+          "def": "NOT NULL search_count",
+          "table": "public.search_usage",
+          "referenced_table": "",
+          "columns": [
+            "search_count"
+          ]
+        },
+        {
+          "name": "search_usage_hourly_pkey",
           "type": "PRIMARY KEY",
           "def": "PRIMARY KEY (id)",
           "table": "public.search_usage",
