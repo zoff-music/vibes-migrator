@@ -441,26 +441,29 @@
 <!-- public.search_usage -->
 <g id="node16" class="node">
 <title>public.search_usage</title>
-<polygon fill="#efefef" stroke="none" points="6137.72,-366.6 6137.72,-402.2 6421.65,-402.2 6421.65,-366.6 6137.72,-366.6"/>
-<polygon fill="none" stroke="black" points="6137.72,-366.6 6137.72,-402.2 6421.65,-402.2 6421.65,-366.6 6137.72,-366.6"/>
-<text text-anchor="start" x="6144.72" y="-380" font-family="Arial Bold" font-size="18.00">public.search_usage</text>
-<text text-anchor="start" x="6290.16" y="-380" font-family="Arial" font-size="14.00">    </text>
-<text text-anchor="start" x="6321.28" y="-380" font-family="Arial" font-size="14.00" fill="#666666">[BASE TABLE]</text>
-<polygon fill="none" stroke="black" points="6137.72,-335.8 6137.72,-366.6 6421.65,-366.6 6421.65,-335.8 6137.72,-335.8"/>
-<text text-anchor="start" x="6144.72" y="-348" font-family="Arial" font-size="14.00">id </text>
-<text text-anchor="start" x="6159.51" y="-348" font-family="Arial" font-size="14.00" fill="#666666">[bigint]</text>
-<polygon fill="none" stroke="black" points="6137.72,-305 6137.72,-335.8 6421.65,-335.8 6421.65,-305 6137.72,-305"/>
-<text text-anchor="start" x="6144.72" y="-317.2" font-family="Arial" font-size="14.00">provider </text>
-<text text-anchor="start" x="6199.19" y="-317.2" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
-<polygon fill="none" stroke="black" points="6137.72,-274.2 6137.72,-305 6421.65,-305 6421.65,-274.2 6137.72,-274.2"/>
-<text text-anchor="start" x="6144.72" y="-286.4" font-family="Arial" font-size="14.00">query_hash </text>
-<text text-anchor="start" x="6221.78" y="-286.4" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
-<polygon fill="none" stroke="black" points="6137.72,-243.4 6137.72,-274.2 6421.65,-274.2 6421.65,-243.4 6137.72,-243.4"/>
-<text text-anchor="start" x="6144.72" y="-255.6" font-family="Arial" font-size="14.00">cached </text>
-<text text-anchor="start" x="6193.76" y="-255.6" font-family="Arial" font-size="14.00" fill="#666666">[boolean]</text>
-<polygon fill="none" stroke="black" points="6137.72,-212.6 6137.72,-243.4 6421.65,-243.4 6421.65,-212.6 6137.72,-212.6"/>
-<text text-anchor="start" x="6144.72" y="-224.8" font-family="Arial" font-size="14.00">created_at </text>
-<text text-anchor="start" x="6214.77" y="-224.8" font-family="Arial" font-size="14.00" fill="#666666">[timestamp with time zone]</text>
+<polygon fill="#efefef" stroke="none" points="6137.72,-382 6137.72,-417.6 6421.65,-417.6 6421.65,-382 6137.72,-382"/>
+<polygon fill="none" stroke="black" points="6137.72,-382 6137.72,-417.6 6421.65,-417.6 6421.65,-382 6137.72,-382"/>
+<text text-anchor="start" x="6144.72" y="-395.4" font-family="Arial Bold" font-size="18.00">public.search_usage</text>
+<text text-anchor="start" x="6290.16" y="-395.4" font-family="Arial" font-size="14.00">    </text>
+<text text-anchor="start" x="6321.28" y="-395.4" font-family="Arial" font-size="14.00" fill="#666666">[BASE TABLE]</text>
+<polygon fill="none" stroke="black" points="6137.72,-351.2 6137.72,-382 6421.65,-382 6421.65,-351.2 6137.72,-351.2"/>
+<text text-anchor="start" x="6144.72" y="-363.4" font-family="Arial" font-size="14.00">id </text>
+<text text-anchor="start" x="6159.51" y="-363.4" font-family="Arial" font-size="14.00" fill="#666666">[bigint]</text>
+<polygon fill="none" stroke="black" points="6137.72,-320.4 6137.72,-351.2 6421.65,-351.2 6421.65,-320.4 6137.72,-320.4"/>
+<text text-anchor="start" x="6144.72" y="-332.6" font-family="Arial" font-size="14.00">provider </text>
+<text text-anchor="start" x="6199.19" y="-332.6" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
+<polygon fill="none" stroke="black" points="6137.72,-289.6 6137.72,-320.4 6421.65,-320.4 6421.65,-289.6 6137.72,-289.6"/>
+<text text-anchor="start" x="6144.72" y="-301.8" font-family="Arial" font-size="14.00">query_hash </text>
+<text text-anchor="start" x="6221.78" y="-301.8" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
+<polygon fill="none" stroke="black" points="6137.72,-258.8 6137.72,-289.6 6421.65,-289.6 6421.65,-258.8 6137.72,-258.8"/>
+<text text-anchor="start" x="6144.72" y="-271" font-family="Arial" font-size="14.00">cached </text>
+<text text-anchor="start" x="6193.76" y="-271" font-family="Arial" font-size="14.00" fill="#666666">[boolean]</text>
+<polygon fill="none" stroke="black" points="6137.72,-228 6137.72,-258.8 6421.65,-258.8 6421.65,-228 6137.72,-228"/>
+<text text-anchor="start" x="6144.72" y="-240.2" font-family="Arial" font-size="14.00">search_count </text>
+<text text-anchor="start" x="6232.67" y="-240.2" font-family="Arial" font-size="14.00" fill="#666666">[bigint]</text>
+<polygon fill="none" stroke="black" points="6137.72,-197.2 6137.72,-228 6421.65,-228 6421.65,-197.2 6137.72,-197.2"/>
+<text text-anchor="start" x="6144.72" y="-209.4" font-family="Arial" font-size="14.00">created_at </text>
+<text text-anchor="start" x="6214.77" y="-209.4" font-family="Arial" font-size="14.00" fill="#666666">[timestamp with time zone]</text>
 </g>
 </g>
 </svg>
