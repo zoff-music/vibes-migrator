@@ -19,6 +19,7 @@
 | duplicate_guard | boolean | true | false |  |  |  |
 | metadata_updated_at | timestamp with time zone | now() | false |  |  |  |
 | metadata_refresh_after | timestamp with time zone | (now() + '21 days'::interval) | false |  |  |  |
+| provider_url | text |  | true |  |  |  |
 
 ## Constraints
 
