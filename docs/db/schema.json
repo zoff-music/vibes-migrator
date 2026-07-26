@@ -450,6 +450,11 @@
           "type": "timestamp with time zone",
           "nullable": false,
           "default": "(now() + '21 days'::interval)"
+        },
+        {
+          "name": "provider_url",
+          "type": "text",
+          "nullable": true
         }
       ],
       "indexes": [

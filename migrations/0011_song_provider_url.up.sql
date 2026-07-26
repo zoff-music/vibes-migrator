@@ -1,0 +1,2 @@
+ALTER TABLE songs
+ADD COLUMN IF NOT EXISTS provider_url TEXT;
