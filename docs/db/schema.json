@@ -1961,6 +1961,118 @@
           ]
         }
       ]
+    },
+    {
+      "name": "public.search_usage",
+      "type": "BASE TABLE",
+      "columns": [
+        {
+          "name": "id",
+          "type": "bigint",
+          "nullable": false
+        },
+        {
+          "name": "provider",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "query_hash",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "cached",
+          "type": "boolean",
+          "nullable": false
+        },
+        {
+          "name": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": false,
+          "default": "now()"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "search_usage_pkey",
+          "def": "CREATE UNIQUE INDEX search_usage_pkey ON public.search_usage USING btree (id)",
+          "table": "public.search_usage",
+          "columns": [
+            "id"
+          ]
+        },
+        {
+          "name": "idx_search_usage_created_at",
+          "def": "CREATE INDEX idx_search_usage_created_at ON public.search_usage USING btree (created_at)",
+          "table": "public.search_usage",
+          "columns": [
+            "created_at"
+          ]
+        }
+      ],
+      "constraints": [
+        {
+          "name": "search_usage_cached_not_null",
+          "type": "n",
+          "def": "NOT NULL cached",
+          "table": "public.search_usage",
+          "referenced_table": "",
+          "columns": [
+            "cached"
+          ]
+        },
+        {
+          "name": "search_usage_created_at_not_null",
+          "type": "n",
+          "def": "NOT NULL created_at",
+          "table": "public.search_usage",
+          "referenced_table": "",
+          "columns": [
+            "created_at"
+          ]
+        },
+        {
+          "name": "search_usage_id_not_null",
+          "type": "n",
+          "def": "NOT NULL id",
+          "table": "public.search_usage",
+          "referenced_table": "",
+          "columns": [
+            "id"
+          ]
+        },
+        {
+          "name": "search_usage_provider_not_null",
+          "type": "n",
+          "def": "NOT NULL provider",
+          "table": "public.search_usage",
+          "referenced_table": "",
+          "columns": [
+            "provider"
+          ]
+        },
+        {
+          "name": "search_usage_query_hash_not_null",
+          "type": "n",
+          "def": "NOT NULL query_hash",
+          "table": "public.search_usage",
+          "referenced_table": "",
+          "columns": [
+            "query_hash"
+          ]
+        },
+        {
+          "name": "search_usage_pkey",
+          "type": "PRIMARY KEY",
+          "def": "PRIMARY KEY (id)",
+          "table": "public.search_usage",
+          "referenced_table": "",
+          "columns": [
+            "id"
+          ]
+        }
+      ]
     }
   ],
   "functions": [
