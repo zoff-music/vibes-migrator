@@ -21,6 +21,7 @@
 | [public.room_name_reservations](public.room_name_reservations.md) | 5 |  | BASE TABLE |
 | [public.search_usage](public.search_usage.md) | 6 |  | BASE TABLE |
 | [public.listener_usage](public.listener_usage.md) | 2 |  | BASE TABLE |
+| [public.admin_users](public.admin_users.md) | 6 |  | BASE TABLE |
 
 ## Stored procedures and functions
 
