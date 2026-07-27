@@ -2100,6 +2100,75 @@
           ]
         }
       ]
+    },
+    {
+      "name": "public.listener_usage",
+      "type": "BASE TABLE",
+      "columns": [
+        {
+          "name": "listener_count",
+          "type": "bigint",
+          "nullable": false
+        },
+        {
+          "name": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": false,
+          "default": "date_trunc('minute'::text, now())"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "listener_usage_pkey",
+          "def": "CREATE UNIQUE INDEX listener_usage_pkey ON public.listener_usage USING btree (created_at)",
+          "table": "public.listener_usage",
+          "columns": [
+            "created_at"
+          ]
+        }
+      ],
+      "constraints": [
+        {
+          "name": "listener_usage_created_at_not_null",
+          "type": "n",
+          "def": "NOT NULL created_at",
+          "table": "public.listener_usage",
+          "referenced_table": "",
+          "columns": [
+            "created_at"
+          ]
+        },
+        {
+          "name": "listener_usage_listener_count_check",
+          "type": "CHECK",
+          "def": "CHECK ((listener_count \u003e 0))",
+          "table": "public.listener_usage",
+          "referenced_table": "",
+          "columns": [
+            "listener_count"
+          ]
+        },
+        {
+          "name": "listener_usage_listener_count_not_null",
+          "type": "n",
+          "def": "NOT NULL listener_count",
+          "table": "public.listener_usage",
+          "referenced_table": "",
+          "columns": [
+            "listener_count"
+          ]
+        },
+        {
+          "name": "listener_usage_pkey",
+          "type": "PRIMARY KEY",
+          "def": "PRIMARY KEY (created_at)",
+          "table": "public.listener_usage",
+          "referenced_table": "",
+          "columns": [
+            "created_at"
+          ]
+        }
+      ]
     }
   ],
   "functions": [
