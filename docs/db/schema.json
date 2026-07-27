@@ -2169,6 +2169,145 @@
           ]
         }
       ]
+    },
+    {
+      "name": "public.admin_users",
+      "type": "BASE TABLE",
+      "columns": [
+        {
+          "name": "id",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "username",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "password_hash",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "session_version",
+          "type": "bigint",
+          "nullable": false,
+          "default": "1"
+        },
+        {
+          "name": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": false,
+          "default": "now()"
+        },
+        {
+          "name": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": false,
+          "default": "now()"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "admin_users_pkey",
+          "def": "CREATE UNIQUE INDEX admin_users_pkey ON public.admin_users USING btree (id)",
+          "table": "public.admin_users",
+          "columns": [
+            "id"
+          ]
+        },
+        {
+          "name": "admin_users_username_key",
+          "def": "CREATE UNIQUE INDEX admin_users_username_key ON public.admin_users USING btree (username)",
+          "table": "public.admin_users",
+          "columns": [
+            "username"
+          ]
+        }
+      ],
+      "constraints": [
+        {
+          "name": "admin_users_created_at_not_null",
+          "type": "n",
+          "def": "NOT NULL created_at",
+          "table": "public.admin_users",
+          "referenced_table": "",
+          "columns": [
+            "created_at"
+          ]
+        },
+        {
+          "name": "admin_users_id_not_null",
+          "type": "n",
+          "def": "NOT NULL id",
+          "table": "public.admin_users",
+          "referenced_table": "",
+          "columns": [
+            "id"
+          ]
+        },
+        {
+          "name": "admin_users_password_hash_not_null",
+          "type": "n",
+          "def": "NOT NULL password_hash",
+          "table": "public.admin_users",
+          "referenced_table": "",
+          "columns": [
+            "password_hash"
+          ]
+        },
+        {
+          "name": "admin_users_session_version_not_null",
+          "type": "n",
+          "def": "NOT NULL session_version",
+          "table": "public.admin_users",
+          "referenced_table": "",
+          "columns": [
+            "session_version"
+          ]
+        },
+        {
+          "name": "admin_users_updated_at_not_null",
+          "type": "n",
+          "def": "NOT NULL updated_at",
+          "table": "public.admin_users",
+          "referenced_table": "",
+          "columns": [
+            "updated_at"
+          ]
+        },
+        {
+          "name": "admin_users_username_not_null",
+          "type": "n",
+          "def": "NOT NULL username",
+          "table": "public.admin_users",
+          "referenced_table": "",
+          "columns": [
+            "username"
+          ]
+        },
+        {
+          "name": "admin_users_pkey",
+          "type": "PRIMARY KEY",
+          "def": "PRIMARY KEY (id)",
+          "table": "public.admin_users",
+          "referenced_table": "",
+          "columns": [
+            "id"
+          ]
+        },
+        {
+          "name": "admin_users_username_key",
+          "type": "UNIQUE",
+          "def": "UNIQUE (username)",
+          "table": "public.admin_users",
+          "referenced_table": "",
+          "columns": [
+            "username"
+          ]
+        }
+      ]
     }
   ],
   "functions": [
