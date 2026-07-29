@@ -242,12 +242,26 @@
           "type": "boolean",
           "nullable": false,
           "default": "false"
+        },
+        {
+          "name": "is_public",
+          "type": "boolean",
+          "nullable": false,
+          "default": "false"
         }
       ],
       "indexes": [
         {
           "name": "room_settings_pkey",
           "def": "CREATE UNIQUE INDEX room_settings_pkey ON public.room_settings USING btree (room_id)",
+          "table": "public.room_settings",
+          "columns": [
+            "room_id"
+          ]
+        },
+        {
+          "name": "idx_room_settings_public",
+          "def": "CREATE INDEX idx_room_settings_public ON public.room_settings USING btree (room_id) WHERE is_public",
           "table": "public.room_settings",
           "columns": [
             "room_id"
@@ -283,6 +297,16 @@
           "referenced_table": "",
           "columns": [
             "enabled_sources"
+          ]
+        },
+        {
+          "name": "room_settings_is_public_not_null",
+          "type": "n",
+          "def": "NOT NULL is_public",
+          "table": "public.room_settings",
+          "referenced_table": "",
+          "columns": [
+            "is_public"
           ]
         },
         {
