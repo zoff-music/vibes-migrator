@@ -14,6 +14,7 @@
 | allow_duplicates | boolean | false | false |  |  |  |
 | enabled_sources | text | 'youtube,spotify,soundcloud'::text | false |  |  |  |
 | only_admin_add_songs | boolean | false | false |  |  |  |
+| is_public | boolean | false | false |  |  |  |
 
 ## Constraints
 
@@ -22,6 +23,7 @@
 | room_settings_allow_duplicates_not_null | n | NOT NULL allow_duplicates |
 | room_settings_democratic_skip_not_null | n | NOT NULL democratic_skip |
 | room_settings_enabled_sources_not_null | n | NOT NULL enabled_sources |
+| room_settings_is_public_not_null | n | NOT NULL is_public |
 | room_settings_loop_queue_not_null | n | NOT NULL loop_queue |
 | room_settings_max_continuous_adds_not_null | n | NOT NULL max_continuous_adds |
 | room_settings_only_admin_add_songs_not_null | n | NOT NULL only_admin_add_songs |
@@ -36,6 +38,7 @@
 | Name | Definition |
 | ---- | ---------- |
 | room_settings_pkey | CREATE UNIQUE INDEX room_settings_pkey ON public.room_settings USING btree (room_id) |
+| idx_room_settings_public | CREATE INDEX idx_room_settings_public ON public.room_settings USING btree (room_id) WHERE is_public |
 
 ## Relations
 
