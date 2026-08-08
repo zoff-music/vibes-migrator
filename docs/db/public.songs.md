@@ -20,6 +20,7 @@
 | metadata_updated_at | timestamp with time zone | now() | false |  |  |  |
 | metadata_refresh_after | timestamp with time zone | (now() + '21 days'::interval) | false |  |  |  |
 | provider_url | text |  | true |  |  |  |
+| playback_restriction | text | ''::text | false |  |  |  |
 
 ## Constraints
 
@@ -31,6 +32,8 @@
 | songs_id_not_null | n | NOT NULL id |
 | songs_metadata_refresh_after_not_null | n | NOT NULL metadata_refresh_after |
 | songs_metadata_updated_at_not_null | n | NOT NULL metadata_updated_at |
+| songs_playback_restriction_check | CHECK | CHECK ((playback_restriction = ANY (ARRAY[''::text, 'age'::text, 'region'::text, 'embedding'::text]))) |
+| songs_playback_restriction_not_null | n | NOT NULL playback_restriction |
 | songs_room_id_not_null | n | NOT NULL room_id |
 | songs_source_id_not_null | n | NOT NULL source_id |
 | songs_source_type_not_null | n | NOT NULL source_type |

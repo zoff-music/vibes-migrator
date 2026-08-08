@@ -7,7 +7,7 @@
 | [public.migrations](public.migrations.md) | 4 |  | BASE TABLE |
 | [public.rooms](public.rooms.md) | 6 |  | BASE TABLE |
 | [public.room_settings](public.room_settings.md) | 11 |  | BASE TABLE |
-| [public.songs](public.songs.md) | 16 |  | BASE TABLE |
+| [public.songs](public.songs.md) | 17 |  | BASE TABLE |
 | [public.playback_state](public.playback_state.md) | 5 |  | BASE TABLE |
 | [public.room_users](public.room_users.md) | 9 |  | BASE TABLE |
 | [public.skip_votes](public.skip_votes.md) | 4 |  | BASE TABLE |
