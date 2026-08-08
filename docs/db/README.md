@@ -22,7 +22,7 @@
 | [public.search_usage](public.search_usage.md) | 6 |  | BASE TABLE |
 | [public.listener_usage](public.listener_usage.md) | 2 |  | BASE TABLE |
 | [public.admin_users](public.admin_users.md) | 6 |  | BASE TABLE |
-| [public.remote_controls](public.remote_controls.md) | 10 |  | BASE TABLE |
+| [public.remote_controls](public.remote_controls.md) | 14 |  | BASE TABLE |
 
 ## Stored procedures and functions
 

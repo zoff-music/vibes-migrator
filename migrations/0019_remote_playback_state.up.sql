@@ -1,0 +1,5 @@
+ALTER TABLE remote_controls
+ADD COLUMN current_song_id TEXT NOT NULL DEFAULT '',
+ADD COLUMN playback_position_ms BIGINT NOT NULL DEFAULT 0,
+ADD COLUMN playback_is_playing BOOLEAN NOT NULL DEFAULT FALSE,
+ADD COLUMN playback_observed_at TIMESTAMPTZ NOT NULL DEFAULT NOW();
