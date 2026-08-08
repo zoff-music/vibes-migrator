@@ -2358,6 +2358,222 @@
           ]
         }
       ]
+    },
+    {
+      "name": "public.remote_controls",
+      "type": "BASE TABLE",
+      "columns": [
+        {
+          "name": "id",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "owner_user_id",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "pairing_token_hash",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "pairing_code_hash",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "controller_token_hash",
+          "type": "text",
+          "nullable": false,
+          "default": "''::text"
+        },
+        {
+          "name": "current_room_id",
+          "type": "text",
+          "nullable": false,
+          "default": "''::text"
+        },
+        {
+          "name": "pairing_expires_at",
+          "type": "timestamp with time zone",
+          "nullable": false
+        },
+        {
+          "name": "last_seen_at",
+          "type": "timestamp with time zone",
+          "nullable": false
+        },
+        {
+          "name": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": false,
+          "default": "now()"
+        },
+        {
+          "name": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": false,
+          "default": "now()"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "remote_controls_pkey",
+          "def": "CREATE UNIQUE INDEX remote_controls_pkey ON public.remote_controls USING btree (id)",
+          "table": "public.remote_controls",
+          "columns": [
+            "id"
+          ]
+        },
+        {
+          "name": "remote_controls_owner_user_id_key",
+          "def": "CREATE UNIQUE INDEX remote_controls_owner_user_id_key ON public.remote_controls USING btree (owner_user_id)",
+          "table": "public.remote_controls",
+          "columns": [
+            "owner_user_id"
+          ]
+        },
+        {
+          "name": "remote_controls_pairing_token_hash_idx",
+          "def": "CREATE UNIQUE INDEX remote_controls_pairing_token_hash_idx ON public.remote_controls USING btree (pairing_token_hash) WHERE (pairing_token_hash \u003c\u003e ''::text)",
+          "table": "public.remote_controls",
+          "columns": [
+            "pairing_token_hash"
+          ]
+        },
+        {
+          "name": "remote_controls_controller_token_hash_idx",
+          "def": "CREATE UNIQUE INDEX remote_controls_controller_token_hash_idx ON public.remote_controls USING btree (controller_token_hash) WHERE (controller_token_hash \u003c\u003e ''::text)",
+          "table": "public.remote_controls",
+          "columns": [
+            "controller_token_hash"
+          ]
+        }
+      ],
+      "constraints": [
+        {
+          "name": "remote_controls_controller_token_hash_not_null",
+          "type": "n",
+          "def": "NOT NULL controller_token_hash",
+          "table": "public.remote_controls",
+          "referenced_table": "",
+          "columns": [
+            "controller_token_hash"
+          ]
+        },
+        {
+          "name": "remote_controls_created_at_not_null",
+          "type": "n",
+          "def": "NOT NULL created_at",
+          "table": "public.remote_controls",
+          "referenced_table": "",
+          "columns": [
+            "created_at"
+          ]
+        },
+        {
+          "name": "remote_controls_current_room_id_not_null",
+          "type": "n",
+          "def": "NOT NULL current_room_id",
+          "table": "public.remote_controls",
+          "referenced_table": "",
+          "columns": [
+            "current_room_id"
+          ]
+        },
+        {
+          "name": "remote_controls_id_not_null",
+          "type": "n",
+          "def": "NOT NULL id",
+          "table": "public.remote_controls",
+          "referenced_table": "",
+          "columns": [
+            "id"
+          ]
+        },
+        {
+          "name": "remote_controls_last_seen_at_not_null",
+          "type": "n",
+          "def": "NOT NULL last_seen_at",
+          "table": "public.remote_controls",
+          "referenced_table": "",
+          "columns": [
+            "last_seen_at"
+          ]
+        },
+        {
+          "name": "remote_controls_owner_user_id_not_null",
+          "type": "n",
+          "def": "NOT NULL owner_user_id",
+          "table": "public.remote_controls",
+          "referenced_table": "",
+          "columns": [
+            "owner_user_id"
+          ]
+        },
+        {
+          "name": "remote_controls_pairing_code_hash_not_null",
+          "type": "n",
+          "def": "NOT NULL pairing_code_hash",
+          "table": "public.remote_controls",
+          "referenced_table": "",
+          "columns": [
+            "pairing_code_hash"
+          ]
+        },
+        {
+          "name": "remote_controls_pairing_expires_at_not_null",
+          "type": "n",
+          "def": "NOT NULL pairing_expires_at",
+          "table": "public.remote_controls",
+          "referenced_table": "",
+          "columns": [
+            "pairing_expires_at"
+          ]
+        },
+        {
+          "name": "remote_controls_pairing_token_hash_not_null",
+          "type": "n",
+          "def": "NOT NULL pairing_token_hash",
+          "table": "public.remote_controls",
+          "referenced_table": "",
+          "columns": [
+            "pairing_token_hash"
+          ]
+        },
+        {
+          "name": "remote_controls_updated_at_not_null",
+          "type": "n",
+          "def": "NOT NULL updated_at",
+          "table": "public.remote_controls",
+          "referenced_table": "",
+          "columns": [
+            "updated_at"
+          ]
+        },
+        {
+          "name": "remote_controls_pkey",
+          "type": "PRIMARY KEY",
+          "def": "PRIMARY KEY (id)",
+          "table": "public.remote_controls",
+          "referenced_table": "",
+          "columns": [
+            "id"
+          ]
+        },
+        {
+          "name": "remote_controls_owner_user_id_key",
+          "type": "UNIQUE",
+          "def": "UNIQUE (owner_user_id)",
+          "table": "public.remote_controls",
+          "referenced_table": "",
+          "columns": [
+            "owner_user_id"
+          ]
+        }
+      ]
     }
   ],
   "functions": [
