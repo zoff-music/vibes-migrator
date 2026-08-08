@@ -479,6 +479,12 @@
           "name": "provider_url",
           "type": "text",
           "nullable": true
+        },
+        {
+          "name": "playback_restriction",
+          "type": "text",
+          "nullable": false,
+          "default": "''::text"
         }
       ],
       "indexes": [
@@ -605,6 +611,26 @@
           "referenced_table": "",
           "columns": [
             "metadata_updated_at"
+          ]
+        },
+        {
+          "name": "songs_playback_restriction_check",
+          "type": "CHECK",
+          "def": "CHECK ((playback_restriction = ANY (ARRAY[''::text, 'age'::text, 'region'::text, 'embedding'::text])))",
+          "table": "public.songs",
+          "referenced_table": "",
+          "columns": [
+            "playback_restriction"
+          ]
+        },
+        {
+          "name": "songs_playback_restriction_not_null",
+          "type": "n",
+          "def": "NOT NULL playback_restriction",
+          "table": "public.songs",
+          "referenced_table": "",
+          "columns": [
+            "playback_restriction"
           ]
         },
         {
