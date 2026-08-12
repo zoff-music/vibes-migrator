@@ -1,4 +1,9 @@
-# Vibes Migrator Skill
+---
+name: vibes-migrator
+description: Build, review, or debug the Vibes Go database migrator, including reversible PostgreSQL migrations, generated database documentation, deployment behavior, and migration tests.
+---
+
+# Vibes Migrator
 
 Use these rules for Go migrator work in this repository.
 
