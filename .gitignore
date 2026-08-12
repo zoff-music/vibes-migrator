@@ -8,7 +8,7 @@
 tmp/
 
 # Go build and test output
-vibes-migrator
+/vibes-migrator
 *.test
 *.out
 coverage/
