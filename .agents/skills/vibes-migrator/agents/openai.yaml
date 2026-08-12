@@ -1,4 +1,4 @@
 interface:
   display_name: "Vibes Migrator"
   short_description: "Build and review Vibes database migrations"
-  default_prompt: "Use $vibes-migrator to implement or review this database migration change using the repository's SQL and deployment conventions."
+  default_prompt: "Use $vibes-migrator to implement or review this database migration using the repository's SQL, backend-client, and deployment-order conventions."

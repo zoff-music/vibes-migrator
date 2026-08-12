@@ -14,6 +14,7 @@ Use these rules for Go migrator work in this repository.
 3. `migrations/` contains incrementally numbered SQL up/down migrations. Never edit an already-merged migration; add the next numbered migration instead.
 4. `docs/db` contains generated tbls database docs.
 5. Run `make docs`, `make test`, and `make integrationtest` before finishing migrator changes when they are relevant.
+6. Inspect the matching database client in `~/dev/zoff-music/vibes-backend` before designing a schema change; migrations and prepared statements must agree on columns, indexes, and nullability.
 
 ## Migration Rules
 
@@ -22,9 +23,11 @@ Use these rules for Go migrator work in this repository.
 - Keep SQL aliases readable and consistent with the backend query style.
 - CTE names should end in `_q`.
 - Avoid destructive data changes unless explicitly requested and called out.
+- Preserve remote-control playback state, public-room visibility, generation state, and provider restrictions when changing room-related tables.
 
 ## Deployment
 
 - The migrator deploys as the `vibes-migrator` Kubernetes job, not as part of `vibes-backend`.
 - The job should complete and be removed/replaced by deploy automation; it must not run as a persistent service.
 - Deployment changes that touch cluster behavior may also require coordinated updates in `~/dev/infra`.
+- Backend code ships separately from this migration job. Document and order cross-repository changes so a deploy never queries a schema that has not been migrated yet.
