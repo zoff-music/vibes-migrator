@@ -248,6 +248,12 @@
           "type": "boolean",
           "nullable": false,
           "default": "false"
+        },
+        {
+          "name": "playlist_import",
+          "type": "boolean",
+          "nullable": false,
+          "default": "true"
         }
       ],
       "indexes": [
@@ -337,6 +343,16 @@
           "referenced_table": "",
           "columns": [
             "only_admin_add_songs"
+          ]
+        },
+        {
+          "name": "room_settings_playlist_import_not_null",
+          "type": "n",
+          "def": "NOT NULL playlist_import",
+          "table": "public.room_settings",
+          "referenced_table": "",
+          "columns": [
+            "playlist_import"
           ]
         },
         {
@@ -2866,7 +2882,7 @@
   ],
   "driver": {
     "name": "postgres",
-    "database_version": "PostgreSQL 18.4 (Debian 18.4-1.pgdg13+1) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit",
+    "database_version": "PostgreSQL 18.6 (Homebrew) on aarch64-apple-darwin25.6.0, compiled by Apple clang version 21.0.0 (clang-2100.1.1.101), 64-bit",
     "meta": {
       "current_schema": "public",
       "search_paths": [

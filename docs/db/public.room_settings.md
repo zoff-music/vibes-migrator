@@ -15,6 +15,7 @@
 | enabled_sources | text | 'youtube,spotify,soundcloud'::text | false |  |  |  |
 | only_admin_add_songs | boolean | false | false |  |  |  |
 | is_public | boolean | false | false |  |  |  |
+| playlist_import | boolean | true | false |  |  |  |
 
 ## Constraints
 
@@ -27,6 +28,7 @@
 | room_settings_loop_queue_not_null | n | NOT NULL loop_queue |
 | room_settings_max_continuous_adds_not_null | n | NOT NULL max_continuous_adds |
 | room_settings_only_admin_add_songs_not_null | n | NOT NULL only_admin_add_songs |
+| room_settings_playlist_import_not_null | n | NOT NULL playlist_import |
 | room_settings_remove_on_play_not_null | n | NOT NULL remove_on_play |
 | room_settings_room_id_not_null | n | NOT NULL room_id |
 | room_settings_skip_allowed_not_null | n | NOT NULL skip_allowed |
