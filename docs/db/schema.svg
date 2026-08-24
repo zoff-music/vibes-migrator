@@ -60,44 +60,47 @@
 <!-- public.room_settings -->
 <g id="node3" class="node">
 <title>public.room_settings</title>
-<polygon fill="#efefef" stroke="none" points="786.7,-474.4 786.7,-510 1076.68,-510 1076.68,-474.4 786.7,-474.4"/>
-<polygon fill="none" stroke="black" points="786.7,-474.4 786.7,-510 1076.68,-510 1076.68,-474.4 786.7,-474.4"/>
-<text text-anchor="start" x="793.7" y="-487.8" font-family="Arial Bold" font-size="18.00">public.room_settings</text>
-<text text-anchor="start" x="945.19" y="-487.8" font-family="Arial" font-size="14.00">    </text>
-<text text-anchor="start" x="976.3" y="-487.8" font-family="Arial" font-size="14.00" fill="#666666">[BASE TABLE]</text>
-<polygon fill="none" stroke="black" points="786.7,-443.6 786.7,-474.4 1076.68,-474.4 1076.68,-443.6 786.7,-443.6"/>
-<text text-anchor="start" x="793.7" y="-455.8" font-family="Arial" font-size="14.00">room_id </text>
-<text text-anchor="start" x="848.17" y="-455.8" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
-<polygon fill="none" stroke="black" points="786.7,-412.8 786.7,-443.6 1076.68,-443.6 1076.68,-412.8 786.7,-412.8"/>
-<text text-anchor="start" x="793.7" y="-425" font-family="Arial" font-size="14.00">skip_allowed </text>
-<text text-anchor="start" x="877.75" y="-425" font-family="Arial" font-size="14.00" fill="#666666">[boolean]</text>
-<polygon fill="none" stroke="black" points="786.7,-382 786.7,-412.8 1076.68,-412.8 1076.68,-382 786.7,-382"/>
-<text text-anchor="start" x="793.7" y="-394.2" font-family="Arial" font-size="14.00">democratic_skip </text>
-<text text-anchor="start" x="898.74" y="-394.2" font-family="Arial" font-size="14.00" fill="#666666">[boolean]</text>
-<polygon fill="none" stroke="black" points="786.7,-351.2 786.7,-382 1076.68,-382 1076.68,-351.2 786.7,-351.2"/>
-<text text-anchor="start" x="793.7" y="-363.4" font-family="Arial" font-size="14.00">skip_vote_threshold </text>
-<text text-anchor="start" x="922.11" y="-363.4" font-family="Arial" font-size="14.00" fill="#666666">[real]</text>
-<polygon fill="none" stroke="black" points="786.7,-320.4 786.7,-351.2 1076.68,-351.2 1076.68,-320.4 786.7,-320.4"/>
-<text text-anchor="start" x="793.7" y="-332.6" font-family="Arial" font-size="14.00">max_continuous_adds </text>
-<text text-anchor="start" x="937.68" y="-332.6" font-family="Arial" font-size="14.00" fill="#666666">[integer]</text>
-<polygon fill="none" stroke="black" points="786.7,-289.6 786.7,-320.4 1076.68,-320.4 1076.68,-289.6 786.7,-289.6"/>
-<text text-anchor="start" x="793.7" y="-301.8" font-family="Arial" font-size="14.00">remove_on_play </text>
-<text text-anchor="start" x="901.1" y="-301.8" font-family="Arial" font-size="14.00" fill="#666666">[boolean]</text>
-<polygon fill="none" stroke="black" points="786.7,-258.8 786.7,-289.6 1076.68,-289.6 1076.68,-258.8 786.7,-258.8"/>
-<text text-anchor="start" x="793.7" y="-271" font-family="Arial" font-size="14.00">loop_queue </text>
-<text text-anchor="start" x="870.77" y="-271" font-family="Arial" font-size="14.00" fill="#666666">[boolean]</text>
-<polygon fill="none" stroke="black" points="786.7,-228 786.7,-258.8 1076.68,-258.8 1076.68,-228 786.7,-228"/>
-<text text-anchor="start" x="793.7" y="-240.2" font-family="Arial" font-size="14.00">allow_duplicates </text>
-<text text-anchor="start" x="900.32" y="-240.2" font-family="Arial" font-size="14.00" fill="#666666">[boolean]</text>
-<polygon fill="none" stroke="black" points="786.7,-197.2 786.7,-228 1076.68,-228 1076.68,-197.2 786.7,-197.2"/>
-<text text-anchor="start" x="793.7" y="-209.4" font-family="Arial" font-size="14.00">enabled_sources </text>
-<text text-anchor="start" x="904.22" y="-209.4" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
-<polygon fill="none" stroke="black" points="786.7,-166.4 786.7,-197.2 1076.68,-197.2 1076.68,-166.4 786.7,-166.4"/>
-<text text-anchor="start" x="793.7" y="-178.6" font-family="Arial" font-size="14.00">only_admin_add_songs </text>
-<text text-anchor="start" x="945.48" y="-178.6" font-family="Arial" font-size="14.00" fill="#666666">[boolean]</text>
-<polygon fill="none" stroke="black" points="786.7,-135.6 786.7,-166.4 1076.68,-166.4 1076.68,-135.6 786.7,-135.6"/>
-<text text-anchor="start" x="793.7" y="-147.8" font-family="Arial" font-size="14.00">is_public </text>
-<text text-anchor="start" x="852.06" y="-147.8" font-family="Arial" font-size="14.00" fill="#666666">[boolean]</text>
+<polygon fill="#efefef" stroke="none" points="786.7,-489.8 786.7,-525.4 1076.68,-525.4 1076.68,-489.8 786.7,-489.8"/>
+<polygon fill="none" stroke="black" points="786.7,-489.8 786.7,-525.4 1076.68,-525.4 1076.68,-489.8 786.7,-489.8"/>
+<text text-anchor="start" x="793.7" y="-503.2" font-family="Arial Bold" font-size="18.00">public.room_settings</text>
+<text text-anchor="start" x="945.19" y="-503.2" font-family="Arial" font-size="14.00">    </text>
+<text text-anchor="start" x="976.3" y="-503.2" font-family="Arial" font-size="14.00" fill="#666666">[BASE TABLE]</text>
+<polygon fill="none" stroke="black" points="786.7,-459 786.7,-489.8 1076.68,-489.8 1076.68,-459 786.7,-459"/>
+<text text-anchor="start" x="793.7" y="-471.2" font-family="Arial" font-size="14.00">room_id </text>
+<text text-anchor="start" x="848.17" y="-471.2" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
+<polygon fill="none" stroke="black" points="786.7,-428.2 786.7,-459 1076.68,-459 1076.68,-428.2 786.7,-428.2"/>
+<text text-anchor="start" x="793.7" y="-440.4" font-family="Arial" font-size="14.00">skip_allowed </text>
+<text text-anchor="start" x="877.75" y="-440.4" font-family="Arial" font-size="14.00" fill="#666666">[boolean]</text>
+<polygon fill="none" stroke="black" points="786.7,-397.4 786.7,-428.2 1076.68,-428.2 1076.68,-397.4 786.7,-397.4"/>
+<text text-anchor="start" x="793.7" y="-409.6" font-family="Arial" font-size="14.00">democratic_skip </text>
+<text text-anchor="start" x="898.74" y="-409.6" font-family="Arial" font-size="14.00" fill="#666666">[boolean]</text>
+<polygon fill="none" stroke="black" points="786.7,-366.6 786.7,-397.4 1076.68,-397.4 1076.68,-366.6 786.7,-366.6"/>
+<text text-anchor="start" x="793.7" y="-378.8" font-family="Arial" font-size="14.00">skip_vote_threshold </text>
+<text text-anchor="start" x="922.11" y="-378.8" font-family="Arial" font-size="14.00" fill="#666666">[real]</text>
+<polygon fill="none" stroke="black" points="786.7,-335.8 786.7,-366.6 1076.68,-366.6 1076.68,-335.8 786.7,-335.8"/>
+<text text-anchor="start" x="793.7" y="-348" font-family="Arial" font-size="14.00">max_continuous_adds </text>
+<text text-anchor="start" x="937.68" y="-348" font-family="Arial" font-size="14.00" fill="#666666">[integer]</text>
+<polygon fill="none" stroke="black" points="786.7,-305 786.7,-335.8 1076.68,-335.8 1076.68,-305 786.7,-305"/>
+<text text-anchor="start" x="793.7" y="-317.2" font-family="Arial" font-size="14.00">remove_on_play </text>
+<text text-anchor="start" x="901.1" y="-317.2" font-family="Arial" font-size="14.00" fill="#666666">[boolean]</text>
+<polygon fill="none" stroke="black" points="786.7,-274.2 786.7,-305 1076.68,-305 1076.68,-274.2 786.7,-274.2"/>
+<text text-anchor="start" x="793.7" y="-286.4" font-family="Arial" font-size="14.00">loop_queue </text>
+<text text-anchor="start" x="870.77" y="-286.4" font-family="Arial" font-size="14.00" fill="#666666">[boolean]</text>
+<polygon fill="none" stroke="black" points="786.7,-243.4 786.7,-274.2 1076.68,-274.2 1076.68,-243.4 786.7,-243.4"/>
+<text text-anchor="start" x="793.7" y="-255.6" font-family="Arial" font-size="14.00">allow_duplicates </text>
+<text text-anchor="start" x="900.32" y="-255.6" font-family="Arial" font-size="14.00" fill="#666666">[boolean]</text>
+<polygon fill="none" stroke="black" points="786.7,-212.6 786.7,-243.4 1076.68,-243.4 1076.68,-212.6 786.7,-212.6"/>
+<text text-anchor="start" x="793.7" y="-224.8" font-family="Arial" font-size="14.00">enabled_sources </text>
+<text text-anchor="start" x="904.22" y="-224.8" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
+<polygon fill="none" stroke="black" points="786.7,-181.8 786.7,-212.6 1076.68,-212.6 1076.68,-181.8 786.7,-181.8"/>
+<text text-anchor="start" x="793.7" y="-194" font-family="Arial" font-size="14.00">only_admin_add_songs </text>
+<text text-anchor="start" x="945.48" y="-194" font-family="Arial" font-size="14.00" fill="#666666">[boolean]</text>
+<polygon fill="none" stroke="black" points="786.7,-151 786.7,-181.8 1076.68,-181.8 1076.68,-151 786.7,-151"/>
+<text text-anchor="start" x="793.7" y="-163.2" font-family="Arial" font-size="14.00">is_public </text>
+<text text-anchor="start" x="852.06" y="-163.2" font-family="Arial" font-size="14.00" fill="#666666">[boolean]</text>
+<polygon fill="none" stroke="black" points="786.7,-120.2 786.7,-151 1076.68,-151 1076.68,-120.2 786.7,-120.2"/>
+<text text-anchor="start" x="793.7" y="-132.4" font-family="Arial" font-size="14.00">playlist_import </text>
+<text text-anchor="start" x="887.06" y="-132.4" font-family="Arial" font-size="14.00" fill="#666666">[boolean]</text>
 </g>
 <!-- public.songs -->
 <g id="node4" class="node">

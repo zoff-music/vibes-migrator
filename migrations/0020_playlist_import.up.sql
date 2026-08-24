@@ -1,0 +1,2 @@
+ALTER TABLE room_settings
+ADD COLUMN playlist_import BOOLEAN NOT NULL DEFAULT TRUE;
