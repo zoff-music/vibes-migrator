@@ -700,6 +700,17 @@
           ]
         },
         {
+          "name": "songs_youtube_duration_check",
+          "type": "CHECK",
+          "def": "CHECK (((source_type \u003c\u003e 'youtube'::text) OR (duration \u003e 0)))",
+          "table": "public.songs",
+          "referenced_table": "",
+          "columns": [
+            "source_type",
+            "duration"
+          ]
+        },
+        {
           "name": "songs_pkey",
           "type": "PRIMARY KEY",
           "def": "PRIMARY KEY (id)",
