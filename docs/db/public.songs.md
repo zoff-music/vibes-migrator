@@ -39,6 +39,7 @@
 | songs_source_type_not_null | n | NOT NULL source_type |
 | songs_thumbnail_url_not_null | n | NOT NULL thumbnail_url |
 | songs_title_not_null | n | NOT NULL title |
+| songs_youtube_duration_check | CHECK | CHECK (((source_type <> 'youtube'::text) OR (duration > 0))) |
 | songs_pkey | PRIMARY KEY | PRIMARY KEY (id) |
 
 ## Indexes
