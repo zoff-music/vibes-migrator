@@ -10,7 +10,6 @@
 | skip_vote_threshold | real | 0.5 | false |  |  |  |
 | max_continuous_adds | integer | 3 | false |  |  |  |
 | remove_on_play | boolean | true | false |  |  |  |
-| loop_queue | boolean | false | false |  |  |  |
 | allow_duplicates | boolean | false | false |  |  |  |
 | enabled_sources | text | 'youtube,spotify,soundcloud'::text | false |  |  |  |
 | only_admin_add_songs | boolean | false | false |  |  |  |
@@ -25,7 +24,6 @@
 | room_settings_democratic_skip_not_null | n | NOT NULL democratic_skip |
 | room_settings_enabled_sources_not_null | n | NOT NULL enabled_sources |
 | room_settings_is_public_not_null | n | NOT NULL is_public |
-| room_settings_loop_queue_not_null | n | NOT NULL loop_queue |
 | room_settings_max_continuous_adds_not_null | n | NOT NULL max_continuous_adds |
 | room_settings_only_admin_add_songs_not_null | n | NOT NULL only_admin_add_songs |
 | room_settings_playlist_import_not_null | n | NOT NULL playlist_import |
