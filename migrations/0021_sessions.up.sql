@@ -1,3 +1,5 @@
+CREATE EXTENSION IF NOT EXISTS pgcrypto;
+
 CREATE TABLE sessions (
 	id TEXT PRIMARY KEY,
 	name TEXT NOT NULL,
@@ -15,7 +17,7 @@ CROSS JOIN LATERAL (
 		SPLIT_PART(c.name, '-', 1) || '-' || SPLIT_PART(c.name, '-', 2) AS name
 	FROM room_name_pool c
 	WHERE c.generated
-	ORDER BY MD5(c.name || a.added_by)
+	ORDER BY DIGEST(c.name || a.added_by, 'sha256')
 	LIMIT 1
 ) b
 WHERE a.added_by != '';
