@@ -1,0 +1,2 @@
+ALTER TABLE room_settings
+ADD COLUMN loop_queue BOOLEAN NOT NULL DEFAULT TRUE;

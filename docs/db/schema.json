@@ -220,12 +220,6 @@
           "default": "true"
         },
         {
-          "name": "loop_queue",
-          "type": "boolean",
-          "nullable": false,
-          "default": "false"
-        },
-        {
           "name": "allow_duplicates",
           "type": "boolean",
           "nullable": false,
@@ -313,16 +307,6 @@
           "referenced_table": "",
           "columns": [
             "is_public"
-          ]
-        },
-        {
-          "name": "room_settings_loop_queue_not_null",
-          "type": "n",
-          "def": "NOT NULL loop_queue",
-          "table": "public.room_settings",
-          "referenced_table": "",
-          "columns": [
-            "loop_queue"
           ]
         },
         {
@@ -2987,7 +2971,7 @@
     "meta": {
       "current_schema": "public",
       "search_paths": [
-        "kasperrt",
+        "postgres",
         "public"
       ],
       "dict": {
