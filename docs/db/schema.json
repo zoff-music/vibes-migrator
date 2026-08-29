@@ -2739,6 +2739,434 @@
           ]
         }
       ]
+    },
+    {
+      "name": "public.playlist_imports",
+      "type": "BASE TABLE",
+      "columns": [
+        {
+          "name": "id",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "room_id",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "added_by",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "next_position",
+          "type": "integer",
+          "nullable": false,
+          "default": "0"
+        },
+        {
+          "name": "attempts",
+          "type": "integer",
+          "nullable": false,
+          "default": "0"
+        },
+        {
+          "name": "updated_at",
+          "type": "timestamp with time zone",
+          "nullable": false,
+          "default": "now()"
+        },
+        {
+          "name": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": false,
+          "default": "now()"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "playlist_imports_pkey",
+          "def": "CREATE UNIQUE INDEX playlist_imports_pkey ON public.playlist_imports USING btree (id)",
+          "table": "public.playlist_imports",
+          "columns": [
+            "id"
+          ]
+        },
+        {
+          "name": "playlist_imports_processing_idx",
+          "def": "CREATE INDEX playlist_imports_processing_idx ON public.playlist_imports USING btree (updated_at, created_at)",
+          "table": "public.playlist_imports",
+          "columns": [
+            "updated_at",
+            "created_at"
+          ]
+        }
+      ],
+      "constraints": [
+        {
+          "name": "playlist_imports_added_by_not_null",
+          "type": "n",
+          "def": "NOT NULL added_by",
+          "table": "public.playlist_imports",
+          "referenced_table": "",
+          "columns": [
+            "added_by"
+          ]
+        },
+        {
+          "name": "playlist_imports_attempts_non_negative",
+          "type": "CHECK",
+          "def": "CHECK ((attempts \u003e= 0))",
+          "table": "public.playlist_imports",
+          "referenced_table": "",
+          "columns": [
+            "attempts"
+          ]
+        },
+        {
+          "name": "playlist_imports_attempts_not_null",
+          "type": "n",
+          "def": "NOT NULL attempts",
+          "table": "public.playlist_imports",
+          "referenced_table": "",
+          "columns": [
+            "attempts"
+          ]
+        },
+        {
+          "name": "playlist_imports_created_at_not_null",
+          "type": "n",
+          "def": "NOT NULL created_at",
+          "table": "public.playlist_imports",
+          "referenced_table": "",
+          "columns": [
+            "created_at"
+          ]
+        },
+        {
+          "name": "playlist_imports_id_not_null",
+          "type": "n",
+          "def": "NOT NULL id",
+          "table": "public.playlist_imports",
+          "referenced_table": "",
+          "columns": [
+            "id"
+          ]
+        },
+        {
+          "name": "playlist_imports_next_position_non_negative",
+          "type": "CHECK",
+          "def": "CHECK ((next_position \u003e= 0))",
+          "table": "public.playlist_imports",
+          "referenced_table": "",
+          "columns": [
+            "next_position"
+          ]
+        },
+        {
+          "name": "playlist_imports_next_position_not_null",
+          "type": "n",
+          "def": "NOT NULL next_position",
+          "table": "public.playlist_imports",
+          "referenced_table": "",
+          "columns": [
+            "next_position"
+          ]
+        },
+        {
+          "name": "playlist_imports_room_id_not_null",
+          "type": "n",
+          "def": "NOT NULL room_id",
+          "table": "public.playlist_imports",
+          "referenced_table": "",
+          "columns": [
+            "room_id"
+          ]
+        },
+        {
+          "name": "playlist_imports_updated_at_not_null",
+          "type": "n",
+          "def": "NOT NULL updated_at",
+          "table": "public.playlist_imports",
+          "referenced_table": "",
+          "columns": [
+            "updated_at"
+          ]
+        },
+        {
+          "name": "playlist_imports_pkey",
+          "type": "PRIMARY KEY",
+          "def": "PRIMARY KEY (id)",
+          "table": "public.playlist_imports",
+          "referenced_table": "",
+          "columns": [
+            "id"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "public.playlist_import_items",
+      "type": "BASE TABLE",
+      "columns": [
+        {
+          "name": "id",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "import_id",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "position",
+          "type": "integer",
+          "nullable": false
+        },
+        {
+          "name": "source_type",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "source_id",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "provider_url",
+          "type": "text",
+          "nullable": false,
+          "default": "''::text"
+        },
+        {
+          "name": "playback_restriction",
+          "type": "text",
+          "nullable": false,
+          "default": "''::text"
+        },
+        {
+          "name": "title",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "artist",
+          "type": "text",
+          "nullable": false,
+          "default": "''::text"
+        },
+        {
+          "name": "thumbnail_url",
+          "type": "text",
+          "nullable": false,
+          "default": "''::text"
+        },
+        {
+          "name": "duration",
+          "type": "integer",
+          "nullable": false
+        },
+        {
+          "name": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": false,
+          "default": "now()"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "playlist_import_items_pkey",
+          "def": "CREATE UNIQUE INDEX playlist_import_items_pkey ON public.playlist_import_items USING btree (id)",
+          "table": "public.playlist_import_items",
+          "columns": [
+            "id"
+          ]
+        },
+        {
+          "name": "playlist_import_items_import_position_unique",
+          "def": "CREATE UNIQUE INDEX playlist_import_items_import_position_unique ON public.playlist_import_items USING btree (import_id, \"position\")",
+          "table": "public.playlist_import_items",
+          "columns": [
+            "import_id",
+            "position"
+          ]
+        },
+        {
+          "name": "playlist_import_items_import_position_idx",
+          "def": "CREATE INDEX playlist_import_items_import_position_idx ON public.playlist_import_items USING btree (import_id, \"position\")",
+          "table": "public.playlist_import_items",
+          "columns": [
+            "import_id",
+            "position"
+          ]
+        }
+      ],
+      "constraints": [
+        {
+          "name": "playlist_import_items_artist_not_null",
+          "type": "n",
+          "def": "NOT NULL artist",
+          "table": "public.playlist_import_items",
+          "referenced_table": "",
+          "columns": [
+            "artist"
+          ]
+        },
+        {
+          "name": "playlist_import_items_created_at_not_null",
+          "type": "n",
+          "def": "NOT NULL created_at",
+          "table": "public.playlist_import_items",
+          "referenced_table": "",
+          "columns": [
+            "created_at"
+          ]
+        },
+        {
+          "name": "playlist_import_items_duration_non_negative",
+          "type": "CHECK",
+          "def": "CHECK ((duration \u003e= 0))",
+          "table": "public.playlist_import_items",
+          "referenced_table": "",
+          "columns": [
+            "duration"
+          ]
+        },
+        {
+          "name": "playlist_import_items_duration_not_null",
+          "type": "n",
+          "def": "NOT NULL duration",
+          "table": "public.playlist_import_items",
+          "referenced_table": "",
+          "columns": [
+            "duration"
+          ]
+        },
+        {
+          "name": "playlist_import_items_id_not_null",
+          "type": "n",
+          "def": "NOT NULL id",
+          "table": "public.playlist_import_items",
+          "referenced_table": "",
+          "columns": [
+            "id"
+          ]
+        },
+        {
+          "name": "playlist_import_items_import_id_not_null",
+          "type": "n",
+          "def": "NOT NULL import_id",
+          "table": "public.playlist_import_items",
+          "referenced_table": "",
+          "columns": [
+            "import_id"
+          ]
+        },
+        {
+          "name": "playlist_import_items_playback_restriction_not_null",
+          "type": "n",
+          "def": "NOT NULL playback_restriction",
+          "table": "public.playlist_import_items",
+          "referenced_table": "",
+          "columns": [
+            "playback_restriction"
+          ]
+        },
+        {
+          "name": "playlist_import_items_position_non_negative",
+          "type": "CHECK",
+          "def": "CHECK ((\"position\" \u003e= 0))",
+          "table": "public.playlist_import_items",
+          "referenced_table": "",
+          "columns": [
+            "position"
+          ]
+        },
+        {
+          "name": "playlist_import_items_position_not_null",
+          "type": "n",
+          "def": "NOT NULL \"position\"",
+          "table": "public.playlist_import_items",
+          "referenced_table": "",
+          "columns": [
+            "position"
+          ]
+        },
+        {
+          "name": "playlist_import_items_provider_url_not_null",
+          "type": "n",
+          "def": "NOT NULL provider_url",
+          "table": "public.playlist_import_items",
+          "referenced_table": "",
+          "columns": [
+            "provider_url"
+          ]
+        },
+        {
+          "name": "playlist_import_items_source_id_not_null",
+          "type": "n",
+          "def": "NOT NULL source_id",
+          "table": "public.playlist_import_items",
+          "referenced_table": "",
+          "columns": [
+            "source_id"
+          ]
+        },
+        {
+          "name": "playlist_import_items_source_type_not_null",
+          "type": "n",
+          "def": "NOT NULL source_type",
+          "table": "public.playlist_import_items",
+          "referenced_table": "",
+          "columns": [
+            "source_type"
+          ]
+        },
+        {
+          "name": "playlist_import_items_thumbnail_url_not_null",
+          "type": "n",
+          "def": "NOT NULL thumbnail_url",
+          "table": "public.playlist_import_items",
+          "referenced_table": "",
+          "columns": [
+            "thumbnail_url"
+          ]
+        },
+        {
+          "name": "playlist_import_items_title_not_null",
+          "type": "n",
+          "def": "NOT NULL title",
+          "table": "public.playlist_import_items",
+          "referenced_table": "",
+          "columns": [
+            "title"
+          ]
+        },
+        {
+          "name": "playlist_import_items_pkey",
+          "type": "PRIMARY KEY",
+          "def": "PRIMARY KEY (id)",
+          "table": "public.playlist_import_items",
+          "referenced_table": "",
+          "columns": [
+            "id"
+          ]
+        },
+        {
+          "name": "playlist_import_items_import_position_unique",
+          "type": "UNIQUE",
+          "def": "UNIQUE (import_id, \"position\")",
+          "table": "public.playlist_import_items",
+          "referenced_table": "",
+          "columns": [
+            "import_id",
+            "position"
+          ]
+        }
+      ]
     }
   ],
   "functions": [
@@ -2971,7 +3399,7 @@
     "meta": {
       "current_schema": "public",
       "search_paths": [
-        "postgres",
+        "kasperrt",
         "public"
       ],
       "dict": {
