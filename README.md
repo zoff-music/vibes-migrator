@@ -17,3 +17,13 @@ make docs
 ```
 
 `make docs` generates tbls database documentation in `docs/db/`.
+
+## Public room search
+
+Migration 0025 enables `pg_trgm` and adds a GIN index on room names for
+case-insensitive substring searches. Ship it before clients start using the
+v2 public-room browser in `zoff-music/vibes-backend`. The backend query remains
+compatible with the earlier schema; the index improves search performance.
+
+Rollback removes the index and leaves the extension installed so other
+trigram indexes remain usable.

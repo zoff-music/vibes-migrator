@@ -26,6 +26,7 @@
 | ---- | ---------- |
 | rooms_pkey | CREATE UNIQUE INDEX rooms_pkey ON public.rooms USING btree (id) |
 | idx_rooms_name_unique | CREATE UNIQUE INDEX idx_rooms_name_unique ON public.rooms USING btree (name) |
+| idx_rooms_name_search | CREATE INDEX idx_rooms_name_search ON public.rooms USING gin (name gin_trgm_ops) |
 
 ## Relations
 
