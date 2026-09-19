@@ -27,3 +27,10 @@ compatible with the earlier schema; the index improves search performance.
 
 Rollback removes the index and leaves the extension installed so other
 trigram indexes remain usable.
+
+## Chat usage
+
+Migration 0026 adds hourly per-room message counters without retaining message
+text or sender identities. The primary key supports room history; the timestamp
+index supports aggregate reporting. Deploy this migration before the matching
+backend chat-usage update. Rolling it back deletes the collected counters.
