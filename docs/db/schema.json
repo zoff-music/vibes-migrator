@@ -117,6 +117,12 @@
           "type": "timestamp without time zone",
           "nullable": true,
           "default": "(CURRENT_TIMESTAMP AT TIME ZONE 'UTC'::text)"
+        },
+        {
+          "name": "room_type",
+          "type": "room_type",
+          "nullable": false,
+          "default": "'MUSIC'::room_type"
         }
       ],
       "indexes": [
@@ -174,6 +180,16 @@
           "referenced_table": "",
           "columns": [
             "name"
+          ]
+        },
+        {
+          "name": "rooms_room_type_not_null",
+          "type": "n",
+          "def": "NOT NULL room_type",
+          "table": "public.rooms",
+          "referenced_table": "",
+          "columns": [
+            "room_type"
           ]
         },
         {
@@ -3910,6 +3926,15 @@
       "return_type": "void",
       "arguments": "internal",
       "type": "FUNCTION"
+    }
+  ],
+  "enums": [
+    {
+      "name": "public.room_type",
+      "values": [
+        "MUSIC",
+        "WATCH"
+      ]
     }
   ],
   "driver": {

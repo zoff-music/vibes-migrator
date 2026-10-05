@@ -33,29 +33,32 @@
 <!-- public.rooms -->
 <g id="node2" class="node">
 <title>public.rooms</title>
-<polygon fill="#efefef" stroke="none" points="413.07,-397.4 413.07,-433 682.3,-433 682.3,-397.4 413.07,-397.4"/>
-<polygon fill="none" stroke="black" points="413.07,-397.4 413.07,-433 682.3,-433 682.3,-397.4 413.07,-397.4"/>
-<text text-anchor="start" x="438.2" y="-410.8" font-family="Arial Bold" font-size="18.00">public.rooms</text>
-<text text-anchor="start" x="532.69" y="-410.8" font-family="Arial" font-size="14.00">    </text>
-<text text-anchor="start" x="563.8" y="-410.8" font-family="Arial" font-size="14.00" fill="#666666">[BASE TABLE]</text>
-<polygon fill="none" stroke="black" points="413.07,-366.6 413.07,-397.4 682.3,-397.4 682.3,-366.6 413.07,-366.6"/>
-<text text-anchor="start" x="420.07" y="-378.8" font-family="Arial" font-size="14.00">id </text>
-<text text-anchor="start" x="434.86" y="-378.8" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
-<polygon fill="none" stroke="black" points="413.07,-335.8 413.07,-366.6 682.3,-366.6 682.3,-335.8 413.07,-335.8"/>
-<text text-anchor="start" x="420.07" y="-348" font-family="Arial" font-size="14.00">name </text>
-<text text-anchor="start" x="458.98" y="-348" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
-<polygon fill="none" stroke="black" points="413.07,-305 413.07,-335.8 682.3,-335.8 682.3,-305 413.07,-305"/>
-<text text-anchor="start" x="420.07" y="-317.2" font-family="Arial" font-size="14.00">mode </text>
-<text text-anchor="start" x="458.98" y="-317.2" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
-<polygon fill="none" stroke="black" points="413.07,-274.2 413.07,-305 682.3,-305 682.3,-274.2 413.07,-274.2"/>
-<text text-anchor="start" x="420.07" y="-286.4" font-family="Arial" font-size="14.00">host_id </text>
-<text text-anchor="start" x="469.1" y="-286.4" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
-<polygon fill="none" stroke="black" points="413.07,-243.4 413.07,-274.2 682.3,-274.2 682.3,-243.4 413.07,-243.4"/>
-<text text-anchor="start" x="420.07" y="-255.6" font-family="Arial" font-size="14.00">admin_password_hash </text>
-<text text-anchor="start" x="567.94" y="-255.6" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
-<polygon fill="none" stroke="black" points="413.07,-212.6 413.07,-243.4 682.3,-243.4 682.3,-212.6 413.07,-212.6"/>
-<text text-anchor="start" x="420.07" y="-224.8" font-family="Arial" font-size="14.00">created_at </text>
-<text text-anchor="start" x="490.12" y="-224.8" font-family="Arial" font-size="14.00" fill="#666666">[timestamp without time zone]</text>
+<polygon fill="#efefef" stroke="none" points="413.07,-412.8 413.07,-448.4 682.3,-448.4 682.3,-412.8 413.07,-412.8"/>
+<polygon fill="none" stroke="black" points="413.07,-412.8 413.07,-448.4 682.3,-448.4 682.3,-412.8 413.07,-412.8"/>
+<text text-anchor="start" x="438.2" y="-426.2" font-family="Arial Bold" font-size="18.00">public.rooms</text>
+<text text-anchor="start" x="532.69" y="-426.2" font-family="Arial" font-size="14.00">    </text>
+<text text-anchor="start" x="563.8" y="-426.2" font-family="Arial" font-size="14.00" fill="#666666">[BASE TABLE]</text>
+<polygon fill="none" stroke="black" points="413.07,-382 413.07,-412.8 682.3,-412.8 682.3,-382 413.07,-382"/>
+<text text-anchor="start" x="420.07" y="-394.2" font-family="Arial" font-size="14.00">id </text>
+<text text-anchor="start" x="434.86" y="-394.2" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
+<polygon fill="none" stroke="black" points="413.07,-351.2 413.07,-382 682.3,-382 682.3,-351.2 413.07,-351.2"/>
+<text text-anchor="start" x="420.07" y="-363.4" font-family="Arial" font-size="14.00">name </text>
+<text text-anchor="start" x="458.98" y="-363.4" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
+<polygon fill="none" stroke="black" points="413.07,-320.4 413.07,-351.2 682.3,-351.2 682.3,-320.4 413.07,-320.4"/>
+<text text-anchor="start" x="420.07" y="-332.6" font-family="Arial" font-size="14.00">mode </text>
+<text text-anchor="start" x="458.98" y="-332.6" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
+<polygon fill="none" stroke="black" points="413.07,-289.6 413.07,-320.4 682.3,-320.4 682.3,-289.6 413.07,-289.6"/>
+<text text-anchor="start" x="420.07" y="-301.8" font-family="Arial" font-size="14.00">host_id </text>
+<text text-anchor="start" x="469.1" y="-301.8" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
+<polygon fill="none" stroke="black" points="413.07,-258.8 413.07,-289.6 682.3,-289.6 682.3,-258.8 413.07,-258.8"/>
+<text text-anchor="start" x="420.07" y="-271" font-family="Arial" font-size="14.00">admin_password_hash </text>
+<text text-anchor="start" x="567.94" y="-271" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
+<polygon fill="none" stroke="black" points="413.07,-228 413.07,-258.8 682.3,-258.8 682.3,-228 413.07,-228"/>
+<text text-anchor="start" x="420.07" y="-240.2" font-family="Arial" font-size="14.00">created_at </text>
+<text text-anchor="start" x="490.12" y="-240.2" font-family="Arial" font-size="14.00" fill="#666666">[timestamp without time zone]</text>
+<polygon fill="none" stroke="black" points="413.07,-197.2 413.07,-228 682.3,-228 682.3,-197.2 413.07,-197.2"/>
+<text text-anchor="start" x="420.07" y="-209.4" font-family="Arial" font-size="14.00">room_type </text>
+<text text-anchor="start" x="490.1" y="-209.4" font-family="Arial" font-size="14.00" fill="#666666">[room_type]</text>
 </g>
 <!-- public.room_settings -->
 <g id="node3" class="node">

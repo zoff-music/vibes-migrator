@@ -1,0 +1,4 @@
+CREATE TYPE room_type AS ENUM ('MUSIC', 'WATCH');
+
+ALTER TABLE rooms
+ADD COLUMN room_type room_type NOT NULL DEFAULT 'MUSIC';
