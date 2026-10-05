@@ -3175,6 +3175,331 @@
           ]
         }
       ]
+    },
+    {
+      "name": "public.chat_usage",
+      "type": "BASE TABLE",
+      "columns": [
+        {
+          "name": "room_id",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": false
+        },
+        {
+          "name": "message_count",
+          "type": "bigint",
+          "nullable": false,
+          "default": "0"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "chat_usage_pkey",
+          "def": "CREATE UNIQUE INDEX chat_usage_pkey ON public.chat_usage USING btree (room_id, created_at)",
+          "table": "public.chat_usage",
+          "columns": [
+            "room_id",
+            "created_at"
+          ]
+        },
+        {
+          "name": "idx_chat_usage_created_at",
+          "def": "CREATE INDEX idx_chat_usage_created_at ON public.chat_usage USING btree (created_at) INCLUDE (message_count)",
+          "table": "public.chat_usage",
+          "columns": [
+            "created_at",
+            "message_count"
+          ]
+        }
+      ],
+      "constraints": [
+        {
+          "name": "chat_usage_created_at_not_null",
+          "type": "n",
+          "def": "NOT NULL created_at",
+          "table": "public.chat_usage",
+          "referenced_table": "",
+          "columns": [
+            "created_at"
+          ]
+        },
+        {
+          "name": "chat_usage_message_count_check",
+          "type": "CHECK",
+          "def": "CHECK ((message_count \u003e= 0))",
+          "table": "public.chat_usage",
+          "referenced_table": "",
+          "columns": [
+            "message_count"
+          ]
+        },
+        {
+          "name": "chat_usage_message_count_not_null",
+          "type": "n",
+          "def": "NOT NULL message_count",
+          "table": "public.chat_usage",
+          "referenced_table": "",
+          "columns": [
+            "message_count"
+          ]
+        },
+        {
+          "name": "chat_usage_room_id_not_null",
+          "type": "n",
+          "def": "NOT NULL room_id",
+          "table": "public.chat_usage",
+          "referenced_table": "",
+          "columns": [
+            "room_id"
+          ]
+        },
+        {
+          "name": "chat_usage_pkey",
+          "type": "PRIMARY KEY",
+          "def": "PRIMARY KEY (room_id, created_at)",
+          "table": "public.chat_usage",
+          "referenced_table": "",
+          "columns": [
+            "room_id",
+            "created_at"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "public.room_search_usage",
+      "type": "BASE TABLE",
+      "columns": [
+        {
+          "name": "room_id",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "provider",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": false
+        },
+        {
+          "name": "search_count",
+          "type": "bigint",
+          "nullable": false,
+          "default": "0"
+        },
+        {
+          "name": "cached_count",
+          "type": "bigint",
+          "nullable": false,
+          "default": "0"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "room_search_usage_pkey",
+          "def": "CREATE UNIQUE INDEX room_search_usage_pkey ON public.room_search_usage USING btree (room_id, provider, created_at)",
+          "table": "public.room_search_usage",
+          "columns": [
+            "room_id",
+            "provider",
+            "created_at"
+          ]
+        },
+        {
+          "name": "idx_room_search_usage_created_at",
+          "def": "CREATE INDEX idx_room_search_usage_created_at ON public.room_search_usage USING btree (created_at)",
+          "table": "public.room_search_usage",
+          "columns": [
+            "created_at"
+          ]
+        }
+      ],
+      "constraints": [
+        {
+          "name": "room_search_usage_cached_count_check",
+          "type": "CHECK",
+          "def": "CHECK ((cached_count \u003e= 0))",
+          "table": "public.room_search_usage",
+          "referenced_table": "",
+          "columns": [
+            "cached_count"
+          ]
+        },
+        {
+          "name": "room_search_usage_cached_count_not_null",
+          "type": "n",
+          "def": "NOT NULL cached_count",
+          "table": "public.room_search_usage",
+          "referenced_table": "",
+          "columns": [
+            "cached_count"
+          ]
+        },
+        {
+          "name": "room_search_usage_created_at_not_null",
+          "type": "n",
+          "def": "NOT NULL created_at",
+          "table": "public.room_search_usage",
+          "referenced_table": "",
+          "columns": [
+            "created_at"
+          ]
+        },
+        {
+          "name": "room_search_usage_provider_not_null",
+          "type": "n",
+          "def": "NOT NULL provider",
+          "table": "public.room_search_usage",
+          "referenced_table": "",
+          "columns": [
+            "provider"
+          ]
+        },
+        {
+          "name": "room_search_usage_room_id_not_null",
+          "type": "n",
+          "def": "NOT NULL room_id",
+          "table": "public.room_search_usage",
+          "referenced_table": "",
+          "columns": [
+            "room_id"
+          ]
+        },
+        {
+          "name": "room_search_usage_search_count_check",
+          "type": "CHECK",
+          "def": "CHECK ((search_count \u003e= 0))",
+          "table": "public.room_search_usage",
+          "referenced_table": "",
+          "columns": [
+            "search_count"
+          ]
+        },
+        {
+          "name": "room_search_usage_search_count_not_null",
+          "type": "n",
+          "def": "NOT NULL search_count",
+          "table": "public.room_search_usage",
+          "referenced_table": "",
+          "columns": [
+            "search_count"
+          ]
+        },
+        {
+          "name": "room_search_usage_pkey",
+          "type": "PRIMARY KEY",
+          "def": "PRIMARY KEY (room_id, provider, created_at)",
+          "table": "public.room_search_usage",
+          "referenced_table": "",
+          "columns": [
+            "room_id",
+            "provider",
+            "created_at"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "public.room_listener_usage",
+      "type": "BASE TABLE",
+      "columns": [
+        {
+          "name": "room_id",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "created_at",
+          "type": "timestamp with time zone",
+          "nullable": false
+        },
+        {
+          "name": "listener_count",
+          "type": "bigint",
+          "nullable": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "room_listener_usage_pkey",
+          "def": "CREATE UNIQUE INDEX room_listener_usage_pkey ON public.room_listener_usage USING btree (room_id, created_at)",
+          "table": "public.room_listener_usage",
+          "columns": [
+            "room_id",
+            "created_at"
+          ]
+        },
+        {
+          "name": "idx_room_listener_usage_created_at",
+          "def": "CREATE INDEX idx_room_listener_usage_created_at ON public.room_listener_usage USING btree (created_at)",
+          "table": "public.room_listener_usage",
+          "columns": [
+            "created_at"
+          ]
+        }
+      ],
+      "constraints": [
+        {
+          "name": "room_listener_usage_created_at_not_null",
+          "type": "n",
+          "def": "NOT NULL created_at",
+          "table": "public.room_listener_usage",
+          "referenced_table": "",
+          "columns": [
+            "created_at"
+          ]
+        },
+        {
+          "name": "room_listener_usage_listener_count_check",
+          "type": "CHECK",
+          "def": "CHECK ((listener_count \u003e= 0))",
+          "table": "public.room_listener_usage",
+          "referenced_table": "",
+          "columns": [
+            "listener_count"
+          ]
+        },
+        {
+          "name": "room_listener_usage_listener_count_not_null",
+          "type": "n",
+          "def": "NOT NULL listener_count",
+          "table": "public.room_listener_usage",
+          "referenced_table": "",
+          "columns": [
+            "listener_count"
+          ]
+        },
+        {
+          "name": "room_listener_usage_room_id_not_null",
+          "type": "n",
+          "def": "NOT NULL room_id",
+          "table": "public.room_listener_usage",
+          "referenced_table": "",
+          "columns": [
+            "room_id"
+          ]
+        },
+        {
+          "name": "room_listener_usage_pkey",
+          "type": "PRIMARY KEY",
+          "def": "PRIMARY KEY (room_id, created_at)",
+          "table": "public.room_listener_usage",
+          "referenced_table": "",
+          "columns": [
+            "room_id",
+            "created_at"
+          ]
+        }
+      ]
     }
   ],
   "functions": [

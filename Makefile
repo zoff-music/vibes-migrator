@@ -1,6 +1,7 @@
 .PHONY: build install update help integrationtest docs docker
 
 PROJECT_NAME=$(shell basename $(CURDIR))
+DOCS_DATABASE_URL ?=
 
 ## build: builds the migrator binary
 build:
@@ -34,6 +35,9 @@ integrationtest:
 
 ## docs: generates database table documentation using tbls
 docs:
+ifneq ($(strip $(DOCS_DATABASE_URL)),)
+	tbls doc --force "$(DOCS_DATABASE_URL)" docs/db
+else
 	@set -e; \
 	trap 'echo "Stopping postgres..." && docker compose down -v' EXIT INT TERM; \
 	docker compose down -v 2>/dev/null || true; \
@@ -47,6 +51,7 @@ docs:
 	rm -rf docs/db; \
 	mkdir -p docs/db; \
 	docker compose run --rm tbls
+endif
 
 ## docker: builds the production migrator image
 docker:
