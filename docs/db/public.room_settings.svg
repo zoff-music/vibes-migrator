@@ -42,8 +42,8 @@
 <text text-anchor="start" x="53.2" y="-150.8" font-family="Arial" font-size="14.00">enabled_sources </text>
 <text text-anchor="start" x="163.72" y="-150.8" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
 <polygon fill="none" stroke="black" points="46.2,-107.8 46.2,-138.6 336.18,-138.6 336.18,-107.8 46.2,-107.8"/>
-<text text-anchor="start" x="53.2" y="-120" font-family="Arial" font-size="14.00">only_admin_add_songs </text>
-<text text-anchor="start" x="204.98" y="-120" font-family="Arial" font-size="14.00" fill="#666666">[boolean]</text>
+<text text-anchor="start" x="53.2" y="-120" font-family="Arial" font-size="14.00">only_admin_add_playlist_items </text>
+<text text-anchor="start" x="251.65" y="-120" font-family="Arial" font-size="14.00" fill="#666666">[boolean]</text>
 <polygon fill="none" stroke="black" points="46.2,-77 46.2,-107.8 336.18,-107.8 336.18,-77 46.2,-77"/>
 <text text-anchor="start" x="53.2" y="-89.2" font-family="Arial" font-size="14.00">is_public </text>
 <text text-anchor="start" x="111.57" y="-89.2" font-family="Arial" font-size="14.00" fill="#666666">[boolean]</text>

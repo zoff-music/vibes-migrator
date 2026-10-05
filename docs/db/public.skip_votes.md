@@ -5,7 +5,7 @@
 | Name | Type | Default | Nullable | Children | Parents | Comment |
 | ---- | ---- | ------- | -------- | -------- | ------- | ------- |
 | room_id | text |  | false |  |  |  |
-| song_id | text |  | false |  |  |  |
+| playlist_item_id | text |  | false |  |  |  |
 | user_id | text |  | false |  |  |  |
 | created_at | timestamp without time zone | (CURRENT_TIMESTAMP AT TIME ZONE 'UTC'::text) | true |  |  |  |
 
@@ -13,17 +13,17 @@
 
 | Name | Type | Definition |
 | ---- | ---- | ---------- |
+| skip_votes_playlist_item_id_not_null | n | NOT NULL playlist_item_id |
 | skip_votes_room_id_not_null | n | NOT NULL room_id |
-| skip_votes_song_id_not_null | n | NOT NULL song_id |
 | skip_votes_user_id_not_null | n | NOT NULL user_id |
-| skip_votes_pkey | PRIMARY KEY | PRIMARY KEY (room_id, song_id, user_id) |
+| skip_votes_pkey | PRIMARY KEY | PRIMARY KEY (room_id, playlist_item_id, user_id) |
 
 ## Indexes
 
 | Name | Definition |
 | ---- | ---------- |
-| skip_votes_pkey | CREATE UNIQUE INDEX skip_votes_pkey ON public.skip_votes USING btree (room_id, song_id, user_id) |
-| idx_skip_votes_song | CREATE INDEX idx_skip_votes_song ON public.skip_votes USING btree (room_id, song_id) |
+| skip_votes_pkey | CREATE UNIQUE INDEX skip_votes_pkey ON public.skip_votes USING btree (room_id, playlist_item_id, user_id) |
+| idx_skip_votes_playlist_item | CREATE INDEX idx_skip_votes_playlist_item ON public.skip_votes USING btree (room_id, playlist_item_id) |
 
 ## Relations
 

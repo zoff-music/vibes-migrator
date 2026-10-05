@@ -12,7 +12,7 @@
 | provider_url | text | ''::text | false |  |  |  |
 | playback_restriction | text | ''::text | false |  |  |  |
 | title | text |  | false |  |  |  |
-| artist | text | ''::text | false |  |  |  |
+| publisher | text | ''::text | false |  |  |  |
 | thumbnail_url | text | ''::text | false |  |  |  |
 | duration | integer |  | false |  |  |  |
 | created_at | timestamp with time zone | now() | false |  |  |  |
@@ -21,7 +21,6 @@
 
 | Name | Type | Definition |
 | ---- | ---- | ---------- |
-| playlist_import_items_artist_not_null | n | NOT NULL artist |
 | playlist_import_items_created_at_not_null | n | NOT NULL created_at |
 | playlist_import_items_duration_non_negative | CHECK | CHECK ((duration >= 0)) |
 | playlist_import_items_duration_not_null | n | NOT NULL duration |
@@ -31,6 +30,7 @@
 | playlist_import_items_position_non_negative | CHECK | CHECK (("position" >= 0)) |
 | playlist_import_items_position_not_null | n | NOT NULL "position" |
 | playlist_import_items_provider_url_not_null | n | NOT NULL provider_url |
+| playlist_import_items_publisher_not_null | n | NOT NULL publisher |
 | playlist_import_items_source_id_not_null | n | NOT NULL source_id |
 | playlist_import_items_source_type_not_null | n | NOT NULL source_type |
 | playlist_import_items_thumbnail_url_not_null | n | NOT NULL thumbnail_url |

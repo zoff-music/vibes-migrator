@@ -42,8 +42,8 @@
 <text text-anchor="start" x="53.2" y="-181.6" font-family="Arial" font-size="14.00">title </text>
 <text text-anchor="start" x="78.88" y="-181.6" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
 <polygon fill="none" stroke="black" points="46.2,-138.6 46.2,-169.4 392.17,-169.4 392.17,-138.6 46.2,-138.6"/>
-<text text-anchor="start" x="53.2" y="-150.8" font-family="Arial" font-size="14.00">artist </text>
-<text text-anchor="start" x="87.43" y="-150.8" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
+<text text-anchor="start" x="53.2" y="-150.8" font-family="Arial" font-size="14.00">publisher </text>
+<text text-anchor="start" x="113.9" y="-150.8" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
 <polygon fill="none" stroke="black" points="46.2,-107.8 46.2,-138.6 392.17,-138.6 392.17,-107.8 46.2,-107.8"/>
 <text text-anchor="start" x="53.2" y="-120" font-family="Arial" font-size="14.00">thumbnail_url </text>
 <text text-anchor="start" x="141.14" y="-120" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>

@@ -1,0 +1,79 @@
+ALTER TABLE songs RENAME TO playlist_items;
+
+ALTER TABLE song_votes RENAME TO playlist_item_votes;
+
+ALTER TABLE playlist_items RENAME COLUMN artist TO publisher;
+
+ALTER TABLE playlist_import_items RENAME COLUMN artist TO publisher;
+
+ALTER TABLE playlist_item_votes RENAME COLUMN song_id TO playlist_item_id;
+
+ALTER TABLE skip_votes RENAME COLUMN song_id TO playlist_item_id;
+
+ALTER TABLE playback_state RENAME COLUMN current_song_id TO current_playlist_item_id;
+
+ALTER TABLE remote_controls RENAME COLUMN current_song_id TO current_playlist_item_id;
+
+ALTER TABLE room_settings RENAME COLUMN only_admin_add_songs TO only_admin_add_playlist_items;
+
+ALTER TABLE playlist_items RENAME CONSTRAINT songs_pkey TO playlist_items_pkey;
+
+ALTER TABLE playlist_items RENAME CONSTRAINT songs_added_by_not_null TO playlist_items_added_by_not_null;
+
+ALTER TABLE playlist_items RENAME CONSTRAINT songs_duplicate_guard_not_null TO playlist_items_duplicate_guard_not_null;
+
+ALTER TABLE playlist_items RENAME CONSTRAINT songs_duration_not_null TO playlist_items_duration_not_null;
+
+ALTER TABLE playlist_items RENAME CONSTRAINT songs_id_not_null TO playlist_items_id_not_null;
+
+ALTER TABLE playlist_items RENAME CONSTRAINT songs_metadata_refresh_after_not_null TO playlist_items_metadata_refresh_after_not_null;
+
+ALTER TABLE playlist_items RENAME CONSTRAINT songs_metadata_updated_at_not_null TO playlist_items_metadata_updated_at_not_null;
+
+ALTER TABLE playlist_items RENAME CONSTRAINT songs_playback_restriction_check TO playlist_items_playback_restriction_check;
+
+ALTER TABLE playlist_items RENAME CONSTRAINT songs_playback_restriction_not_null TO playlist_items_playback_restriction_not_null;
+
+ALTER TABLE playlist_items RENAME CONSTRAINT songs_room_id_not_null TO playlist_items_room_id_not_null;
+
+ALTER TABLE playlist_items RENAME CONSTRAINT songs_source_id_not_null TO playlist_items_source_id_not_null;
+
+ALTER TABLE playlist_items RENAME CONSTRAINT songs_source_type_not_null TO playlist_items_source_type_not_null;
+
+ALTER TABLE playlist_items RENAME CONSTRAINT songs_thumbnail_url_not_null TO playlist_items_thumbnail_url_not_null;
+
+ALTER TABLE playlist_items RENAME CONSTRAINT songs_title_not_null TO playlist_items_title_not_null;
+
+ALTER TABLE playlist_items RENAME CONSTRAINT songs_youtube_duration_check TO playlist_items_youtube_duration_check;
+
+ALTER TABLE playlist_item_votes RENAME CONSTRAINT song_votes_pkey TO playlist_item_votes_pkey;
+
+ALTER TABLE playlist_item_votes RENAME CONSTRAINT song_votes_room_id_not_null TO playlist_item_votes_room_id_not_null;
+
+ALTER TABLE playlist_item_votes RENAME CONSTRAINT song_votes_song_id_not_null TO playlist_item_votes_playlist_item_id_not_null;
+
+ALTER TABLE playlist_item_votes RENAME CONSTRAINT song_votes_user_id_not_null TO playlist_item_votes_user_id_not_null;
+
+ALTER TABLE skip_votes RENAME CONSTRAINT skip_votes_song_id_not_null TO skip_votes_playlist_item_id_not_null;
+
+ALTER TABLE remote_controls RENAME CONSTRAINT remote_controls_current_song_id_not_null TO remote_controls_current_playlist_item_id_not_null;
+
+ALTER TABLE room_settings RENAME CONSTRAINT room_settings_only_admin_add_songs_not_null TO room_settings_only_admin_add_playlist_items_not_null;
+
+ALTER TABLE playlist_import_items RENAME CONSTRAINT playlist_import_items_artist_not_null TO playlist_import_items_publisher_not_null;
+
+ALTER INDEX idx_skip_votes_song RENAME TO idx_skip_votes_playlist_item;
+
+ALTER INDEX idx_song_votes_song RENAME TO idx_playlist_item_votes_playlist_item;
+
+ALTER INDEX idx_songs_duplicate_guard RENAME TO idx_playlist_items_duplicate_guard;
+
+ALTER INDEX idx_songs_metadata_refresh RENAME TO idx_playlist_items_metadata_refresh;
+
+ALTER INDEX idx_songs_room_added_at RENAME TO idx_playlist_items_room_added_at;
+
+ALTER INDEX idx_songs_room_id RENAME TO idx_playlist_items_room_id;
+
+ALTER INDEX idx_songs_room_position RENAME TO idx_playlist_items_room_position;
+
+ALTER INDEX idx_songs_room_source RENAME TO idx_playlist_items_room_source;
