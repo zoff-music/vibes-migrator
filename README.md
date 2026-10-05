@@ -69,6 +69,15 @@ workflows at a database you need to retain.
 documentation when changing the schema. Add a new numbered migration pair rather
 than editing already-applied history.
 
+If Docker is unavailable, apply migrations to an isolated local PostgreSQL
+database, install `tbls`, and generate documentation from that database:
+
+```sh
+make docs DOCS_DATABASE_URL=postgres://localhost/vibes_docs?sslmode=disable
+```
+
+This optional mode only reads the supplied database and writes `docs/db`.
+
 ## Relationship to the Applications
 
 1. Apply a compatible schema change here.

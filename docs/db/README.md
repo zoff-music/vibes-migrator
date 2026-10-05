@@ -26,6 +26,9 @@
 | [public.sessions](public.sessions.md) | 4 |  | BASE TABLE |
 | [public.playlist_imports](public.playlist_imports.md) | 7 |  | BASE TABLE |
 | [public.playlist_import_items](public.playlist_import_items.md) | 12 |  | BASE TABLE |
+| [public.chat_usage](public.chat_usage.md) | 3 |  | BASE TABLE |
+| [public.room_search_usage](public.room_search_usage.md) | 5 |  | BASE TABLE |
+| [public.room_listener_usage](public.room_listener_usage.md) | 3 |  | BASE TABLE |
 
 ## Stored procedures and functions
 
