@@ -10,6 +10,7 @@
 | host_id | text |  | true |  |  |  |
 | admin_password_hash | text |  | true |  |  |  |
 | created_at | timestamp without time zone | (CURRENT_TIMESTAMP AT TIME ZONE 'UTC'::text) | true |  |  |  |
+| room_type | room_type | 'MUSIC'::room_type | false |  |  |  |
 
 ## Constraints
 
@@ -18,6 +19,7 @@
 | rooms_id_not_null | n | NOT NULL id |
 | rooms_mode_not_null | n | NOT NULL mode |
 | rooms_name_not_null | n | NOT NULL name |
+| rooms_room_type_not_null | n | NOT NULL room_type |
 | rooms_pkey | PRIMARY KEY | PRIMARY KEY (id) |
 
 ## Indexes

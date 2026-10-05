@@ -5,7 +5,7 @@
 | Name | Columns | Comment | Type |
 | ---- | ------- | ------- | ---- |
 | [public.migrations](public.migrations.md) | 4 |  | BASE TABLE |
-| [public.rooms](public.rooms.md) | 6 |  | BASE TABLE |
+| [public.rooms](public.rooms.md) | 7 |  | BASE TABLE |
 | [public.room_settings](public.room_settings.md) | 11 |  | BASE TABLE |
 | [public.playlist_items](public.playlist_items.md) | 17 |  | BASE TABLE |
 | [public.playback_state](public.playback_state.md) | 5 |  | BASE TABLE |
@@ -102,6 +102,12 @@
 | public.strict_word_similarity_dist_op | float4 | text, text | FUNCTION |
 | public.strict_word_similarity_dist_commutator_op | float4 | text, text | FUNCTION |
 | public.gtrgm_options | void | internal | FUNCTION |
+
+## Enums
+
+| Name | Values |
+| ---- | ------- |
+| public.room_type | MUSIC, WATCH |
 
 ## Relations
 
