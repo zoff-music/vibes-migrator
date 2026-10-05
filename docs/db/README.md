@@ -7,11 +7,11 @@
 | [public.migrations](public.migrations.md) | 4 |  | BASE TABLE |
 | [public.rooms](public.rooms.md) | 6 |  | BASE TABLE |
 | [public.room_settings](public.room_settings.md) | 11 |  | BASE TABLE |
-| [public.songs](public.songs.md) | 17 |  | BASE TABLE |
+| [public.playlist_items](public.playlist_items.md) | 17 |  | BASE TABLE |
 | [public.playback_state](public.playback_state.md) | 5 |  | BASE TABLE |
 | [public.room_users](public.room_users.md) | 9 |  | BASE TABLE |
 | [public.skip_votes](public.skip_votes.md) | 4 |  | BASE TABLE |
-| [public.song_votes](public.song_votes.md) | 4 |  | BASE TABLE |
+| [public.playlist_item_votes](public.playlist_item_votes.md) | 4 |  | BASE TABLE |
 | [public.auth_tokens](public.auth_tokens.md) | 7 |  | BASE TABLE |
 | [public.access_tokens](public.access_tokens.md) | 9 |  | BASE TABLE |
 | [public.pending_oauth_state](public.pending_oauth_state.md) | 4 |  | BASE TABLE |

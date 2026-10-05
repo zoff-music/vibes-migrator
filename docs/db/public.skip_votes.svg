@@ -21,8 +21,8 @@
 <text text-anchor="start" x="53.2" y="-150.8" font-family="Arial" font-size="14.00">room_id </text>
 <text text-anchor="start" x="107.67" y="-150.8" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
 <polygon fill="none" stroke="black" points="46.2,-107.8 46.2,-138.6 315.43,-138.6 315.43,-107.8 46.2,-107.8"/>
-<text text-anchor="start" x="53.2" y="-120" font-family="Arial" font-size="14.00">song_id </text>
-<text text-anchor="start" x="106.13" y="-120" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
+<text text-anchor="start" x="53.2" y="-120" font-family="Arial" font-size="14.00">playlist_item_id </text>
+<text text-anchor="start" x="152.8" y="-120" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
 <polygon fill="none" stroke="black" points="46.2,-77 46.2,-107.8 315.43,-107.8 315.43,-77 46.2,-77"/>
 <text text-anchor="start" x="53.2" y="-89.2" font-family="Arial" font-size="14.00">user_id </text>
 <text text-anchor="start" x="103.01" y="-89.2" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>

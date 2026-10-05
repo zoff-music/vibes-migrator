@@ -5,7 +5,7 @@
 | Name | Type | Default | Nullable | Children | Parents | Comment |
 | ---- | ---- | ------- | -------- | -------- | ------- | ------- |
 | room_id | text |  | false |  |  |  |
-| current_song_id | text |  | true |  |  |  |
+| current_playlist_item_id | text |  | true |  |  |  |
 | is_playing | boolean | false | true |  |  |  |
 | position_ms | integer | 0 | true |  |  |  |
 | updated_at | timestamp without time zone | (CURRENT_TIMESTAMP AT TIME ZONE 'UTC'::text) | true |  |  |  |

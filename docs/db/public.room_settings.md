@@ -12,7 +12,7 @@
 | remove_on_play | boolean | true | false |  |  |  |
 | allow_duplicates | boolean | false | false |  |  |  |
 | enabled_sources | text | 'youtube,spotify,soundcloud'::text | false |  |  |  |
-| only_admin_add_songs | boolean | false | false |  |  |  |
+| only_admin_add_playlist_items | boolean | false | false |  |  |  |
 | is_public | boolean | false | false |  |  |  |
 | playlist_import | boolean | true | false |  |  |  |
 
@@ -25,7 +25,7 @@
 | room_settings_enabled_sources_not_null | n | NOT NULL enabled_sources |
 | room_settings_is_public_not_null | n | NOT NULL is_public |
 | room_settings_max_continuous_adds_not_null | n | NOT NULL max_continuous_adds |
-| room_settings_only_admin_add_songs_not_null | n | NOT NULL only_admin_add_songs |
+| room_settings_only_admin_add_playlist_items_not_null | n | NOT NULL only_admin_add_playlist_items |
 | room_settings_playlist_import_not_null | n | NOT NULL playlist_import |
 | room_settings_remove_on_play_not_null | n | NOT NULL remove_on_play |
 | room_settings_room_id_not_null | n | NOT NULL room_id |

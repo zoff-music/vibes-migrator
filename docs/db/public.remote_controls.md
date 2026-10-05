@@ -14,7 +14,7 @@
 | last_seen_at | timestamp with time zone |  | false |  |  |  |
 | created_at | timestamp with time zone | now() | false |  |  |  |
 | updated_at | timestamp with time zone | now() | false |  |  |  |
-| current_song_id | text | ''::text | false |  |  |  |
+| current_playlist_item_id | text | ''::text | false |  |  |  |
 | playback_position_ms | bigint | 0 | false |  |  |  |
 | playback_is_playing | boolean | false | false |  |  |  |
 | playback_observed_at | timestamp with time zone | now() | false |  |  |  |
@@ -25,8 +25,8 @@
 | ---- | ---- | ---------- |
 | remote_controls_controller_token_hash_not_null | n | NOT NULL controller_token_hash |
 | remote_controls_created_at_not_null | n | NOT NULL created_at |
+| remote_controls_current_playlist_item_id_not_null | n | NOT NULL current_playlist_item_id |
 | remote_controls_current_room_id_not_null | n | NOT NULL current_room_id |
-| remote_controls_current_song_id_not_null | n | NOT NULL current_song_id |
 | remote_controls_id_not_null | n | NOT NULL id |
 | remote_controls_last_seen_at_not_null | n | NOT NULL last_seen_at |
 | remote_controls_owner_user_id_not_null | n | NOT NULL owner_user_id |
