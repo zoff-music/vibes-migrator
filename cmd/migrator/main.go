@@ -146,7 +146,7 @@ func getMigrationFiles() ([]string, error) {
 		if _, err := strconv.Atoi(parts[0]); err != nil {
 			continue
 		}
-		migrationFiles = append(migrationFiles, filepath.Join(dir, f.Name()))
+		migrationFiles = append(migrationFiles, f.Name())
 	}
 
 	log.Printf("Found %d migration files", len(migrationFiles))
@@ -154,6 +154,12 @@ func getMigrationFiles() ([]string, error) {
 }
 
 func applyUpMigrations(db *sql.DB, currentVersion int, steps int, files []string) error {
+	root, err := os.OpenRoot("migrations")
+	if err != nil {
+		return fmt.Errorf("error opening migrations directory: %w", err)
+	}
+	defer root.Close()
+
 	var versions []int
 	// We need to parse all up files
 	upFiles := make(map[int]string)
@@ -184,7 +190,7 @@ func applyUpMigrations(db *sql.DB, currentVersion int, steps int, files []string
 			return err
 		}
 
-		content, err := os.ReadFile(upFiles[v])
+		content, err := root.ReadFile(upFiles[v])
 		if err != nil {
 			return err
 		}
@@ -205,6 +211,12 @@ func applyDownMigrations(db *sql.DB, currentVersion int, steps int, files []stri
 	if currentVersion == 0 {
 		return nil
 	}
+
+	root, err := os.OpenRoot("migrations")
+	if err != nil {
+		return fmt.Errorf("error opening migrations directory: %w", err)
+	}
+	defer root.Close()
 
 	// Find down files
 	downFiles := make(map[int]string)
@@ -241,7 +253,7 @@ func applyDownMigrations(db *sql.DB, currentVersion int, steps int, files []stri
 			return err
 		}
 
-		content, err := os.ReadFile(path)
+		content, err := root.ReadFile(path)
 		if err != nil {
 			return err
 		}

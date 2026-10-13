@@ -55,10 +55,21 @@ blindly clearing its status. Run one migrator per database at a time.
 
 ```bash
 make build
+make security
+make test
 make integrationtest
 make docs
 make docker
 ```
+
+Builds use Go 1.27.2 or newer. `make build` requires gosec and govulncheck to
+pass first. `GOSEC_VERSION` pins the current upstream commit and
+`GOVULNCHECK_VERSION` defaults to the latest release.
+
+Pull requests run read-only security checks. The `release.yaml` workflow only
+publishes after a PR merges into `main`, checks the exact merged commit, and
+requires both scanners before building. Docker credentials use a private
+temporary configuration removed after success or failure.
 
 Integration checks apply migrations up and down against disposable local
 PostgreSQL. Both `make integrationtest` and `make docs` use Docker Compose and
