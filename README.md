@@ -66,7 +66,7 @@ Builds use Go 1.27.2 or newer. `make build` requires gosec and govulncheck to
 pass first. `GOSEC_VERSION` pins the current upstream commit and
 `GOVULNCHECK_VERSION` defaults to the latest release.
 
-Pull requests run read-only security checks. The `release.yaml` workflow only
+Pull requests do not trigger workflows. The `release.yaml` workflow only
 publishes on pushes to `main` in `zoff-music/vibes-migrator`, including PR merges
 and direct commits. It checks the exact pushed commit and requires both scanners
 before building. Forks and other branches cannot publish. Docker credentials use a private
