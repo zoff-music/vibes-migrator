@@ -2475,6 +2475,12 @@
           "type": "timestamp with time zone",
           "nullable": false,
           "default": "now()"
+        },
+        {
+          "name": "party_mode",
+          "type": "boolean",
+          "nullable": false,
+          "default": "false"
         }
       ],
       "indexes": [
@@ -2610,6 +2616,16 @@
           "referenced_table": "",
           "columns": [
             "pairing_token_hash"
+          ]
+        },
+        {
+          "name": "remote_controls_party_mode_not_null",
+          "type": "n",
+          "def": "NOT NULL party_mode",
+          "table": "public.remote_controls",
+          "referenced_table": "",
+          "columns": [
+            "party_mode"
           ]
         },
         {
@@ -3943,7 +3959,7 @@
     "meta": {
       "current_schema": "public",
       "search_paths": [
-        "postgres",
+        "kasperrt",
         "public"
       ],
       "dict": {

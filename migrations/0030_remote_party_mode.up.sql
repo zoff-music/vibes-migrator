@@ -1,0 +1,1 @@
+ALTER TABLE remote_controls ADD COLUMN party_mode BOOLEAN NOT NULL DEFAULT FALSE;
