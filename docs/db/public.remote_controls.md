@@ -18,6 +18,7 @@
 | playback_position_ms | bigint | 0 | false |  |  |  |
 | playback_is_playing | boolean | false | false |  |  |  |
 | playback_observed_at | timestamp with time zone | now() | false |  |  |  |
+| party_mode | boolean | false | false |  |  |  |
 
 ## Constraints
 
@@ -33,6 +34,7 @@
 | remote_controls_pairing_code_hash_not_null | n | NOT NULL pairing_code_hash |
 | remote_controls_pairing_expires_at_not_null | n | NOT NULL pairing_expires_at |
 | remote_controls_pairing_token_hash_not_null | n | NOT NULL pairing_token_hash |
+| remote_controls_party_mode_not_null | n | NOT NULL party_mode |
 | remote_controls_playback_is_playing_not_null | n | NOT NULL playback_is_playing |
 | remote_controls_playback_observed_at_not_null | n | NOT NULL playback_observed_at |
 | remote_controls_playback_position_ms_not_null | n | NOT NULL playback_position_ms |

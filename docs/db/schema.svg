@@ -519,53 +519,56 @@
 <!-- public.remote_controls -->
 <g id="node19" class="node">
 <title>public.remote_controls</title>
-<polygon fill="#efefef" stroke="none" points="7363.83,-520.6 7363.83,-556.2 7687.54,-556.2 7687.54,-520.6 7363.83,-520.6"/>
-<polygon fill="none" stroke="black" points="7363.83,-520.6 7363.83,-556.2 7687.54,-556.2 7687.54,-520.6 7363.83,-520.6"/>
-<text text-anchor="start" x="7380.21" y="-534" font-family="Arial Bold" font-size="18.00">public.remote_controls</text>
-<text text-anchor="start" x="7546.67" y="-534" font-family="Arial" font-size="14.00">    </text>
-<text text-anchor="start" x="7577.79" y="-534" font-family="Arial" font-size="14.00" fill="#666666">[BASE TABLE]</text>
-<polygon fill="none" stroke="black" points="7363.83,-489.8 7363.83,-520.6 7687.54,-520.6 7687.54,-489.8 7363.83,-489.8"/>
-<text text-anchor="start" x="7370.83" y="-502" font-family="Arial" font-size="14.00">id </text>
-<text text-anchor="start" x="7385.62" y="-502" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
-<polygon fill="none" stroke="black" points="7363.83,-459 7363.83,-489.8 7687.54,-489.8 7687.54,-459 7363.83,-459"/>
-<text text-anchor="start" x="7370.83" y="-471.2" font-family="Arial" font-size="14.00">owner_user_id </text>
-<text text-anchor="start" x="7466.56" y="-471.2" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
-<polygon fill="none" stroke="black" points="7363.83,-428.2 7363.83,-459 7687.54,-459 7687.54,-428.2 7363.83,-428.2"/>
-<text text-anchor="start" x="7370.83" y="-440.4" font-family="Arial" font-size="14.00">pairing_token_hash </text>
-<text text-anchor="start" x="7496.93" y="-440.4" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
-<polygon fill="none" stroke="black" points="7363.83,-397.4 7363.83,-428.2 7687.54,-428.2 7687.54,-397.4 7363.83,-397.4"/>
-<text text-anchor="start" x="7370.83" y="-409.6" font-family="Arial" font-size="14.00">pairing_code_hash </text>
-<text text-anchor="start" x="7493.04" y="-409.6" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
-<polygon fill="none" stroke="black" points="7363.83,-366.6 7363.83,-397.4 7687.54,-397.4 7687.54,-366.6 7363.83,-366.6"/>
-<text text-anchor="start" x="7370.83" y="-378.8" font-family="Arial" font-size="14.00">controller_token_hash </text>
-<text text-anchor="start" x="7512.48" y="-378.8" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
-<polygon fill="none" stroke="black" points="7363.83,-335.8 7363.83,-366.6 7687.54,-366.6 7687.54,-335.8 7363.83,-335.8"/>
-<text text-anchor="start" x="7370.83" y="-348" font-family="Arial" font-size="14.00">current_room_id </text>
-<text text-anchor="start" x="7476.66" y="-348" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
-<polygon fill="none" stroke="black" points="7363.83,-305 7363.83,-335.8 7687.54,-335.8 7687.54,-305 7363.83,-305"/>
-<text text-anchor="start" x="7370.83" y="-317.2" font-family="Arial" font-size="14.00">pairing_expires_at </text>
-<text text-anchor="start" x="7489.13" y="-317.2" font-family="Arial" font-size="14.00" fill="#666666">[timestamp with time zone]</text>
-<polygon fill="none" stroke="black" points="7363.83,-274.2 7363.83,-305 7687.54,-305 7687.54,-274.2 7363.83,-274.2"/>
-<text text-anchor="start" x="7370.83" y="-286.4" font-family="Arial" font-size="14.00">last_seen_at </text>
-<text text-anchor="start" x="7454.11" y="-286.4" font-family="Arial" font-size="14.00" fill="#666666">[timestamp with time zone]</text>
-<polygon fill="none" stroke="black" points="7363.83,-243.4 7363.83,-274.2 7687.54,-274.2 7687.54,-243.4 7363.83,-243.4"/>
-<text text-anchor="start" x="7370.83" y="-255.6" font-family="Arial" font-size="14.00">created_at </text>
-<text text-anchor="start" x="7440.88" y="-255.6" font-family="Arial" font-size="14.00" fill="#666666">[timestamp with time zone]</text>
-<polygon fill="none" stroke="black" points="7363.83,-212.6 7363.83,-243.4 7687.54,-243.4 7687.54,-212.6 7363.83,-212.6"/>
-<text text-anchor="start" x="7370.83" y="-224.8" font-family="Arial" font-size="14.00">updated_at </text>
-<text text-anchor="start" x="7444.79" y="-224.8" font-family="Arial" font-size="14.00" fill="#666666">[timestamp with time zone]</text>
-<polygon fill="none" stroke="black" points="7363.83,-181.8 7363.83,-212.6 7687.54,-212.6 7687.54,-181.8 7363.83,-181.8"/>
-<text text-anchor="start" x="7370.83" y="-194" font-family="Arial" font-size="14.00">current_playlist_item_id </text>
-<text text-anchor="start" x="7521.79" y="-194" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
-<polygon fill="none" stroke="black" points="7363.83,-151 7363.83,-181.8 7687.54,-181.8 7687.54,-151 7363.83,-151"/>
-<text text-anchor="start" x="7370.83" y="-163.2" font-family="Arial" font-size="14.00">playback_position_ms </text>
-<text text-anchor="start" x="7512.47" y="-163.2" font-family="Arial" font-size="14.00" fill="#666666">[bigint]</text>
-<polygon fill="none" stroke="black" points="7363.83,-120.2 7363.83,-151 7687.54,-151 7687.54,-120.2 7363.83,-120.2"/>
-<text text-anchor="start" x="7370.83" y="-132.4" font-family="Arial" font-size="14.00">playback_is_playing </text>
-<text text-anchor="start" x="7500.02" y="-132.4" font-family="Arial" font-size="14.00" fill="#666666">[boolean]</text>
-<polygon fill="none" stroke="black" points="7363.83,-89.4 7363.83,-120.2 7687.54,-120.2 7687.54,-89.4 7363.83,-89.4"/>
-<text text-anchor="start" x="7370.83" y="-101.6" font-family="Arial" font-size="14.00">playback_observed_at </text>
-<text text-anchor="start" x="7514.82" y="-101.6" font-family="Arial" font-size="14.00" fill="#666666">[timestamp with time zone]</text>
+<polygon fill="#efefef" stroke="none" points="7363.83,-536 7363.83,-571.6 7687.54,-571.6 7687.54,-536 7363.83,-536"/>
+<polygon fill="none" stroke="black" points="7363.83,-536 7363.83,-571.6 7687.54,-571.6 7687.54,-536 7363.83,-536"/>
+<text text-anchor="start" x="7380.21" y="-549.4" font-family="Arial Bold" font-size="18.00">public.remote_controls</text>
+<text text-anchor="start" x="7546.67" y="-549.4" font-family="Arial" font-size="14.00">    </text>
+<text text-anchor="start" x="7577.79" y="-549.4" font-family="Arial" font-size="14.00" fill="#666666">[BASE TABLE]</text>
+<polygon fill="none" stroke="black" points="7363.83,-505.2 7363.83,-536 7687.54,-536 7687.54,-505.2 7363.83,-505.2"/>
+<text text-anchor="start" x="7370.83" y="-517.4" font-family="Arial" font-size="14.00">id </text>
+<text text-anchor="start" x="7385.62" y="-517.4" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
+<polygon fill="none" stroke="black" points="7363.83,-474.4 7363.83,-505.2 7687.54,-505.2 7687.54,-474.4 7363.83,-474.4"/>
+<text text-anchor="start" x="7370.83" y="-486.6" font-family="Arial" font-size="14.00">owner_user_id </text>
+<text text-anchor="start" x="7466.56" y="-486.6" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
+<polygon fill="none" stroke="black" points="7363.83,-443.6 7363.83,-474.4 7687.54,-474.4 7687.54,-443.6 7363.83,-443.6"/>
+<text text-anchor="start" x="7370.83" y="-455.8" font-family="Arial" font-size="14.00">pairing_token_hash </text>
+<text text-anchor="start" x="7496.93" y="-455.8" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
+<polygon fill="none" stroke="black" points="7363.83,-412.8 7363.83,-443.6 7687.54,-443.6 7687.54,-412.8 7363.83,-412.8"/>
+<text text-anchor="start" x="7370.83" y="-425" font-family="Arial" font-size="14.00">pairing_code_hash </text>
+<text text-anchor="start" x="7493.04" y="-425" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
+<polygon fill="none" stroke="black" points="7363.83,-382 7363.83,-412.8 7687.54,-412.8 7687.54,-382 7363.83,-382"/>
+<text text-anchor="start" x="7370.83" y="-394.2" font-family="Arial" font-size="14.00">controller_token_hash </text>
+<text text-anchor="start" x="7512.48" y="-394.2" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
+<polygon fill="none" stroke="black" points="7363.83,-351.2 7363.83,-382 7687.54,-382 7687.54,-351.2 7363.83,-351.2"/>
+<text text-anchor="start" x="7370.83" y="-363.4" font-family="Arial" font-size="14.00">current_room_id </text>
+<text text-anchor="start" x="7476.66" y="-363.4" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
+<polygon fill="none" stroke="black" points="7363.83,-320.4 7363.83,-351.2 7687.54,-351.2 7687.54,-320.4 7363.83,-320.4"/>
+<text text-anchor="start" x="7370.83" y="-332.6" font-family="Arial" font-size="14.00">pairing_expires_at </text>
+<text text-anchor="start" x="7489.13" y="-332.6" font-family="Arial" font-size="14.00" fill="#666666">[timestamp with time zone]</text>
+<polygon fill="none" stroke="black" points="7363.83,-289.6 7363.83,-320.4 7687.54,-320.4 7687.54,-289.6 7363.83,-289.6"/>
+<text text-anchor="start" x="7370.83" y="-301.8" font-family="Arial" font-size="14.00">last_seen_at </text>
+<text text-anchor="start" x="7454.11" y="-301.8" font-family="Arial" font-size="14.00" fill="#666666">[timestamp with time zone]</text>
+<polygon fill="none" stroke="black" points="7363.83,-258.8 7363.83,-289.6 7687.54,-289.6 7687.54,-258.8 7363.83,-258.8"/>
+<text text-anchor="start" x="7370.83" y="-271" font-family="Arial" font-size="14.00">created_at </text>
+<text text-anchor="start" x="7440.88" y="-271" font-family="Arial" font-size="14.00" fill="#666666">[timestamp with time zone]</text>
+<polygon fill="none" stroke="black" points="7363.83,-228 7363.83,-258.8 7687.54,-258.8 7687.54,-228 7363.83,-228"/>
+<text text-anchor="start" x="7370.83" y="-240.2" font-family="Arial" font-size="14.00">updated_at </text>
+<text text-anchor="start" x="7444.79" y="-240.2" font-family="Arial" font-size="14.00" fill="#666666">[timestamp with time zone]</text>
+<polygon fill="none" stroke="black" points="7363.83,-197.2 7363.83,-228 7687.54,-228 7687.54,-197.2 7363.83,-197.2"/>
+<text text-anchor="start" x="7370.83" y="-209.4" font-family="Arial" font-size="14.00">current_playlist_item_id </text>
+<text text-anchor="start" x="7521.79" y="-209.4" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
+<polygon fill="none" stroke="black" points="7363.83,-166.4 7363.83,-197.2 7687.54,-197.2 7687.54,-166.4 7363.83,-166.4"/>
+<text text-anchor="start" x="7370.83" y="-178.6" font-family="Arial" font-size="14.00">playback_position_ms </text>
+<text text-anchor="start" x="7512.47" y="-178.6" font-family="Arial" font-size="14.00" fill="#666666">[bigint]</text>
+<polygon fill="none" stroke="black" points="7363.83,-135.6 7363.83,-166.4 7687.54,-166.4 7687.54,-135.6 7363.83,-135.6"/>
+<text text-anchor="start" x="7370.83" y="-147.8" font-family="Arial" font-size="14.00">playback_is_playing </text>
+<text text-anchor="start" x="7500.02" y="-147.8" font-family="Arial" font-size="14.00" fill="#666666">[boolean]</text>
+<polygon fill="none" stroke="black" points="7363.83,-104.8 7363.83,-135.6 7687.54,-135.6 7687.54,-104.8 7363.83,-104.8"/>
+<text text-anchor="start" x="7370.83" y="-117" font-family="Arial" font-size="14.00">playback_observed_at </text>
+<text text-anchor="start" x="7514.82" y="-117" font-family="Arial" font-size="14.00" fill="#666666">[timestamp with time zone]</text>
+<polygon fill="none" stroke="black" points="7363.83,-74 7363.83,-104.8 7687.54,-104.8 7687.54,-74 7363.83,-74"/>
+<text text-anchor="start" x="7370.83" y="-86.2" font-family="Arial" font-size="14.00">party_mode </text>
+<text text-anchor="start" x="7448.65" y="-86.2" font-family="Arial" font-size="14.00" fill="#666666">[boolean]</text>
 </g>
 <!-- public.sessions -->
 <g id="node20" class="node">
