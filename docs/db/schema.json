@@ -123,22 +123,6 @@
           "type": "room_type",
           "nullable": false,
           "default": "'MUSIC'::room_type"
-        },
-        {
-          "name": "flagged",
-          "type": "boolean",
-          "nullable": false,
-          "default": "false"
-        },
-        {
-          "name": "flagged_at",
-          "type": "timestamp without time zone",
-          "nullable": true
-        },
-        {
-          "name": "checked_at",
-          "type": "timestamp without time zone",
-          "nullable": true
         }
       ],
       "indexes": [
@@ -165,47 +149,9 @@
           "columns": [
             "name"
           ]
-        },
-        {
-          "name": "rooms_unchecked_names",
-          "def": "CREATE INDEX rooms_unchecked_names ON public.rooms USING btree (created_at, id) WHERE (checked_at IS NULL)",
-          "table": "public.rooms",
-          "columns": [
-            "created_at",
-            "id"
-          ]
-        },
-        {
-          "name": "rooms_flagged_dates",
-          "def": "CREATE INDEX rooms_flagged_dates ON public.rooms USING btree (flagged_at DESC) WHERE flagged",
-          "table": "public.rooms",
-          "columns": [
-            "flagged_at"
-          ]
         }
       ],
       "constraints": [
-        {
-          "name": "rooms_flagged_date",
-          "type": "CHECK",
-          "def": "CHECK ((flagged = (flagged_at IS NOT NULL)))",
-          "table": "public.rooms",
-          "referenced_table": "",
-          "columns": [
-            "flagged",
-            "flagged_at"
-          ]
-        },
-        {
-          "name": "rooms_flagged_not_null",
-          "type": "n",
-          "def": "NOT NULL flagged",
-          "table": "public.rooms",
-          "referenced_table": "",
-          "columns": [
-            "flagged"
-          ]
-        },
         {
           "name": "rooms_id_not_null",
           "type": "n",
@@ -3583,65 +3529,6 @@
           "columns": [
             "room_id",
             "created_at"
-          ]
-        }
-      ]
-    },
-    {
-      "name": "public.room_reviews",
-      "type": "BASE TABLE",
-      "columns": [
-        {
-          "name": "id",
-          "type": "boolean",
-          "nullable": false,
-          "default": "true"
-        },
-        {
-          "name": "started_at",
-          "type": "timestamp without time zone",
-          "nullable": true
-        }
-      ],
-      "indexes": [
-        {
-          "name": "room_reviews_pkey",
-          "def": "CREATE UNIQUE INDEX room_reviews_pkey ON public.room_reviews USING btree (id)",
-          "table": "public.room_reviews",
-          "columns": [
-            "id"
-          ]
-        }
-      ],
-      "constraints": [
-        {
-          "name": "room_reviews_id_check",
-          "type": "CHECK",
-          "def": "CHECK (id)",
-          "table": "public.room_reviews",
-          "referenced_table": "",
-          "columns": [
-            "id"
-          ]
-        },
-        {
-          "name": "room_reviews_id_not_null",
-          "type": "n",
-          "def": "NOT NULL id",
-          "table": "public.room_reviews",
-          "referenced_table": "",
-          "columns": [
-            "id"
-          ]
-        },
-        {
-          "name": "room_reviews_pkey",
-          "type": "PRIMARY KEY",
-          "def": "PRIMARY KEY (id)",
-          "table": "public.room_reviews",
-          "referenced_table": "",
-          "columns": [
-            "id"
           ]
         }
       ]

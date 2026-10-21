@@ -11,16 +11,11 @@
 | admin_password_hash | text |  | true |  |  |  |
 | created_at | timestamp without time zone | (CURRENT_TIMESTAMP AT TIME ZONE 'UTC'::text) | true |  |  |  |
 | room_type | room_type | 'MUSIC'::room_type | false |  |  |  |
-| flagged | boolean | false | false |  |  |  |
-| flagged_at | timestamp without time zone |  | true |  |  |  |
-| checked_at | timestamp without time zone |  | true |  |  |  |
 
 ## Constraints
 
 | Name | Type | Definition |
 | ---- | ---- | ---------- |
-| rooms_flagged_date | CHECK | CHECK ((flagged = (flagged_at IS NOT NULL))) |
-| rooms_flagged_not_null | n | NOT NULL flagged |
 | rooms_id_not_null | n | NOT NULL id |
 | rooms_mode_not_null | n | NOT NULL mode |
 | rooms_name_not_null | n | NOT NULL name |
@@ -34,8 +29,6 @@
 | rooms_pkey | CREATE UNIQUE INDEX rooms_pkey ON public.rooms USING btree (id) |
 | idx_rooms_name_unique | CREATE UNIQUE INDEX idx_rooms_name_unique ON public.rooms USING btree (name) |
 | idx_rooms_name_search | CREATE INDEX idx_rooms_name_search ON public.rooms USING gin (name gin_trgm_ops) |
-| rooms_unchecked_names | CREATE INDEX rooms_unchecked_names ON public.rooms USING btree (created_at, id) WHERE (checked_at IS NULL) |
-| rooms_flagged_dates | CREATE INDEX rooms_flagged_dates ON public.rooms USING btree (flagged_at DESC) WHERE flagged |
 
 ## Relations
 
