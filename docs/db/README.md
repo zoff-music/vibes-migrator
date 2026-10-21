@@ -5,7 +5,7 @@
 | Name | Columns | Comment | Type |
 | ---- | ------- | ------- | ---- |
 | [public.migrations](public.migrations.md) | 4 |  | BASE TABLE |
-| [public.rooms](public.rooms.md) | 7 |  | BASE TABLE |
+| [public.rooms](public.rooms.md) | 10 |  | BASE TABLE |
 | [public.room_settings](public.room_settings.md) | 11 |  | BASE TABLE |
 | [public.playlist_items](public.playlist_items.md) | 17 |  | BASE TABLE |
 | [public.playback_state](public.playback_state.md) | 5 |  | BASE TABLE |
@@ -29,6 +29,7 @@
 | [public.chat_usage](public.chat_usage.md) | 3 |  | BASE TABLE |
 | [public.room_search_usage](public.room_search_usage.md) | 5 |  | BASE TABLE |
 | [public.room_listener_usage](public.room_listener_usage.md) | 3 |  | BASE TABLE |
+| [public.room_reviews](public.room_reviews.md) | 2 |  | BASE TABLE |
 
 ## Stored procedures and functions
 
