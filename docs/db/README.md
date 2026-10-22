@@ -9,7 +9,7 @@
 | [public.room_settings](public.room_settings.md) | 11 |  | BASE TABLE |
 | [public.playlist_items](public.playlist_items.md) | 17 |  | BASE TABLE |
 | [public.playback_state](public.playback_state.md) | 5 |  | BASE TABLE |
-| [public.room_users](public.room_users.md) | 9 |  | BASE TABLE |
+| [public.room_users](public.room_users.md) | 10 |  | BASE TABLE |
 | [public.skip_votes](public.skip_votes.md) | 4 |  | BASE TABLE |
 | [public.playlist_item_votes](public.playlist_item_votes.md) | 4 |  | BASE TABLE |
 | [public.auth_tokens](public.auth_tokens.md) | 7 |  | BASE TABLE |

@@ -13,6 +13,7 @@
 | cast_owner_id | text |  | true |  |  |  |
 | joined_at | timestamp without time zone | (CURRENT_TIMESTAMP AT TIME ZONE 'UTC'::text) | true |  |  |  |
 | last_seen_at | timestamp without time zone | (CURRENT_TIMESTAMP AT TIME ZONE 'UTC'::text) | true |  |  |  |
+| admin_password_hash | text |  | true |  |  |  |
 
 ## Constraints
 
