@@ -198,38 +198,41 @@
 <!-- public.room_users -->
 <g id="node6" class="node">
 <title>public.room_users</title>
-<polygon fill="#efefef" stroke="none" points="2018.45,-443.6 2018.45,-479.2 2300.92,-479.2 2300.92,-443.6 2018.45,-443.6"/>
-<polygon fill="none" stroke="black" points="2018.45,-443.6 2018.45,-479.2 2300.92,-479.2 2300.92,-443.6 2018.45,-443.6"/>
-<text text-anchor="start" x="2030.7" y="-457" font-family="Arial Bold" font-size="18.00">public.room_users</text>
-<text text-anchor="start" x="2164.18" y="-457" font-family="Arial" font-size="14.00">    </text>
-<text text-anchor="start" x="2195.3" y="-457" font-family="Arial" font-size="14.00" fill="#666666">[BASE TABLE]</text>
-<polygon fill="none" stroke="black" points="2018.45,-412.8 2018.45,-443.6 2300.92,-443.6 2300.92,-412.8 2018.45,-412.8"/>
-<text text-anchor="start" x="2025.45" y="-425" font-family="Arial" font-size="14.00">id </text>
-<text text-anchor="start" x="2040.24" y="-425" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
-<polygon fill="none" stroke="black" points="2018.45,-382 2018.45,-412.8 2300.92,-412.8 2300.92,-382 2018.45,-382"/>
-<text text-anchor="start" x="2025.45" y="-394.2" font-family="Arial" font-size="14.00">room_id </text>
-<text text-anchor="start" x="2079.92" y="-394.2" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
-<polygon fill="none" stroke="black" points="2018.45,-351.2 2018.45,-382 2300.92,-382 2300.92,-351.2 2018.45,-351.2"/>
-<text text-anchor="start" x="2025.45" y="-363.4" font-family="Arial" font-size="14.00">nickname </text>
-<text text-anchor="start" x="2089.26" y="-363.4" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
-<polygon fill="none" stroke="black" points="2018.45,-320.4 2018.45,-351.2 2300.92,-351.2 2300.92,-320.4 2018.45,-320.4"/>
-<text text-anchor="start" x="2025.45" y="-332.6" font-family="Arial" font-size="14.00">is_admin </text>
-<text text-anchor="start" x="2085.37" y="-332.6" font-family="Arial" font-size="14.00" fill="#666666">[boolean]</text>
-<polygon fill="none" stroke="black" points="2018.45,-289.6 2018.45,-320.4 2300.92,-320.4 2300.92,-289.6 2018.45,-289.6"/>
-<text text-anchor="start" x="2025.45" y="-301.8" font-family="Arial" font-size="14.00">is_active_listener </text>
-<text text-anchor="start" x="2136.73" y="-301.8" font-family="Arial" font-size="14.00" fill="#666666">[boolean]</text>
-<polygon fill="none" stroke="black" points="2018.45,-258.8 2018.45,-289.6 2300.92,-289.6 2300.92,-258.8 2018.45,-258.8"/>
-<text text-anchor="start" x="2025.45" y="-271" font-family="Arial" font-size="14.00">is_cast_receiver </text>
-<text text-anchor="start" x="2130.49" y="-271" font-family="Arial" font-size="14.00" fill="#666666">[boolean]</text>
-<polygon fill="none" stroke="black" points="2018.45,-228 2018.45,-258.8 2300.92,-258.8 2300.92,-228 2018.45,-228"/>
-<text text-anchor="start" x="2025.45" y="-240.2" font-family="Arial" font-size="14.00">cast_owner_id </text>
-<text text-anchor="start" x="2119.62" y="-240.2" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
-<polygon fill="none" stroke="black" points="2018.45,-197.2 2018.45,-228 2300.92,-228 2300.92,-197.2 2018.45,-197.2"/>
-<text text-anchor="start" x="2025.45" y="-209.4" font-family="Arial" font-size="14.00">joined_at </text>
-<text text-anchor="start" x="2086.17" y="-209.4" font-family="Arial" font-size="14.00" fill="#666666">[timestamp without time zone]</text>
-<polygon fill="none" stroke="black" points="2018.45,-166.4 2018.45,-197.2 2300.92,-197.2 2300.92,-166.4 2018.45,-166.4"/>
-<text text-anchor="start" x="2025.45" y="-178.6" font-family="Arial" font-size="14.00">last_seen_at </text>
-<text text-anchor="start" x="2108.73" y="-178.6" font-family="Arial" font-size="14.00" fill="#666666">[timestamp without time zone]</text>
+<polygon fill="#efefef" stroke="none" points="2018.45,-459 2018.45,-494.6 2300.92,-494.6 2300.92,-459 2018.45,-459"/>
+<polygon fill="none" stroke="black" points="2018.45,-459 2018.45,-494.6 2300.92,-494.6 2300.92,-459 2018.45,-459"/>
+<text text-anchor="start" x="2030.7" y="-472.4" font-family="Arial Bold" font-size="18.00">public.room_users</text>
+<text text-anchor="start" x="2164.18" y="-472.4" font-family="Arial" font-size="14.00">    </text>
+<text text-anchor="start" x="2195.3" y="-472.4" font-family="Arial" font-size="14.00" fill="#666666">[BASE TABLE]</text>
+<polygon fill="none" stroke="black" points="2018.45,-428.2 2018.45,-459 2300.92,-459 2300.92,-428.2 2018.45,-428.2"/>
+<text text-anchor="start" x="2025.45" y="-440.4" font-family="Arial" font-size="14.00">id </text>
+<text text-anchor="start" x="2040.24" y="-440.4" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
+<polygon fill="none" stroke="black" points="2018.45,-397.4 2018.45,-428.2 2300.92,-428.2 2300.92,-397.4 2018.45,-397.4"/>
+<text text-anchor="start" x="2025.45" y="-409.6" font-family="Arial" font-size="14.00">room_id </text>
+<text text-anchor="start" x="2079.92" y="-409.6" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
+<polygon fill="none" stroke="black" points="2018.45,-366.6 2018.45,-397.4 2300.92,-397.4 2300.92,-366.6 2018.45,-366.6"/>
+<text text-anchor="start" x="2025.45" y="-378.8" font-family="Arial" font-size="14.00">nickname </text>
+<text text-anchor="start" x="2089.26" y="-378.8" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
+<polygon fill="none" stroke="black" points="2018.45,-335.8 2018.45,-366.6 2300.92,-366.6 2300.92,-335.8 2018.45,-335.8"/>
+<text text-anchor="start" x="2025.45" y="-348" font-family="Arial" font-size="14.00">is_admin </text>
+<text text-anchor="start" x="2085.37" y="-348" font-family="Arial" font-size="14.00" fill="#666666">[boolean]</text>
+<polygon fill="none" stroke="black" points="2018.45,-305 2018.45,-335.8 2300.92,-335.8 2300.92,-305 2018.45,-305"/>
+<text text-anchor="start" x="2025.45" y="-317.2" font-family="Arial" font-size="14.00">is_active_listener </text>
+<text text-anchor="start" x="2136.73" y="-317.2" font-family="Arial" font-size="14.00" fill="#666666">[boolean]</text>
+<polygon fill="none" stroke="black" points="2018.45,-274.2 2018.45,-305 2300.92,-305 2300.92,-274.2 2018.45,-274.2"/>
+<text text-anchor="start" x="2025.45" y="-286.4" font-family="Arial" font-size="14.00">is_cast_receiver </text>
+<text text-anchor="start" x="2130.49" y="-286.4" font-family="Arial" font-size="14.00" fill="#666666">[boolean]</text>
+<polygon fill="none" stroke="black" points="2018.45,-243.4 2018.45,-274.2 2300.92,-274.2 2300.92,-243.4 2018.45,-243.4"/>
+<text text-anchor="start" x="2025.45" y="-255.6" font-family="Arial" font-size="14.00">cast_owner_id </text>
+<text text-anchor="start" x="2119.62" y="-255.6" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
+<polygon fill="none" stroke="black" points="2018.45,-212.6 2018.45,-243.4 2300.92,-243.4 2300.92,-212.6 2018.45,-212.6"/>
+<text text-anchor="start" x="2025.45" y="-224.8" font-family="Arial" font-size="14.00">joined_at </text>
+<text text-anchor="start" x="2086.17" y="-224.8" font-family="Arial" font-size="14.00" fill="#666666">[timestamp without time zone]</text>
+<polygon fill="none" stroke="black" points="2018.45,-181.8 2018.45,-212.6 2300.92,-212.6 2300.92,-181.8 2018.45,-181.8"/>
+<text text-anchor="start" x="2025.45" y="-194" font-family="Arial" font-size="14.00">last_seen_at </text>
+<text text-anchor="start" x="2108.73" y="-194" font-family="Arial" font-size="14.00" fill="#666666">[timestamp without time zone]</text>
+<polygon fill="none" stroke="black" points="2018.45,-151 2018.45,-181.8 2300.92,-181.8 2300.92,-151 2018.45,-151"/>
+<text text-anchor="start" x="2025.45" y="-163.2" font-family="Arial" font-size="14.00">admin_password_hash </text>
+<text text-anchor="start" x="2173.32" y="-163.2" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
 </g>
 <!-- public.skip_votes -->
 <g id="node7" class="node">
