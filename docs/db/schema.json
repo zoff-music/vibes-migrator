@@ -1551,7 +1551,7 @@
         {
           "name": "room_id",
           "type": "text",
-          "nullable": false
+          "nullable": true
         },
         {
           "name": "prompt",
@@ -1595,6 +1595,17 @@
           "name": "failure_reason",
           "type": "text",
           "nullable": true
+        },
+        {
+          "name": "owner_id",
+          "type": "text",
+          "nullable": true
+        },
+        {
+          "name": "room_type",
+          "type": "room_type",
+          "nullable": false,
+          "default": "'MUSIC'::room_type"
         }
       ],
       "indexes": [
@@ -1713,6 +1724,17 @@
           ]
         },
         {
+          "name": "room_generations_pending_owner",
+          "type": "CHECK",
+          "def": "CHECK (((room_id IS NOT NULL) OR ((owner_id IS NOT NULL) AND (owner_id \u003c\u003e ''::text))))",
+          "table": "public.room_generations",
+          "referenced_table": "",
+          "columns": [
+            "room_id",
+            "owner_id"
+          ]
+        },
+        {
           "name": "room_generations_prompt_check",
           "type": "CHECK",
           "def": "CHECK (((length(btrim(prompt)) \u003e= 1) AND (length(btrim(prompt)) \u003c= 300)))",
@@ -1733,13 +1755,13 @@
           ]
         },
         {
-          "name": "room_generations_room_id_not_null",
+          "name": "room_generations_room_type_not_null",
           "type": "n",
-          "def": "NOT NULL room_id",
+          "def": "NOT NULL room_type",
           "table": "public.room_generations",
           "referenced_table": "",
           "columns": [
-            "room_id"
+            "room_type"
           ]
         },
         {
@@ -4073,11 +4095,11 @@
   ],
   "driver": {
     "name": "postgres",
-    "database_version": "PostgreSQL 18.6 (Debian 18.6-1.pgdg13+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit",
+    "database_version": "PostgreSQL 18.6 (Homebrew) on aarch64-apple-darwin25.6.0, compiled by Apple clang version 21.0.0 (clang-2100.3.34.2), 64-bit",
     "meta": {
       "current_schema": "public",
       "search_paths": [
-        "postgres",
+        "kasperrt",
         "public"
       ],
       "dict": {

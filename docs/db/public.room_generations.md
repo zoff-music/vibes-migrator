@@ -4,7 +4,7 @@
 
 | Name | Type | Default | Nullable | Children | Parents | Comment |
 | ---- | ---- | ------- | -------- | -------- | ------- | ------- |
-| room_id | text |  | false |  |  |  |
+| room_id | text |  | true |  |  |  |
 | prompt | text |  | false |  |  |  |
 | attempt | integer | 0 | false |  |  |  |
 | created_at | timestamp without time zone | (CURRENT_TIMESTAMP AT TIME ZONE 'UTC'::text) | false |  |  |  |
@@ -13,6 +13,8 @@
 | completed_at | timestamp without time zone |  | true |  |  |  |
 | failed_at | timestamp without time zone |  | true |  |  |  |
 | failure_reason | text |  | true |  |  |  |
+| owner_id | text |  | true |  |  |  |
+| room_type | room_type | 'MUSIC'::room_type | false |  |  |  |
 
 ## Constraints
 
@@ -24,9 +26,10 @@
 | room_generations_failure_attempt | CHECK | CHECK (((failed_at IS NULL) OR (attempt >= 5))) |
 | room_generations_failure_reason | CHECK | CHECK (((failure_reason IS NULL) OR ((failed_at IS NOT NULL) AND ((length(failure_reason) >= 1) AND (length(failure_reason) <= 300))))) |
 | room_generations_id_not_null | n | NOT NULL id |
+| room_generations_pending_owner | CHECK | CHECK (((room_id IS NOT NULL) OR ((owner_id IS NOT NULL) AND (owner_id <> ''::text)))) |
 | room_generations_prompt_check | CHECK | CHECK (((length(btrim(prompt)) >= 1) AND (length(btrim(prompt)) <= 300))) |
 | room_generations_prompt_not_null | n | NOT NULL prompt |
-| room_generations_room_id_not_null | n | NOT NULL room_id |
+| room_generations_room_type_not_null | n | NOT NULL room_type |
 | room_generations_single_outcome | CHECK | CHECK (((completed_at IS NULL) OR (failed_at IS NULL))) |
 | room_generations_updated_at_not_null | n | NOT NULL updated_at |
 | room_generations_pkey | PRIMARY KEY | PRIMARY KEY (id) |
