@@ -366,38 +366,44 @@
 <!-- public.room_generations -->
 <g id="node12" class="node">
 <title>public.room_generations</title>
-<polygon fill="#efefef" stroke="none" points="4454.71,-443.6 4454.71,-479.2 4772.66,-479.2 4772.66,-443.6 4454.71,-443.6"/>
-<polygon fill="none" stroke="black" points="4454.71,-443.6 4454.71,-479.2 4772.66,-479.2 4772.66,-443.6 4454.71,-443.6"/>
-<text text-anchor="start" x="4461.71" y="-457" font-family="Arial Bold" font-size="18.00">public.room_generations</text>
-<text text-anchor="start" x="4641.17" y="-457" font-family="Arial" font-size="14.00">    </text>
-<text text-anchor="start" x="4672.29" y="-457" font-family="Arial" font-size="14.00" fill="#666666">[BASE TABLE]</text>
+<polygon fill="#efefef" stroke="none" points="4454.71,-474.4 4454.71,-510 4772.66,-510 4772.66,-474.4 4454.71,-474.4"/>
+<polygon fill="none" stroke="black" points="4454.71,-474.4 4454.71,-510 4772.66,-510 4772.66,-474.4 4454.71,-474.4"/>
+<text text-anchor="start" x="4461.71" y="-487.8" font-family="Arial Bold" font-size="18.00">public.room_generations</text>
+<text text-anchor="start" x="4641.17" y="-487.8" font-family="Arial" font-size="14.00">    </text>
+<text text-anchor="start" x="4672.29" y="-487.8" font-family="Arial" font-size="14.00" fill="#666666">[BASE TABLE]</text>
+<polygon fill="none" stroke="black" points="4454.71,-443.6 4454.71,-474.4 4772.66,-474.4 4772.66,-443.6 4454.71,-443.6"/>
+<text text-anchor="start" x="4461.71" y="-455.8" font-family="Arial" font-size="14.00">room_id </text>
+<text text-anchor="start" x="4516.18" y="-455.8" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
 <polygon fill="none" stroke="black" points="4454.71,-412.8 4454.71,-443.6 4772.66,-443.6 4772.66,-412.8 4454.71,-412.8"/>
-<text text-anchor="start" x="4461.71" y="-425" font-family="Arial" font-size="14.00">room_id </text>
-<text text-anchor="start" x="4516.18" y="-425" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
+<text text-anchor="start" x="4461.71" y="-425" font-family="Arial" font-size="14.00">prompt </text>
+<text text-anchor="start" x="4509.18" y="-425" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
 <polygon fill="none" stroke="black" points="4454.71,-382 4454.71,-412.8 4772.66,-412.8 4772.66,-382 4454.71,-382"/>
-<text text-anchor="start" x="4461.71" y="-394.2" font-family="Arial" font-size="14.00">prompt </text>
-<text text-anchor="start" x="4509.18" y="-394.2" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
+<text text-anchor="start" x="4461.71" y="-394.2" font-family="Arial" font-size="14.00">attempt </text>
+<text text-anchor="start" x="4512.29" y="-394.2" font-family="Arial" font-size="14.00" fill="#666666">[integer]</text>
 <polygon fill="none" stroke="black" points="4454.71,-351.2 4454.71,-382 4772.66,-382 4772.66,-351.2 4454.71,-351.2"/>
-<text text-anchor="start" x="4461.71" y="-363.4" font-family="Arial" font-size="14.00">attempt </text>
-<text text-anchor="start" x="4512.29" y="-363.4" font-family="Arial" font-size="14.00" fill="#666666">[integer]</text>
+<text text-anchor="start" x="4461.71" y="-363.4" font-family="Arial" font-size="14.00">created_at </text>
+<text text-anchor="start" x="4531.76" y="-363.4" font-family="Arial" font-size="14.00" fill="#666666">[timestamp without time zone]</text>
 <polygon fill="none" stroke="black" points="4454.71,-320.4 4454.71,-351.2 4772.66,-351.2 4772.66,-320.4 4454.71,-320.4"/>
-<text text-anchor="start" x="4461.71" y="-332.6" font-family="Arial" font-size="14.00">created_at </text>
-<text text-anchor="start" x="4531.76" y="-332.6" font-family="Arial" font-size="14.00" fill="#666666">[timestamp without time zone]</text>
+<text text-anchor="start" x="4461.71" y="-332.6" font-family="Arial" font-size="14.00">updated_at </text>
+<text text-anchor="start" x="4535.67" y="-332.6" font-family="Arial" font-size="14.00" fill="#666666">[timestamp without time zone]</text>
 <polygon fill="none" stroke="black" points="4454.71,-289.6 4454.71,-320.4 4772.66,-320.4 4772.66,-289.6 4454.71,-289.6"/>
-<text text-anchor="start" x="4461.71" y="-301.8" font-family="Arial" font-size="14.00">updated_at </text>
-<text text-anchor="start" x="4535.67" y="-301.8" font-family="Arial" font-size="14.00" fill="#666666">[timestamp without time zone]</text>
+<text text-anchor="start" x="4461.71" y="-301.8" font-family="Arial" font-size="14.00">id </text>
+<text text-anchor="start" x="4476.5" y="-301.8" font-family="Arial" font-size="14.00" fill="#666666">[bigint]</text>
 <polygon fill="none" stroke="black" points="4454.71,-258.8 4454.71,-289.6 4772.66,-289.6 4772.66,-258.8 4454.71,-258.8"/>
-<text text-anchor="start" x="4461.71" y="-271" font-family="Arial" font-size="14.00">id </text>
-<text text-anchor="start" x="4476.5" y="-271" font-family="Arial" font-size="14.00" fill="#666666">[bigint]</text>
+<text text-anchor="start" x="4461.71" y="-271" font-family="Arial" font-size="14.00">completed_at </text>
+<text text-anchor="start" x="4549.66" y="-271" font-family="Arial" font-size="14.00" fill="#666666">[timestamp without time zone]</text>
 <polygon fill="none" stroke="black" points="4454.71,-228 4454.71,-258.8 4772.66,-258.8 4772.66,-228 4454.71,-228"/>
-<text text-anchor="start" x="4461.71" y="-240.2" font-family="Arial" font-size="14.00">completed_at </text>
-<text text-anchor="start" x="4549.66" y="-240.2" font-family="Arial" font-size="14.00" fill="#666666">[timestamp without time zone]</text>
+<text text-anchor="start" x="4461.71" y="-240.2" font-family="Arial" font-size="14.00">failed_at </text>
+<text text-anchor="start" x="4518.53" y="-240.2" font-family="Arial" font-size="14.00" fill="#666666">[timestamp without time zone]</text>
 <polygon fill="none" stroke="black" points="4454.71,-197.2 4454.71,-228 4772.66,-228 4772.66,-197.2 4454.71,-197.2"/>
-<text text-anchor="start" x="4461.71" y="-209.4" font-family="Arial" font-size="14.00">failed_at </text>
-<text text-anchor="start" x="4518.53" y="-209.4" font-family="Arial" font-size="14.00" fill="#666666">[timestamp without time zone]</text>
+<text text-anchor="start" x="4461.71" y="-209.4" font-family="Arial" font-size="14.00">failure_reason </text>
+<text text-anchor="start" x="4554.33" y="-209.4" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
 <polygon fill="none" stroke="black" points="4454.71,-166.4 4454.71,-197.2 4772.66,-197.2 4772.66,-166.4 4454.71,-166.4"/>
-<text text-anchor="start" x="4461.71" y="-178.6" font-family="Arial" font-size="14.00">failure_reason </text>
-<text text-anchor="start" x="4554.33" y="-178.6" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
+<text text-anchor="start" x="4461.71" y="-178.6" font-family="Arial" font-size="14.00">owner_id </text>
+<text text-anchor="start" x="4522.42" y="-178.6" font-family="Arial" font-size="14.00" fill="#666666">[text]</text>
+<polygon fill="none" stroke="black" points="4454.71,-135.6 4454.71,-166.4 4772.66,-166.4 4772.66,-135.6 4454.71,-135.6"/>
+<text text-anchor="start" x="4461.71" y="-147.8" font-family="Arial" font-size="14.00">room_type </text>
+<text text-anchor="start" x="4531.75" y="-147.8" font-family="Arial" font-size="14.00" fill="#666666">[room_type]</text>
 </g>
 <!-- public.room_name_words -->
 <g id="node13" class="node">

@@ -15,7 +15,7 @@
 | [public.auth_tokens](public.auth_tokens.md) | 7 |  | BASE TABLE |
 | [public.access_tokens](public.access_tokens.md) | 9 |  | BASE TABLE |
 | [public.pending_oauth_state](public.pending_oauth_state.md) | 4 |  | BASE TABLE |
-| [public.room_generations](public.room_generations.md) | 9 |  | BASE TABLE |
+| [public.room_generations](public.room_generations.md) | 11 |  | BASE TABLE |
 | [public.room_name_words](public.room_name_words.md) | 2 |  | BASE TABLE |
 | [public.room_name_pool](public.room_name_pool.md) | 4 |  | BASE TABLE |
 | [public.room_name_reservations](public.room_name_reservations.md) | 5 |  | BASE TABLE |
