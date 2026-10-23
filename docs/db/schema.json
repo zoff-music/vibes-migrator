@@ -3672,6 +3672,65 @@
           ]
         }
       ]
+    },
+    {
+      "name": "public.admin_reviews",
+      "type": "BASE TABLE",
+      "columns": [
+        {
+          "name": "id",
+          "type": "boolean",
+          "nullable": false,
+          "default": "true"
+        },
+        {
+          "name": "updated_at",
+          "type": "timestamp without time zone",
+          "nullable": true
+        }
+      ],
+      "indexes": [
+        {
+          "name": "admin_reviews_pkey",
+          "def": "CREATE UNIQUE INDEX admin_reviews_pkey ON public.admin_reviews USING btree (id)",
+          "table": "public.admin_reviews",
+          "columns": [
+            "id"
+          ]
+        }
+      ],
+      "constraints": [
+        {
+          "name": "admin_reviews_id_check",
+          "type": "CHECK",
+          "def": "CHECK (id)",
+          "table": "public.admin_reviews",
+          "referenced_table": "",
+          "columns": [
+            "id"
+          ]
+        },
+        {
+          "name": "admin_reviews_id_not_null",
+          "type": "n",
+          "def": "NOT NULL id",
+          "table": "public.admin_reviews",
+          "referenced_table": "",
+          "columns": [
+            "id"
+          ]
+        },
+        {
+          "name": "admin_reviews_pkey",
+          "type": "PRIMARY KEY",
+          "def": "PRIMARY KEY (id)",
+          "table": "public.admin_reviews",
+          "referenced_table": "",
+          "columns": [
+            "id"
+          ]
+        }
+      ]
     }
   ],
   "functions": [
@@ -4099,7 +4158,7 @@
     "meta": {
       "current_schema": "public",
       "search_paths": [
-        "kasperrt",
+        "postgres",
         "public"
       ],
       "dict": {
