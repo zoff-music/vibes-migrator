@@ -3731,6 +3731,355 @@
           ]
         }
       ]
+    },
+    {
+      "name": "public.search_claims",
+      "type": "BASE TABLE",
+      "columns": [
+        {
+          "name": "query_hash",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "token",
+          "type": "uuid",
+          "nullable": false
+        },
+        {
+          "name": "expires_at",
+          "type": "timestamp without time zone",
+          "nullable": false
+        }
+      ],
+      "indexes": [
+        {
+          "name": "search_claims_pkey",
+          "def": "CREATE UNIQUE INDEX search_claims_pkey ON public.search_claims USING btree (query_hash)",
+          "table": "public.search_claims",
+          "columns": [
+            "query_hash"
+          ]
+        },
+        {
+          "name": "search_claims_expires_at_idx",
+          "def": "CREATE INDEX search_claims_expires_at_idx ON public.search_claims USING btree (expires_at)",
+          "table": "public.search_claims",
+          "columns": [
+            "expires_at"
+          ]
+        }
+      ],
+      "constraints": [
+        {
+          "name": "search_claims_expires_at_not_null",
+          "type": "n",
+          "def": "NOT NULL expires_at",
+          "table": "public.search_claims",
+          "referenced_table": "",
+          "columns": [
+            "expires_at"
+          ]
+        },
+        {
+          "name": "search_claims_query_hash_not_null",
+          "type": "n",
+          "def": "NOT NULL query_hash",
+          "table": "public.search_claims",
+          "referenced_table": "",
+          "columns": [
+            "query_hash"
+          ]
+        },
+        {
+          "name": "search_claims_token_not_null",
+          "type": "n",
+          "def": "NOT NULL token",
+          "table": "public.search_claims",
+          "referenced_table": "",
+          "columns": [
+            "token"
+          ]
+        },
+        {
+          "name": "search_claims_pkey",
+          "type": "PRIMARY KEY",
+          "def": "PRIMARY KEY (query_hash)",
+          "table": "public.search_claims",
+          "referenced_table": "",
+          "columns": [
+            "query_hash"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "public.search_budgets",
+      "type": "BASE TABLE",
+      "columns": [
+        {
+          "name": "id",
+          "type": "boolean",
+          "nullable": false,
+          "default": "true"
+        },
+        {
+          "name": "quota_day",
+          "type": "date",
+          "nullable": false,
+          "default": "CURRENT_DATE"
+        },
+        {
+          "name": "search_count",
+          "type": "integer",
+          "nullable": false,
+          "default": "0"
+        },
+        {
+          "name": "generation_count",
+          "type": "integer",
+          "nullable": false,
+          "default": "0"
+        },
+        {
+          "name": "started_at",
+          "type": "timestamp without time zone",
+          "nullable": true
+        }
+      ],
+      "indexes": [
+        {
+          "name": "search_budgets_pkey",
+          "def": "CREATE UNIQUE INDEX search_budgets_pkey ON public.search_budgets USING btree (id)",
+          "table": "public.search_budgets",
+          "columns": [
+            "id"
+          ]
+        }
+      ],
+      "constraints": [
+        {
+          "name": "search_budgets_generation_count_not_null",
+          "type": "n",
+          "def": "NOT NULL generation_count",
+          "table": "public.search_budgets",
+          "referenced_table": "",
+          "columns": [
+            "generation_count"
+          ]
+        },
+        {
+          "name": "search_budgets_id_check",
+          "type": "CHECK",
+          "def": "CHECK (id)",
+          "table": "public.search_budgets",
+          "referenced_table": "",
+          "columns": [
+            "id"
+          ]
+        },
+        {
+          "name": "search_budgets_id_not_null",
+          "type": "n",
+          "def": "NOT NULL id",
+          "table": "public.search_budgets",
+          "referenced_table": "",
+          "columns": [
+            "id"
+          ]
+        },
+        {
+          "name": "search_budgets_quota_day_not_null",
+          "type": "n",
+          "def": "NOT NULL quota_day",
+          "table": "public.search_budgets",
+          "referenced_table": "",
+          "columns": [
+            "quota_day"
+          ]
+        },
+        {
+          "name": "search_budgets_search_count_not_null",
+          "type": "n",
+          "def": "NOT NULL search_count",
+          "table": "public.search_budgets",
+          "referenced_table": "",
+          "columns": [
+            "search_count"
+          ]
+        },
+        {
+          "name": "search_budgets_pkey",
+          "type": "PRIMARY KEY",
+          "def": "PRIMARY KEY (id)",
+          "table": "public.search_budgets",
+          "referenced_table": "",
+          "columns": [
+            "id"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "public.search_attempts",
+      "type": "BASE TABLE",
+      "columns": [
+        {
+          "name": "id",
+          "type": "uuid",
+          "nullable": false
+        },
+        {
+          "name": "query_hash",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "room_id",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "user_id",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "purpose",
+          "type": "text",
+          "nullable": false
+        },
+        {
+          "name": "outcome",
+          "type": "text",
+          "nullable": false,
+          "default": "'reserved'::text"
+        },
+        {
+          "name": "created_at",
+          "type": "timestamp without time zone",
+          "nullable": false,
+          "default": "now()"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "search_attempts_pkey",
+          "def": "CREATE UNIQUE INDEX search_attempts_pkey ON public.search_attempts USING btree (id)",
+          "table": "public.search_attempts",
+          "columns": [
+            "id"
+          ]
+        },
+        {
+          "name": "search_attempts_created_at_idx",
+          "def": "CREATE INDEX search_attempts_created_at_idx ON public.search_attempts USING btree (created_at)",
+          "table": "public.search_attempts",
+          "columns": [
+            "created_at"
+          ]
+        },
+        {
+          "name": "search_attempts_user_created_at_idx",
+          "def": "CREATE INDEX search_attempts_user_created_at_idx ON public.search_attempts USING btree (user_id, created_at)",
+          "table": "public.search_attempts",
+          "columns": [
+            "user_id",
+            "created_at"
+          ]
+        },
+        {
+          "name": "search_attempts_room_created_at_idx",
+          "def": "CREATE INDEX search_attempts_room_created_at_idx ON public.search_attempts USING btree (room_id, created_at)",
+          "table": "public.search_attempts",
+          "columns": [
+            "room_id",
+            "created_at"
+          ]
+        }
+      ],
+      "constraints": [
+        {
+          "name": "search_attempts_created_at_not_null",
+          "type": "n",
+          "def": "NOT NULL created_at",
+          "table": "public.search_attempts",
+          "referenced_table": "",
+          "columns": [
+            "created_at"
+          ]
+        },
+        {
+          "name": "search_attempts_id_not_null",
+          "type": "n",
+          "def": "NOT NULL id",
+          "table": "public.search_attempts",
+          "referenced_table": "",
+          "columns": [
+            "id"
+          ]
+        },
+        {
+          "name": "search_attempts_outcome_not_null",
+          "type": "n",
+          "def": "NOT NULL outcome",
+          "table": "public.search_attempts",
+          "referenced_table": "",
+          "columns": [
+            "outcome"
+          ]
+        },
+        {
+          "name": "search_attempts_purpose_not_null",
+          "type": "n",
+          "def": "NOT NULL purpose",
+          "table": "public.search_attempts",
+          "referenced_table": "",
+          "columns": [
+            "purpose"
+          ]
+        },
+        {
+          "name": "search_attempts_query_hash_not_null",
+          "type": "n",
+          "def": "NOT NULL query_hash",
+          "table": "public.search_attempts",
+          "referenced_table": "",
+          "columns": [
+            "query_hash"
+          ]
+        },
+        {
+          "name": "search_attempts_room_id_not_null",
+          "type": "n",
+          "def": "NOT NULL room_id",
+          "table": "public.search_attempts",
+          "referenced_table": "",
+          "columns": [
+            "room_id"
+          ]
+        },
+        {
+          "name": "search_attempts_user_id_not_null",
+          "type": "n",
+          "def": "NOT NULL user_id",
+          "table": "public.search_attempts",
+          "referenced_table": "",
+          "columns": [
+            "user_id"
+          ]
+        },
+        {
+          "name": "search_attempts_pkey",
+          "type": "PRIMARY KEY",
+          "def": "PRIMARY KEY (id)",
+          "table": "public.search_attempts",
+          "referenced_table": "",
+          "columns": [
+            "id"
+          ]
+        }
+      ]
     }
   ],
   "functions": [
@@ -4154,7 +4503,7 @@
   ],
   "driver": {
     "name": "postgres",
-    "database_version": "PostgreSQL 18.6 (Homebrew) on aarch64-apple-darwin25.6.0, compiled by Apple clang version 21.0.0 (clang-2100.3.34.2), 64-bit",
+    "database_version": "PostgreSQL 18.6 (Debian 18.6-1.pgdg13+2) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit",
     "meta": {
       "current_schema": "public",
       "search_paths": [

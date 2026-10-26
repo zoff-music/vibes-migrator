@@ -31,6 +31,9 @@
 | [public.room_listener_usage](public.room_listener_usage.md) | 3 |  | BASE TABLE |
 | [public.room_reviews](public.room_reviews.md) | 2 |  | BASE TABLE |
 | [public.admin_reviews](public.admin_reviews.md) | 2 |  | BASE TABLE |
+| [public.search_claims](public.search_claims.md) | 3 |  | BASE TABLE |
+| [public.search_budgets](public.search_budgets.md) | 5 |  | BASE TABLE |
+| [public.search_attempts](public.search_attempts.md) | 7 |  | BASE TABLE |
 
 ## Stored procedures and functions
 
