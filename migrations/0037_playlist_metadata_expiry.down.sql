@@ -1,0 +1,1 @@
+DROP INDEX idx_playlist_items_youtube_metadata_expiry;

@@ -53,6 +53,7 @@
 | idx_playlist_items_room_added_at | CREATE INDEX idx_playlist_items_room_added_at ON public.playlist_items USING btree (room_id, added_at) |
 | idx_playlist_items_duplicate_guard | CREATE UNIQUE INDEX idx_playlist_items_duplicate_guard ON public.playlist_items USING btree (room_id, source_type, source_id) WHERE duplicate_guard |
 | idx_playlist_items_metadata_refresh | CREATE INDEX idx_playlist_items_metadata_refresh ON public.playlist_items USING btree (source_type, metadata_refresh_after) |
+| idx_playlist_items_youtube_metadata_expiry | CREATE INDEX idx_playlist_items_youtube_metadata_expiry ON public.playlist_items USING btree (metadata_updated_at, room_id) WHERE (source_type = 'youtube'::text) |
 
 ## Relations
 
