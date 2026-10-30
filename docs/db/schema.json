@@ -628,6 +628,15 @@
             "source_type",
             "metadata_refresh_after"
           ]
+        },
+        {
+          "name": "idx_playlist_items_youtube_metadata_expiry",
+          "def": "CREATE INDEX idx_playlist_items_youtube_metadata_expiry ON public.playlist_items USING btree (metadata_updated_at, room_id) WHERE (source_type = 'youtube'::text)",
+          "table": "public.playlist_items",
+          "columns": [
+            "metadata_updated_at",
+            "room_id"
+          ]
         }
       ],
       "constraints": [
