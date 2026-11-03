@@ -8,6 +8,10 @@
 | name | text |  | false |  |  |  |
 | created_at | timestamp with time zone | now() | false |  |  |  |
 | updated_at | timestamp with time zone | now() | false |  |  |  |
+| moderator_id | text |  | true |  |  |  |
+| moderator_version | bigint |  | true |  |  |  |
+| moderator_expires_at | timestamp without time zone |  | true |  |  |  |
+| moderator_session_id | text |  | true |  |  |  |
 
 ## Constraints
 
