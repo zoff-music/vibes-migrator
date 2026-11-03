@@ -2805,6 +2805,26 @@
           "type": "timestamp with time zone",
           "nullable": false,
           "default": "now()"
+        },
+        {
+          "name": "moderator_id",
+          "type": "text",
+          "nullable": true
+        },
+        {
+          "name": "moderator_version",
+          "type": "bigint",
+          "nullable": true
+        },
+        {
+          "name": "moderator_expires_at",
+          "type": "timestamp without time zone",
+          "nullable": true
+        },
+        {
+          "name": "moderator_session_id",
+          "type": "text",
+          "nullable": true
         }
       ],
       "indexes": [

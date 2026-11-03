@@ -23,7 +23,7 @@
 | [public.listener_usage](public.listener_usage.md) | 2 |  | BASE TABLE |
 | [public.admin_users](public.admin_users.md) | 6 |  | BASE TABLE |
 | [public.remote_controls](public.remote_controls.md) | 15 |  | BASE TABLE |
-| [public.sessions](public.sessions.md) | 4 |  | BASE TABLE |
+| [public.sessions](public.sessions.md) | 8 |  | BASE TABLE |
 | [public.playlist_imports](public.playlist_imports.md) | 7 |  | BASE TABLE |
 | [public.playlist_import_items](public.playlist_import_items.md) | 12 |  | BASE TABLE |
 | [public.chat_usage](public.chat_usage.md) | 3 |  | BASE TABLE |
