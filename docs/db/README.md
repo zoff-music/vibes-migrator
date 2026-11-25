@@ -31,6 +31,7 @@
 | [public.room_listener_usage](public.room_listener_usage.md) | 3 |  | BASE TABLE |
 | [public.room_reviews](public.room_reviews.md) | 2 |  | BASE TABLE |
 | [public.admin_reviews](public.admin_reviews.md) | 2 |  | BASE TABLE |
+| [public.playlist_authorizations](public.playlist_authorizations.md) | 4 |  | BASE TABLE |
 
 ## Stored procedures and functions
 
